@@ -1,0 +1,8 @@
+skin	global			Aeon	chrome/global/
+skin	mozapps			Aeon	chrome/mozapps/
+skin	browser			Aeon	chrome/browser/
+skin	communicator	Aeon	chrome/communicator/
+
+override chrome://browser/skin/autocomplete.css chrome://global/skin/autocomplete.css
+skin	os			Aeon	chrome/os/linux/	os=Linux
+skin	os			Aeon	chrome/os/winnt/	os=WINNT

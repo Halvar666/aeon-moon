@@ -1,0 +1,26 @@
+Aeon Moon
+==========
+
+Port of the classic Aeon theme for modern Pale Moon.
+
+Original theme
+--------------
+Aeon by Ed Hume.
+
+License
+-------
+The original Aeon theme was published on Mozilla Add-ons (AMO) under
+Mozilla Public License Version 1.1 (MPL 1.1).
+
+Archived source page:
+https://web.archive.org/web/20180730003058/https://addons.mozilla.org/en-US/firefox/addon/aeon/
+
+Additional note
+---------------
+The archived AMO description states that the icons are in the public domain.
+
+Pale Moon port
+--------------
+This package adapts the original theme for compatibility with modern Pale Moon.
+
+Port and packaging changes: Halvar.

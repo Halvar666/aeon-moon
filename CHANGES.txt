@@ -1,0 +1,25 @@
+Aeon Moon 1.1.0b1
+=================
+
+Public test build for modern Pale Moon.
+
+Highlights
+----------
+- Based on the working Aeon Moon 1.0.4 baseline.
+- Keeps the Pale Moon toolbar icon fixes from 1.0.1.
+- Keeps the address-bar bookmark star fix from 1.0.0.
+- Adds Linux menu icon binding support inspired by Moonola.
+- Preserves the same menu rendering on Windows.
+
+Toolbar compatibility fixes included
+-----------------------------------
+- Status Bar Preferences icon
+- History button icon
+- Bookmarks menu-button icon
+- Download Status icon
+
+Notes
+-----
+- Customize Toolbar drag and drop works; on Linux the cursor feedback may still show a forbidden symbol even though the drop is accepted.
+- Original theme by Ed Hume.
+- Pale Moon port and adaptation by Halvar.
