@@ -1,0 +1,76 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+spinbuttons {
+  -moz-appearance: spinner;
+  cursor: default;
+}
+
+.spinbuttons-button {
+  min-width: 13px;
+  min-height: 11px;
+  margin: 0 !important;
+  border: 2px solid;
+  -moz-border-top-colors: #A9A9A9 #EAEAEA;
+  -moz-border-right-colors: #A9A9A9 #EAEAEA;
+  -moz-border-bottom-colors: #A9A9A9 #EAEAEA;
+  -moz-border-left-colors: #A9A9A9 #EAEAEA;
+  background-color: white;
+}
+
+.spinbuttons-button > .button-box {
+  border: 0;
+}
+
+.spinbuttons-button:hover 
+{
+  border: 2px solid;
+  -moz-border-top-colors: #585858 orange;
+  -moz-border-right-colors: #585858 orange;
+  -moz-border-bottom-colors: #585858 orange;
+  -moz-border-left-colors: #585858 orange;
+}
+
+.spinbuttons-button:hover:active
+{
+  border: 2px solid;
+  -moz-border-top-colors: #585858 transparent;
+  -moz-border-right-colors: #585858 transparent;
+  -moz-border-bottom-colors: #585858 transparent;
+  -moz-border-left-colors: #585858 transparent;
+  background-color: #DCDCDC;
+}
+
+.spinbuttons-button[disabled="true"] {
+  border: 2px solid;
+  -moz-border-top-colors: white #EAEAEA !important; /*ThreeDHighlight ThreeDLightShadow;*/
+  -moz-border-right-colors: #6B6B6B #9F9F9F !important; /*ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-bottom-colors: #6B6B6B #9F9F9F !important; /*ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-left-colors: white #EAEAEA !important; /*ThreeDHighlight ThreeDLightShadow;*/
+  background-color: white !important;
+}
+
+.spinbuttons-up {
+  -moz-appearance: spinner-upbutton;
+  background-image: url("chrome://global/skin/arrow/arrow-up.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.spinbuttons-up[disabled="true"] {
+  background-image: url("chrome://global/skin/arrow/arrow-up-dis.gif");
+}
+
+.spinbuttons-down {
+  -moz-appearance: spinner-downbutton;
+  background-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.spinbuttons-down[disabled="true"] {
+  background-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
+}

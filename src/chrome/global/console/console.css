@@ -1,0 +1,274 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== console.css ====================================================
+   == Styles used by the Error Console window.
+   ====================================================================== */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+.console-box {
+/*  background-color: -moz-Field;*/
+  color: black; /* -moz-FieldText; */
+  background-image: url('chrome://global/skin/background.gif');
+}
+
+/* ::::: console rows ::::: */
+
+.console-row {
+  border-bottom: 1px dotted #9F9F9F; /*ThreeDShadow;*/
+  padding: 4px 0px;
+}
+
+.console-row-icon {
+  padding: 4px;
+  -moz-padding-start: 5px;
+  background-color: transparent;
+  -moz-box-align: start !important;
+}
+
+.console-row-msg > label:first-child,
+.console-row-file > label:first-child {
+  display: none;
+}
+
+.console-time {
+  font-weight: normal !important;
+}
+
+.console-icon {
+  list-style-image: inherit;
+  background-color: transparent;
+}
+
+.console-error-msg {
+  margin-bottom: 2px;
+}
+
+/* ..... error rows ..... */
+
+.console-row-code {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 0px;
+  color: #0000BB;
+  font-size: larger;
+}
+
+.console-dots,
+.console-caret {
+  height: 9px;
+}
+
+.console-dots {
+  background: url("chrome://global/skin/console/console-error-dash.gif") repeat-x top;
+}
+
+.console-caret {
+  width: 7px;
+  background: url("chrome://global/skin/console/console-error-caret.gif") no-repeat top;
+}
+
+/* ..... message rows ..... */
+
+.console-row[type="message"] {
+  font-family: monospace;
+}
+
+/* ..... selected state ..... */
+
+.console-row[selected="true"] .console-row-icon,
+.console-row[selected="true"] {
+  background-image: url('chrome://global/skin/F2.gif');
+}
+
+.console-row-code[selected="true"],
+.console-row-content[selected="true"] > .console-row-file > .console-error-source > .text-link {
+  color: blue !important;
+}
+
+/* ::::: icons ::::: */
+
+.console-row[type="error"],
+.console-row[type="exception"] {
+  list-style-image: url("chrome://global/skin/console/console-toolbar.png");
+  -moz-image-region: rect(64px 128px 96px 96px) !important;
+}
+
+.console-row[type="error"] .console-row-msg,
+.console-row[type="exception"] .console-row-msg {
+  font-weight: bold;
+}
+
+.console-row[type="warning"] {
+  list-style-image: url("chrome://global/skin/console/console-toolbar.png");
+  -moz-image-region: rect(64px 96px 96px 64px) !important;
+}
+
+.console-row[type="message"] {
+  list-style-image: url("chrome://global/skin/console/console-toolbar.png");
+  -moz-image-region: rect(64px 64px 96px 32px) !important;
+}
+
+/* ::::: toolbars ::::: */
+
+#TextboxEval {
+  margin: 2px !important;
+}
+
+#ButtonEval {
+  margin-top: 2px !important;
+  margin-bottom: 2px !important;
+  -moz-margin-start: 0px !important;
+  -moz-margin-end: 2px !important;
+}
+
+toolbarseparator {
+  min-height: 1em;
+}
+
+/* Toolbar icons */
+
+#ToolbarMode toolbarbutton {
+  min-width: 57px;
+  padding: 4px !important;
+}
+
+toolbar#ToolbarMode toolbarbutton:active,
+toolbar#ToolbarMode toolbarbutton[checked="true"] {
+  -moz-padding-start: 5px !important;
+  -moz-padding-end: 3px !important;
+  background-image: none;
+  border: solid 1px gray !important;
+  background-color: white;
+  border-color: gray;
+  border-radius: 4px;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+
+
+toolbar#ToolbarMode toolbarbutton {
+  list-style-image: url("chrome://global/skin/console/console-toolbar.png");
+  -moz-box-orient: horizontal;
+  padding: 4px !important;
+}
+
+toolbarbutton[observes="Console:modeAll"], /* fx2 */
+#Console\:modeAll {
+  -moz-image-region: rect(0px 32px 32px 0px);
+}
+
+#Console\:modeAll {
+  -moz-image-region: rect(0px 32px 32px 0px);
+}
+
+#Console\:modeAll:hover,
+toolbarbutton[observes="Console:modeAll"]:hover { /* fx2 */
+  -moz-image-region: rect(64px 32px 96px 0px);
+}
+
+toolbarbutton[observes="Console:modeAll"][checked="true"], /* fx2 */
+#Console\:modeAll[checked="true"] {
+  -moz-image-region: rect(32px 32px 64px 0px);
+}
+
+#Console\:modeAll:hover:active,
+toolbarbutton[observes="Console:modeAll"]:hover:active { /* fx2 */
+  -moz-image-region: rect(96px 32px 128px 0px);
+}
+
+toolbarbutton[observes="Console:modeErrors"], /* fx2 */
+#Console\:modeErrors {
+  -moz-image-region: rect(0px 128px 32px 96px);
+}
+
+#Console\:modeErrors:hover,
+toolbarbutton[observes="Console:modeErrors"]:hover { /* fx2 */
+  -moz-image-region: rect(64px 128px 96px 96px);
+}
+
+toolbarbutton[observes="Console:modeErrors"][checked="true"], /* fx2 */
+#Console\:modeErrors[checked="true"] {
+  -moz-image-region: rect(32px 128px 64px 96px);
+}
+
+#Console\:modeErrors:hover:active,
+toolbarbutton[observes="Console:modeErrors"]:hover:active { /* fx2 */
+  -moz-image-region: rect(96px 128px 128px 96px);
+}
+
+toolbarbutton[observes="Console:modeWarnings"], /* fx2 */
+#Console\:modeWarnings {
+  -moz-image-region: rect(0px 96px 32px 64px);
+}
+
+#Console\:modeWarnings:hover,
+toolbarbutton[observes="Console:modeWarnings"]:hover { /* fx2 */
+  -moz-image-region: rect(64px 96px 96px 64px);
+}
+
+toolbarbutton[observes="Console:modeWarnings"][checked="true"], /* fx2 */
+#Console\:modeWarnings[checked="true"] {
+  -moz-image-region: rect(32px 96px 64px 64px);
+}
+
+#Console\:modeWarnings:hover:active,
+toolbarbutton[observes="Console:modeWarnings"]:hover:active { /* fx2 */
+  -moz-image-region: rect(96px 96px 128px 64px);
+}
+
+toolbarbutton[observes="Console:modeMessages"], /* fx2 */
+#Console\:modeMessages {
+  -moz-image-region: rect(0px 64px 32px 32px);
+}
+
+#Console\:modeMessages:hover,
+toolbarbutton[observes="Console:modeMessages"]:hover { /* fx2 */
+  -moz-image-region: rect(64px 64px 96px 32px);
+}
+
+toolbarbutton[observes="Console:modeMessages"][checked="true"], /* fx2 */
+#Console\:modeMessages[checked="true"] {
+  -moz-image-region: rect(32px 64px 64px 32px);
+}
+
+#Console\:modeMessages:hover:active,
+toolbarbutton[observes="Console:modeMessages"]:hover:active { /* fx2 */
+  -moz-image-region: rect(96px 64px 128px 32px);
+}
+
+toolbarbutton[observes="Console:clear"], /* fx2 */
+#Console\:clear {
+  list-style-image: url("chrome://browser/skin/extrabuttons-l.png") !important;
+  -moz-image-region: rect(0 384px 32px 352px);
+}
+
+#Console\:clear:hover,
+toolbarbutton[observes="Console:clear"]:hover { /* fx2 */
+  -moz-image-region: rect(32px 384px 64px 352px);
+}
+
+#Console\:clear:hover:active,
+toolbarbutton[observes="Console:clear"]:hover:active, /* fx2 */
+#Console\:clear[checked="true"] {
+  -moz-image-region: rect(64px 384px 96px 352px);
+}
+
+toolbar#ToolbarMode .toolbarbutton-icon {
+  padding: 2px 5px 2px 0px !important;
+}
+
+toolbar#ToolbarMode .toolbarbutton-text {
+  -moz-padding-end: 4px;
+}
+
+
+/* ::::: Fix Error Console toolbar button text spacing ::::: */
+
+.toolbarbutton-text {
+  -moz-padding-start: 0px;
+  -moz-padding-end: 5px;
+}

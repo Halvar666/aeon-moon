@@ -1,0 +1,71 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== dialog.css =====================================================
+  == Styles used by the XUL dialog element.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: dialog ::::: */
+
+dialog { 
+  padding-top: 8px;
+  padding-bottom: 10px;
+  -moz-padding-start: 8px;
+  -moz-padding-end: 10px;
+}
+
+/* ::::: dialog buttons ::::: */
+
+.dialog-button {
+  font: menu;
+  margin-top: 6px;
+}
+
+/* ::::: dialog header ::::: */
+
+dialogheader {
+  margin: 0px 5px 5px 5px;
+  border: 2px solid;
+  -moz-border-top-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
+  -moz-border-right-colors: white #6B6B6B; /*ThreeDHighlight ThreeDDarkShadow;*/
+  -moz-border-bottom-colors: white #6B6B6B; /*ThreeDHighlight ThreeDDarkShadow;*/
+  -moz-border-left-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
+  padding: 5px 8px;
+  background-color: #82E6F9; /*Aeon - Highlight;*/
+  color: black /*HighlightText;*/
+}
+
+.dialogheader-title {
+  margin: 0px !important;
+  font-size: larger;
+  font-weight: bold;
+}
+
+/* ::::: large dialog header ::::: */
+
+.header-large {
+  -moz-box-orient: vertical;
+  margin: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  -moz-border-bottom-colors: white #9F9F9F; /*ThreeDHighlight ThreeDShadow;*/
+  padding-top: 12px;
+  padding-bottom: 12px;
+  -moz-padding-start: 25px;
+  -moz-padding-end: 5px;
+/*  background-color: Window;
+  color: WindowText;*/
+}
+
+.header-large > .dialogheader-title {
+  font: inherit;
+  font-weight: bold;
+}
+
+.header-large > .dialogheader-description {
+  -moz-margin-start: 12px !important;
+}

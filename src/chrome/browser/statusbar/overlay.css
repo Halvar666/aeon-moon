@@ -1,0 +1,35 @@
+/* Pale Moon compatibility additions for Status-4-Evar / Status Bar Preferences */
+
+#status4evar-options-button,
+#wrapper-status4evar-options-button {
+  list-style-image: url("chrome://browser/skin/statusbar/pms24.png") !important;
+}
+
+toolbar[iconsize="small"] #status4evar-options-button,
+toolbar[iconsize="small"] #wrapper-status4evar-options-button {
+  list-style-image: url("chrome://browser/skin/statusbar/pms16.png") !important;
+}
+
+#status4evar-download-button,
+#wrapper-status4evar-download-button {
+  list-style-image: url("chrome://browser/skin/downloads-32.png") !important;
+  -moz-image-region: rect(0 32px 32px 0) !important;
+}
+
+toolbar[iconsize="small"] #status4evar-download-button,
+toolbar[iconsize="small"] #wrapper-status4evar-download-button {
+  list-style-image: url("chrome://browser/skin/downloads-24x66.png") !important;
+  -moz-image-region: rect(0 24px 22px 0) !important;
+}
+
+#status4evar-download-button #status4evar-download-icon {
+  background: url("chrome://browser/skin/downloads-24x66.png") no-repeat 0 0 !important;
+  width: 24px !important;
+  height: 22px !important;
+}
+
+#status4evar-download-button[attention] #status4evar-download-icon {
+  background-image: url("chrome://browser/skin/downloads/download-glow.png") !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}

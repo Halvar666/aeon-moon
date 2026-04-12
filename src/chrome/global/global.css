@@ -1,0 +1,429 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== global.css =====================================================
+  == Styles that apply everywhere.
+  ======================================================================= */
+
+/* all localizable skin settings shall live here */
+@import url("chrome://global/locale/intl.css");
+
+@import url("chrome://global/skin/formatting.css");
+
+@import url("chrome://browser/skin/menuIcons.css");
+@import url("chrome://os/skin/global/menuBindings.css");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* test - these set the DOMI and trees to the other font for testing purposes */
+
+/*#winBoxModel > groupbox,
+#bxElement,
+#winInspectorMain,
+tree {
+  font: menu;
+}*/
+
+/* ::::: XBL bindings ::::: */
+
+radio {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#radio");
+}
+
+menulist > menupopup,
+.menulist-menupopup {
+  -moz-binding: url("chrome://global/content/bindings/popup.xml#popup-scrollbars");
+}
+
+.menulist-compact {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#menulist-compact");
+}
+
+progressmeter[mode="undetermined"] {
+  -moz-binding: url("chrome://global/content/bindings/progressmeter.xml#progressmeter-undetermined");
+}
+
+/* ::::: root elements ::::: */
+
+/*popup,
+menupopup,*/
+window,
+page,
+dialog,
+wizard,
+prefwindow {
+  -moz-appearance: window;
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
+  font: message-box;
+}
+
+/*#winInspectorMain,*/
+sidebarheader,
+popup,
+menupopup,
+window,
+page,
+dialog,
+wizard,
+prefwindow,
+toolbar {
+  background-image: url(chrome://global/skin/background.gif);
+}
+
+/* deprecated */
+window.dialog {
+  padding-top: 8px;
+  padding-bottom: 10px;
+  -moz-padding-start: 8px;
+  -moz-padding-end: 10px;
+}
+
+/* ::::: alert icons :::::*/
+
+.message-icon,
+.alert-icon,
+.error-icon,
+.question-icon {
+  width: 64px;
+  height: 64px;
+  list-style-image: url("chrome://branding/content/icon64.png");
+  margin: 6px 20px 6px 6px !important;
+}
+
+
+
+
+
+/* ::::: iframe ::::: */
+
+iframe {
+  border: none;
+  width: 100px;
+  height: 100px;
+  min-width: 10px;
+  min-height: 10px;
+}
+
+/* skin the toolbars and menus */
+
+
+menubarmenu, toolbar, toolbox {
+  -moz-appearance: none !important;
+  background-color: transparent;
+}
+
+/* align pixels on the sides of the window */
+
+toolbox, #content {
+  border: none !important;
+}
+
+#urlbar {
+  border-width: 1px !important;
+}
+
+#urlbar-wrapper {
+  -moz-box-align: center
+}
+/* from bug 997131; placed 2014-06-14 */
+
+/* ::::: skin Forecastfox ::::: */
+
+#ff-box {
+  -moz-appearance: none !important;
+  background-color: transparent;
+  border-top: 1px solid #9D9DA1; /* ThreeDShadow; */
+  border-right: 1px solid #9D9DA1; /* ThreeDShadow; */
+  border-bottom: 1px solid #9D9DA1; /* ThreeDShadow; */
+  border-left: 1px solid white; /*ThreeDHighlight;*/
+}
+
+/* ::::: statusbar ::::: */
+
+statusbar {
+  -moz-appearance: none /*statusbar*/ !important;
+  background-image: url('chrome://global/skin/background.gif') !important;
+  min-height: 22px;
+  background-color: white;
+  color: black; /* MenuText; */
+}
+
+statusbarpanel {
+  -moz-appearance: none /*statusbarpanel*/ !important;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  border-left: 1px solid white; /*ThreeDHighlight;*/
+  border-top: 1px solid #9D9DA1; /* ThreeDShadow; */
+  border-right: 1px solid #9D9DA1; /* ThreeDShadow; */
+  border-bottom: 1px solid #9D9DA1; /* ThreeDShadow; */
+  padding: 0 4px;
+}
+
+statusbarpanel:not(.statusbar-resizerpanel):-moz-lwtheme {
+  -moz-appearance: none;
+  border-top-style: none;
+  border-bottom-style: none;
+  -moz-border-start-style: none;
+}
+
+.statusbar-resizerpanel {
+  -moz-box-align: end;
+  -moz-box-pack: end;
+  -moz-appearance: resizerpanel;
+  padding: 0;
+  border: 1px solid silver;
+  border-top: 1px solid #9D9DA1; /* ThreeDShadow; */
+}
+
+.statusbarpanel-iconic,
+.statusbarpanel-iconic-text,
+.statusbarpanel-menu-iconic {
+  padding: 0 1px;
+}
+
+/* XXXBlake yeah, shoot me -- these don't belong here.  I'll move them later. */
+
+sidebarheader {
+  min-height: 23px;
+  background-color: transparent !important;
+  -moz-appearance: none !important; /*toolbox;*/
+  border-bottom: 1px solid silver;
+}
+
+sidebarheader > label {
+  -moz-padding-start: 4px;
+  color: black;
+}
+
+.toolbar-focustarget {
+  -moz-user-focus: ignore !important;
+}
+
+toolbar[mode="text"] .toolbarbutton-text {
+  padding: 0 !important;
+  margin: 3px 5px !important;
+}
+
+/* ::::: miscellaneous formatting ::::: */
+
+:root:-moz-lwtheme,
+[lwthemefooter="true"] {
+  -moz-appearance: none;
+}
+
+:root:-moz-lwtheme-darktext {
+  text-shadow: 0 -0.5px 1.5px white;
+}
+
+:root:-moz-lwtheme-brighttext {
+  text-shadow: 1px 1px 1.5px black;
+}
+
+statusbar:-moz-lwtheme,
+sidebarheader:-moz-lwtheme {
+  -moz-appearance: none;
+  background: none;
+  border-style: none;
+}
+
+.inset {
+  border: 1px solid #9F9F9F; /*ThreeDShadow;*/
+  border-right-color: white; /*ThreeDHighlight;*/
+  border-bottom-color: white; /*ThreeDHighlight;*/
+  margin: 0 5px 5px;
+}
+  
+.outset {
+  border: 1px solid #9F9F9F; /*ThreeDShadow;*/
+  border-left-color: white; /*ThreeDHighlight;*/
+  border-top-color: white; /*ThreeDHighlight;*/
+}
+
+/* separators */
+separator:not([orient="vertical"]) {
+  height: 1.5em;
+}
+separator[orient="vertical"] {
+  width: 1.5em;
+}
+
+separator.thin:not([orient="vertical"]) {
+  height: 0.5em;
+}
+separator.thin[orient="vertical"] {
+  width: 0.5em;
+}
+
+separator.groove:not([orient="vertical"]) {
+  border-top: 1px solid  #9F9F9F; /*ThreeDShadow;*/
+  border-bottom: 1px solid white; /*ThreeDHighlight;*/
+  height: 0;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+separator.groove[orient="vertical"] {
+  border-left: 1px solid  #9F9F9F; /*ThreeDShadow;*/
+  border-right: 1px solid white; /*ThreeDHighlight;*/
+  width: 0;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+}
+
+.small-margin {
+  margin: 1px 2px;
+}
+
+.plain {
+  -moz-appearance: none;
+  margin: 0 !important;
+  border: none;
+  padding: 0;
+}
+
+description,
+label {
+  cursor: default;
+  margin-top: 1px;
+  margin-bottom: 2px;
+  -moz-margin-start: 6px;
+  -moz-margin-end: 5px;
+}
+
+description {
+  margin-bottom: 4px;
+}
+
+label[disabled="true"] {
+  color: #ACA899; /*GrayText;*/
+}
+
+label[disabled="true"]:-moz-system-metric(windows-classic) {
+  color:  #9F9F9F; /*ThreeDShadow;*/
+  text-shadow: 1px 1px white; /*ThreeDHighlight;*/
+}
+
+.tooltip-label {
+  margin: 0;
+}
+
+.header {
+  font-weight: bold;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+.indent {
+  -moz-margin-start: 23px;
+}
+
+.box-padded {
+  padding: 5px;
+}
+
+.spaced {
+  margin: 3px 5px 4px;
+}
+
+.wizard-box {
+  padding: 20px 44px 10px;
+}
+
+.text-link {
+  color: -moz-nativehyperlinktext;
+  text-decoration: underline;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+  
+.text-link:-moz-focusring {
+  border: 1px dotted black; /*-moz-DialogText;*/
+  color: red;
+}
+
+/* :::::: autoscroll popup ::::: */
+
+.autoscroller {
+  height: 28px;
+  width: 28px;
+  border: none;
+  margin: -14px;
+  padding: 0;
+  background-image: url("chrome://global/skin/icons/autoscroll.png");
+  background-color: transparent;
+  background-position: right top;
+  -moz-appearance: none;
+}
+
+.autoscroller[scrolldir="NS"] {
+  background-position: right center;
+}
+
+.autoscroller[scrolldir="EW"] {
+  background-position: right bottom;
+}
+
+/* ::::: Broken Page Reporter ::::: */
+
+#reporterMenuButton {
+  list-style-image: url("chrome://browser/skin/reporter-icon-large.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#reporterMenuButton:not([disabled="true"]):hover {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+#reporterMenuButton:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(64px 32px 96px 0px) !important;
+}
+toolbox #reporterMenuButton[disabled="true"] {
+  -moz-image-region: rect(96px 32px 128px 0px) !important;
+}
+
+toolbar[iconsize="small"] #reporterMenuButton {
+  list-style-image: url("chrome://browser/skin/reporter-icon-small.png") !important;
+  -moz-image-region: rect(0px 24px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #reporterMenuButton:not([disabled="true"]):hover {
+  -moz-image-region: rect(22px 24px 44px 0px) !important;
+}
+toolbar[iconsize="small"] #reporterMenuButton:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(44px 24px 66px 0px) !important;
+}
+toolbox toolbar[iconsize="small"] #reporterMenuButton[disabled="true"] {
+  -moz-image-region: rect(66px 24px 88px 0px) !important;
+}
+
+/* ::::: MR Tech Local Install Extensions and Themes menus restart button ::::: */
+
+#restartfirefox-fileMenu2 {
+  list-style-image: url("chrome://browser/skin/MRTech-24x22.png") !important;
+  -moz-image-region: rect(0px 72px 22px 48px);
+}
+#restartfirefox-fileMenu2:hover {
+  -moz-image-region: rect(22px 72px 44px 48px);
+}
+#restartfirefox-fileMenu2:hover:active {
+  -moz-image-region: rect(44px 72px 66px 48px);
+}
+
+/* DOM Inspector splitter */
+
+.titledsplitter-dragbar {
+  border-top: 1px solid silver;
+  min-height: 5px !important;
+}
+
+/* About dialog fix for large fonts */
+/* won't work in about.css */
+
+#userAgent {
+  min-height: 3em;
+  margin-bottom: 5px;
+}

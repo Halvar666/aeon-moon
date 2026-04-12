@@ -1,0 +1,39 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== groupbox.css ==================================================
+  == Styles used by the XUL groupbox and related elements.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: groupbox ::::: */
+
+groupbox {
+  -moz-appearance: none !important; /*groupbox;*/
+  border: 1px solid #9F9F9F; /*ThreeDShadow;*/
+  -moz-border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.groupbox-body {
+  padding: inherit;
+}
+
+caption {
+  margin: 0px 6px 2px 6px;
+  background-color: #C3F4FD; /* -moz-Dialog; */
+  color: black;
+  padding: 0px 3px;
+}
+
+tabpanels caption {
+  -moz-appearance: none !important; /*tabpanel;*/
+}
+
+/* !important is needed to override label in global.css */
+.caption-text {
+  margin: 0 2px !important;
+}

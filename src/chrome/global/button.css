@@ -1,0 +1,190 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== button.css =====================================================
+  == Styles used by the XUL button element.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* :::::::::: button :::::::::: */
+
+button {
+  -moz-appearance: none; /*button;*/
+  -moz-appearance: button;
+  max-height: none !important; /* to defeat aios max-height */
+  margin: 1px 5px 2px 5px;
+  min-width: 6.3em;
+  border: 3px solid;
+  -moz-border-top-colors: #585858 white;
+  -moz-border-right-colors: #585858 transparent;
+  -moz-border-bottom-colors: #585858 transparent;
+  -moz-border-left-colors: #585858 transparent;
+  color: black; /* ButtonText; */
+  border-radius: 5px;
+  background-image: url("button.png");
+}
+
+button:hover {
+  border: 3px solid;
+  -moz-border-top-colors: #585858 orange #FFF0CF;
+  -moz-border-right-colors: #585858 orange;
+  -moz-border-bottom-colors: #585858 #E59700 orange;
+  -moz-border-left-colors: #585858 orange;
+}
+
+button:hover:active {
+  -moz-border-top-colors: white #585858 white;
+  -moz-border-right-colors: white #585858 white;
+  -moz-border-bottom-colors: white #585858 transparent;
+  -moz-border-left-colors: white #585858 white;
+  background-image: url("buttonDown.png");
+}
+
+.button-box {
+  border: 1px solid transparent;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  -moz-padding-start: 3px;
+  -moz-padding-end: 4px;
+}
+
+.button-box:hover {
+  border: 1px solid orange;
+}
+
+.button-text {
+  margin: 0 !important;
+  text-align: center;
+}
+
+/* .......... focused state .......... */
+
+button:focus {
+  -moz-border-top-colors: /*ThreeDDarkShadow ThreeDHighlight*/ #716F64 white transparent;
+  -moz-border-right-colors: #716F64 #716F64 #9D9DA1; /*ThreeDDarkShadow ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-bottom-colors: #716F64 #716F64 #9D9DA1; /*ThreeDDarkShadow ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-left-colors: /*ThreeDDarkShadow ThreeDHighlight*/ #716F64 white transparent;
+}
+
+button:focus:hover {
+  border: 3px solid;
+  -moz-border-top-colors: #585858 orange #FFF0CF;
+  -moz-border-right-colors: #585858 orange;
+  -moz-border-bottom-colors: #585858 #E59700 orange;
+  -moz-border-left-colors: #585858 orange;
+}
+
+button:focus > .button-box {
+  border: 1px dotted #716F64; /*ThreeDDarkShadow;*/
+}
+
+/* .......... default state .......... */
+
+button[default="true"] {
+  -moz-border-top-colors: #716F64 #F1EFE2;
+  -moz-border-right-colors: #716F64 #716F64 #9D9DA1;
+  -moz-border-bottom-colors: #716F64 #716F64 #9D9DA1;
+  -moz-border-left-colors: #716F64 #F1EFE2;
+}
+
+button[default="true"]:hover {
+  border: 3px solid;
+  -moz-border-top-colors: #585858 orange #FFF0CF;
+  -moz-border-right-colors: #585858 orange;
+  -moz-border-bottom-colors: #585858 #E59700 orange;
+  -moz-border-left-colors: #585858 orange;
+}
+
+/* .......... active/open/checked state .......... */
+
+button:hover:active,
+button[open="true"],
+button[checked="true"] {
+  -moz-border-top-colors: /*ThreeDDarkShadow ThreeDShadow*/ #716F64 #9D9DA1 transparent;
+  -moz-border-right-colors: /*ThreeDDarkShadow ThreeDShadow*/ #716F64 #9D9DA1 transparent;
+  -moz-border-bottom-colors: /*ThreeDDarkShadow ThreeDShadow*/ #716F64 #9D9DA1 transparent;
+  -moz-border-left-colors: /*ThreeDDarkShadow ThreeDShadow*/ #716F64 #9D9DA1 transparent;
+}
+
+button:hover:active > .button-box,
+button[open="true"] > .button-box,
+button[checked="true"] > .button-box {
+  padding-top: 2px;
+  padding-bottom: 1px;
+  -moz-padding-start: 4px;
+  -moz-padding-end: 3px;
+}
+
+/* .......... disabled state .......... */
+
+button[disabled="true"] {
+  -moz-border-top-colors: transparent white #F1EFE2 !important; /*ThreeDHighlight ThreeDLightShadow;*/
+  -moz-border-right-colors: transparent #716F64 white !important; /*ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-bottom-colors: transparent #716F64 white !important; /*ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-left-colors: transparent white #F1EFE2 !important; /*ThreeDHighlight ThreeDLightShadow;*/
+  color: #ACA899; /*GrayText;*/
+  background-image: none;
+}
+
+button[disabled="true"] > .button-box {
+  padding-top: 1px !important;
+  padding-bottom: 2px !important;
+  -moz-padding-start: 3px !important;
+  -moz-padding-end: 4px !important;
+}
+
+/* ::::: menu/menu-button buttons ::::: */
+
+button[type="menu-button"] {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 0;
+  border: none;
+}
+
+.button-menu-dropmarker,
+.button-menubutton-dropmarker {
+  -moz-appearance: none !important;
+  margin: 1px;
+  background-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-width:11px;
+  min-height:11px;
+}
+  
+.button-menu-dropmarker[disabled="true"],
+.button-menubutton-dropmarker[disabled="true"] {
+  background-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
+}
+
+.button-menubutton-dropmarker[open="true"] {
+  margin-top: 2px;
+  margin-bottom: 0px;
+  -moz-margin-start: 2px;
+  -moz-margin-end: 0px;
+}
+
+/* ::::: plain buttons ::::: */
+
+button.plain {
+  border: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+button[type="disclosure"] {
+  border: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  -moz-appearance: none !important;
+  list-style-image: url("chrome://global/skin/tree/twisty-clsd.png");
+  min-width: 0px !important;
+  background-color: transparent;
+}
+
+button[type="disclosure"][open="true"] {
+  list-style-image: url("chrome://global/skin/tree/twisty-open.png"); 
+}

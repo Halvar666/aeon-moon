@@ -1,0 +1,212 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== toolbar.css ====================================================
+  == Styles used by XUL toolbar-related elements.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: toolbox ::::: */
+
+toolbox {
+  -moz-appearance: none !important; /*toolbox;*/
+  border-left: 1px solid #9D9DA1; /* ThreeDShadow; */
+  border-top: 1px solid #9D9DA1; /* ThreeDShadow; */
+  border-right: 1px solid white; /* ThreeDHighlight; */
+}
+
+/* ::::: toolbar & menubar ::::: */
+toolbar, menubar {
+  -moz-appearance: none !important; /* toolbar; */
+}
+
+toolbar {
+  min-width: 1px;
+  min-height: 20px;
+  border-left: 1px solid white; /*ThreeDHighlight;*/
+  border-top: 1px solid white; /*ThreeDHighlight;*/
+  border-right: 1px solid #9D9DA1; /* ThreeDShadow; */
+  border-bottom: 1px solid #9D9DA1; /* ThreeDShadow; */
+}
+
+toolbar[type="menubar"],
+toolbar:first-child, menubar {
+  min-height: 20px;
+  border-left: 1px solid white; /*ThreeDHighlight;*/
+  border-top: 1px solid white; /*ThreeDHighlight;*/
+  border-right: 1px solid #9D9DA1; /* ThreeDShadow; */
+  border-bottom: 1px solid #9D9DA1; /* ThreeDShadow; */
+}
+
+toolbar[mode="icons"] .toolbarbutton-text {
+  display: none;
+}
+
+toolbar[mode="text"] .toolbarbutton-icon {
+  display: none;
+}
+
+toolbar[mode="text"] .toolbarbutton-text {
+  padding: 0 !important;
+  margin: 3px 5px !important;
+}
+
+/* ::::: lightweight theme ::::: */
+ 
+menubar:-moz-lwtheme,
+toolbox:-moz-lwtheme,
+toolbar:-moz-lwtheme {
+  -moz-appearance: none;
+  background: none;
+  border-style: none;
+}
+
+/* ::::: toolbar decorations ::::: */
+
+toolbarseparator {
+  -moz-appearance: separator;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 3px solid transparent;
+  border-right: 3px solid transparent;
+  -moz-border-left-colors  : transparent transparent #9D9DA1 /*ThreeDShadow*/;
+  -moz-border-right-colors : transparent transparent white /*ThreeDHighlight*/;
+}
+
+/* Vertical separator, both normally and while in customise mode */
+
+toolbox[vertical=true] > toolbar > toolbarseparator,
+toolbox[vertical=true] > toolbar > toolbarpaletteitem[place=toolbar] > toolbarseparator {
+  margin: 0.2em 2px;
+  border-bottom: 1px solid white; /*ThreeDHighlight;*/
+  border-top: 1px solid #9D9DA1; /* ThreeDShadow; */
+  height: 3px;
+  border-left: none;
+  border-right: none;
+}
+
+#vertical-toolbar toolbarseparator {
+	-moz-appearance: none !important;
+	margin: 0.2em 2px;
+	border-bottom: 1px solid ThreeDHighlight;
+	border-top: 1px solid ThreeDShadow;
+	height: 3px;
+	border-left: none;
+	border-right: none;
+}
+
+#vertical-toolbar :-moz-any(toolbaritem, toolbarpaletteitem) > * {
+	-moz-box-flex: 1;
+}
+
+/** Toolbar Spacer **/
+
+toolbarspacer {
+  width: 15px;
+}
+toolbox[vertical=true] > toolbar > toolbarspacer {
+  height: 15px;
+}
+
+/* spacer while in customise mode */
+
+toolbox[vertical=true] > toolbar > toolbarpaletteitem[place=toolbar] > toolbarspacer {
+  height: 11px;
+}
+
+/* drag drop feedback when in customisation mode. dragover=left really means dragover=before. */
+
+toolbox[vertical=true] > toolbar > toolbarpaletteitem[place=toolbar] {
+}
+
+toolbox > toolbar > toolbarpaletteitem[dragover="left"] {
+  border-left-color: black;
+}
+toolbox > toolbar > toolbarpaletteitem[dragover="right"] {
+  border-right-color: black;
+}
+toolbox[vertical=true] > toolbar > toolbarpaletteitem[dragover="left"] {
+  border-top-color: black;
+}
+toolbox[vertical=true] > toolbar > toolbarpaletteitem[dragover="right"] {
+  border-bottom-color: black;
+}
+
+/* ::::: toolbarpaletteitem ::::: */
+
+toolbarpaletteitem {
+  cursor: -moz-grab;
+}
+
+.toolbarpaletteitem-box[type="spacer"],
+.toolbarpaletteitem-box[type="spring"] {
+  border: 1px solid #808080;
+  background-color: #FFF !important;
+}
+
+/* This setting makes that line which marks where an item is going */
+
+toolbarpaletteitem[place="toolbar"] {
+  margin-left: -2px;
+  margin-right: -2px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+toolbox[vertical=true] toolbarpaletteitem[place="toolbar"] {
+  margin-top: -2px;
+  margin-bottom: -2px;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  margin-left: 0px;
+  margin-right: 0px;
+  border-left: none;
+  border-right: none;
+}
+
+toolbarpaletteitem[place="toolbar"] > toolbarspacer {
+  width: 11px;
+}
+
+.toolbarpaletteitem-box[type="spacer"][place="toolbar"],
+.toolbarpaletteitem-box[type="spring"][place="toolbar"] {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  -moz-margin-start: 0px;
+  -moz-margin-end: 2px;
+}
+
+.toolbarpaletteitem-box[type="separator"][place="palette"] {
+  width: 2px;
+  height: 50px;
+}
+
+.toolbarpaletteitem-box[type="spacer"][place="palette"],
+.toolbarpaletteitem-box[type="spring"][place="palette"] {
+  margin-bottom: 2px;
+  width: 50px;
+  height: 50px;
+}
+
+.toolbarpaletteitem-box[type="spring"][place="palette"] {
+  background: url("chrome://global/skin/toolbar/spring.png") no-repeat center;
+}
+
+/* ..... drag and drop feedback ..... */
+
+toolbarpaletteitem[place="toolbar"] {
+  margin-left: -2px;
+  margin-right: -2px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+toolbarpaletteitem[dragover="left"] {
+  border-left-color: #000000;
+}
+
+toolbarpaletteitem[dragover="right"] {
+  border-right-color: #000000;
+}

@@ -1,0 +1,418 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Mozilla Communicator client code, released
+ * March 31, 1998.
+ *
+ * The Initial Developer of the Original Code is
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998-1999
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Joe Hewitt (hewitt@netscape.com)
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/* ===== menu.css =======================================================
+  == Styles used by XUL menu-related elements.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: menu/menuitem ::::: */
+
+menu,
+menuitem,
+.splitmenu-menuitem {
+  -moz-appearance: none !important; /*menuitem;*/
+  -moz-box-align: center;
+  color: black; /* MenuText; */
+  font: menu;
+  list-style-image: none;
+  -moz-image-region: auto;
+  border: 2px solid transparent; /* for drag-n-drop visibility */
+}
+
+menuitem[default="true"] {
+  font-weight: bold;
+}
+
+menu[disabled="true"],
+menuitem[disabled="true"],
+.splitmenu-menuitem[disabled="true"],
+menu[_moz-menuactive="true"][disabled="true"],
+menuitem[_moz-menuactive="true"][disabled="true"],
+.splitmenu-menuitem[_moz-menuactive="true"][disabled="true"] {
+  color: #ACA899; /*GrayText;*/
+  text-shadow: none;
+  }
+@media all and (-moz-windows-classic) {
+  menu[disabled="true"],
+  menubar > menu[disabled="true"][_moz-menuactive="true"],
+  menuitem[disabled="true"],
+  .splitmenu-menuitem[disabled="true"] {
+    color: #9F9F9F; /*ThreeDShadow;*/
+    text-shadow: 1px 1px ThreeDHighlight;
+  }
+}
+
+menuitem.spell-suggestion {
+  font-weight:bold;
+}
+
+/* ..... internal content .... */
+
+.menu-accel,
+.menu-iconic-accel,
+.menu-text,
+.menu-iconic-left, /* need to keep this here */
+.menu-iconic-text {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+  -moz-margin-start: 1px !important;
+  -moz-margin-end: 5px !important;
+  color: inherit;
+}
+
+.menu-text {
+  -moz-margin-start: 17px !important;
+  -moz-appearance: none !important; /*menuitemtext;*/
+}
+
+.menu-text,
+.menu-iconic-text {
+  font-weight: inherit;
+}
+
+.menu-description {
+  font-style: italic;
+  color: #ACA899; /*GrayText;*/
+  -moz-margin-start: 1ex !important;
+}
+
+.menu-accel,
+.menu-iconic-accel {
+  -moz-padding-end: 17px;
+  color: inherit;
+  -moz-margin-start: 7px /* 0.74em */ !important;
+  -moz-margin-end: 2px /* 1.35em */ !important;
+}
+
+.menu-iconic-left {
+  min-width: 16px;
+}
+
+.menu-iconic-icon {
+  -moz-image-region: inherit;
+}
+
+menu.menu-iconic > .menu-iconic-left > .menu-iconic-icon,
+menuitem.menuitem-iconic > .menu-iconic-left > .menu-iconic-icon {
+  /* reduce icon-text crowding */
+  -moz-margin-start: -1px;
+  -moz-margin-end: 1px;
+}
+
+menupopup > menuitem > .menu-iconic-left > .menu-iconic-icon,
+popup > menuitem > .menu-iconic-left > .menu-iconic-icon {
+  max-width: 16px;
+  max-height: 16px;
+}
+
+/* ..... menu arrow box ..... */
+
+.menu-right {
+  -moz-appearance: none !important; /* menuarrow; - bad for my themes */
+  margin-top: 0px;
+  -moz-margin-end: 0px;
+  margin-bottom: 0px;
+  -moz-margin-start: 6px;
+  width: 8px;
+  list-style-image: url("chrome://global/skin/menu/Menu-arrow.png");
+  -moz-image-region: auto;
+}
+
+.menu-right[_moz-menuactive="true"]:not([disabled="true"]) {
+  list-style-image: url("chrome://global/skin/menu/Menu-arrow.png");
+  -moz-image-region: auto;
+}
+
+.menu-right[disabled="true"] {
+  list-style-image: url("chrome://global/skin/menu/Menu-arrow-disabled.png");
+  -moz-image-region: auto;
+}
+
+menupopup > menu[_moz-menuactive="true"]:not([disabled="true"]):active > .menu-right {
+  list-style-image: url("chrome://global/skin/menu/Menu-arrow-hover.png");
+  -moz-image-region: auto;
+}
+
+.menu-right[chromedir="rtl"]:not([disabled="true"]) {
+  list-style-image: url("chrome://global/skin/menu/Menu-arrow-rtl.png");
+}
+
+.menu-right[chromedir="rtl"][_moz-menuactive="true"]:not([disabled="true"]) {
+  list-style-image: url("chrome://global/skin/menu/Menu-arrow-rtl.png");
+}
+
+menupopup > menu[chromedir="rtl"][_moz-menuactive="true"]:not([disabled="true"]):active > .menu-right {
+  list-style-image: url("chrome://global/skin/menu/Menu-arrow-hover-rtl.png");
+  -moz-image-region: auto;
+}
+
+.menu-right[chromedir="rtl"][disabled="true"] {
+  list-style-image: url("chrome://global/skin/menu/Menu-arrow-disabled-rtl.png");
+}
+
+#main-menubar > menu {
+  margin: 0px 0px 0px 0px !important;
+  padding: 0px;
+}
+
+/* ::::: menu/menuitems in menubar ::::: */
+
+menubar > menu {
+  border: 1px solid transparent;
+  padding-top: 2px;
+  -moz-padding-end: 5px;
+  padding-bottom: 2px;
+  -moz-padding-start: 7px;
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+menubar > menu[_moz-menuactive="true"] {
+  border-top: 1px solid white; /*ThreeDHighlight;*/
+  border-right: 1px solid #9F9F9F; /*ThreeDShadow;*/
+  border-bottom: 1px solid #9F9F9F; /*ThreeDShadow;*/
+  border-left: 1px solid white; /*ThreeDHighlight;*/
+}
+
+menubar > menu[_moz-menuactive="true"][open="true"] {
+  border-top: 1px solid #9F9F9F; /*ThreeDShadow;*/
+  border-right: 1px solid white; /*ThreeDHighlight;*/
+  border-bottom: 1px solid white; /*ThreeDHighlight;*/
+  border-left: 1px solid #9F9F9F; /*ThreeDShadow;*/
+}
+
+menubar > menu[_moz-menuactive="true"],
+menubar > menu[_moz-menuactive="true"][open="true"] {
+  background-color: #82E6F9; /* -moz-menuhover; */
+  color: black; /* -moz-menuhovertext; */
+}
+
+/* ..... internal content .... */
+
+.menubar-left {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  -moz-margin-start: 0px;
+  -moz-margin-end: 2px;
+  color: inherit;
+}
+
+.menubar-iconic-left,
+.menubar-iconic-text {
+  margin: 0px 0px 0px 0px !important;
+}
+
+#main-menubar > menu > .menubar-text {
+  border: 1px solid transparent;
+  padding: 2px 5px;
+  margin: 0px 0px 0px 0px !important;
+}
+
+.menubar-text {
+  margin-top: 1px;
+  -moz-margin-end: 4px !important;
+  margin-bottom: 1px;
+  -moz-margin-start: 5px !important;
+  padding-top: 1px;
+  color:  black;
+  font-weight: normal;
+}
+
+/* ::::: menu/menuitems in popups ::::: */
+
+menupopup > menu,
+menupopup > menuitem {
+  max-width: 42em;
+  min-height: 20px;
+}
+
+menupopup > menu[_moz-menuactive="true"],
+menupopup > menuitem[_moz-menuactive="true"],
+menu[_moz-menuactive="true"],
+menuitem[_moz-menuactive="true"],
+.splitmenu-menuitem[_moz-menuactive="true"] {
+  background-color: #82E6F9; /* -moz-menuhover; */
+  color: black; /* -moz-menuhovertext; */
+}
+
+menupopup > menu[_moz-menuactive="true"]:active,
+menupopup > menuitem[_moz-menuactive="true"]:active,
+menu[_moz-menuactive="true"]:active,
+menuitem[_moz-menuactive="true"]:active,
+.splitmenu-menuitem[_moz-menuactive="true"]:active {
+  background-color: #0BC4E5; /* Highlight; */
+  color: white; /* HighlightText; */
+}
+
+/* ::::: menu/menuitems in menulist popups ::::: */
+
+.menulist-menupopup > menuitem,
+menulist > menupopup > menuitem,
+.menulist-menupopup > menu,
+menulist > menupopup > menu {
+  -moz-appearance: none !important;
+  border: 1px solid transparent;
+  padding-top: 1px;
+  -moz-padding-end: 30px;
+  padding-bottom: 1px;
+  -moz-padding-start: 5px;
+  max-width: none;
+  font: message-box;
+  color: black; /* -moz-FieldText; */
+}
+
+.menulist-menupopup > menuitem > .menu-iconic-left,
+menulist > menupopup > menuitem > .menu-iconic-left,
+.menulist-menupopup > menu > .menu-iconic-left,
+menulist > menupopup > menu > .menu-iconic-left {
+  display: none;
+}
+
+menulist > menupopup > menuitem[_moz-menuactive="true"] {
+  border: 1px dotted #F5DB95;
+  background-color: #82E6F9; /* -moz-menuhover; */
+  color: black; /* -moz-menuhovertext; */
+  background-image: none;
+}
+
+menulist > menupopup > menuitem[_moz-menuactive="true"]:active {
+  border: 1px dotted #F5DB95;
+  background-color: #0BC4E5; /* Highlight; */
+  color: white; /* HighlightText; */
+  background-image: none;
+}
+
+menulist > menupopup > menuitem[_moz-menuactive="true"][disabled="true"] {
+  color: #ACA899; /*GrayText;*/
+}
+
+menulist > menupopup > menuitem[disabled="true"]:not([_moz-menuactive="true"]):-moz-system-metric(windows-classic) {
+  color: #ACA899; /*GrayText;*/
+  text-shadow: none;
+}
+
+menulist > menupopup > menuitem > .menu-iconic-text {
+  margin: 0 !important;
+}
+
+/* ::::: checkbox and radio menuitems ::::: */
+
+menuitem[checked="true"] {
+  -moz-appearance: none !important; /*checkmenuitem; - nonono */
+  list-style-image: url("chrome://global/skin/menu/menu-check-big.gif");
+  -moz-image-region: auto;
+}
+menuitem[type="checkbox"]:not([checked="true"]) {
+  list-style-image: url("chrome://global/skin/menu/menu-check-notChecked.png");
+}
+menuitem[type="checkbox"]:not([checked="true"]):hover {
+  list-style-image: url("chrome://global/skin/menu/menu-check-notChecked-hover.png");
+}
+menuitem[type="checkbox"]:not([checked="true"]):hover:active {
+  list-style-image: url("chrome://global/skin/menu/menu-check-active.png");
+}
+
+menuitem[checked="true"][disabled="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-check-disabled.gif");
+  -moz-image-region: auto;
+}
+
+menuitem[checked="true"][_moz-menuactive="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-check-big.gif");
+  -moz-image-region: auto;
+}
+
+menuitem[checked="true"][_moz-menuactive="true"]:active {
+  list-style-image: url("chrome://global/skin/menu/menu-check-active.png");
+  -moz-image-region: auto;
+}
+
+/* ::::: radio menuitem ::::: */
+
+menuitem[checked="true"][type="radio"] {
+  list-style-image: url("chrome://global/skin/menu/menu-radio.gif");
+  -moz-image-region: auto;
+}
+
+menuitem[checked="true"][type="radio"][disabled="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-radio-disabled.gif");
+  -moz-image-region: auto;
+}
+
+menuitem[checked="true"][type="radio"][_moz-menuactive="true"] {
+  list-style-image: url("chrome://global/skin/menu/menu-radio.gif");
+  -moz-image-region: auto;
+}
+
+menuitem[checked="true"][type="radio"][_moz-menuactive="true"]:active {
+  list-style-image: url("chrome://global/skin/menu/menu-radio-hover.gif");
+  -moz-image-region: auto;
+}
+
+/* ::::: menuseparator ::::: */
+
+menuseparator {
+  -moz-appearance: none !important; /* menuseparator; */
+  margin: 2px 3px;
+  border-top: 1px solid #9F9F9F; /*ThreeDShadow;*/
+  border-bottom: 1px solid white; /*ThreeDHighlight;*/
+}
+
+menulist > menupopup > menuseparator,
+.menulist-menupopup > menuseparator {
+  margin: 2px 0;
+  border-top: 1px solid #000000;
+  border-bottom: none;
+}
+
+/* ::::: autocomplete ::::: */
+
+.autocomplete-history-popup > menuitem {
+  max-width: none !important;
+  font: message-box;
+}
+
+/* ::::: tree column picker ::::: */
+
+.treecell-popupcell-menu {
+  -moz-margin-start: -2px;
+  list-style-image: url("chrome://global/skin/columnselect.gif");
+  -moz-image-region: auto;
+}

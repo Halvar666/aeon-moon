@@ -1,0 +1,75 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: menupopup ::::: */
+
+menupopup,
+popup,
+panel {
+  border: 2px solid;
+  -moz-border-top-colors: #9D9DA1 #F1EFE2; /* ThreeDShadow ThreeDLightShadow; */
+  -moz-border-right-colors: #716F64 #9D9DA1; /* ThreeDDarkShadow ThreeDShadow; */
+  -moz-border-bottom-colors: #716F64 #9D9DA1; /* ThreeDDarkShadow ThreeDShadow; */
+  -moz-border-left-colors: #9D9DA1 #F1EFE2; /* ThreeDShadow ThreeDLightShadow; */
+  padding: 1px;
+  min-width: 1px;
+  background: url('chrome://global/skin/background.gif') !important;
+}
+
+popup:not([type="autocomplete"]),
+menupopup {
+  -moz-appearance: none !important; /* menupopup; */
+}
+
+menupopup > menu > menupopup,
+popup > menu > menupopup {
+ /* align submenus */
+  -moz-margin-start: -3px;
+  margin-top: -3px;
+}
+
+panel[type="arrow"] {
+  -moz-appearance: none;
+/*  background: transparent;*/
+  background-image: url('chrome://global/skin/background.gif') !important;
+  border: none;
+  transition: opacity 300ms;
+}
+
+/* ::::: tooltip ::::: */
+
+tooltip {
+  -moz-appearance: none !important; /*tooltip;*/
+  margin-top: 21px;
+  border: 1px solid InfoText;
+  padding: 2px 3px;
+  max-width: 40em;
+  background-color: #FFFFE1; /*InfoBackground;*/
+  color: black; /*InfoText;*/
+  font: message-box;
+}
+
+.tooltip-label {
+  margin: 0px !important;
+}
+
+tooltip[titletip="true"] {
+ /* See bug 32157 comment 128
+  * margin: -2px 0px 0px -3px;
+  */
+  max-width: none;
+}
+
+/* rules for popups associated with menulists */
+
+menulist > menupopup,
+.menulist-menupopup {
+  -moz-appearance: none !important;
+  border: solid 1px black;
+  padding: 0px;
+  min-width: 0px;
+  background-color: white; /* -moz-Field; */
+}

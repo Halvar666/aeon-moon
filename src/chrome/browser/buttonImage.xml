@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<bindings id="buttonBindings"
+   xmlns="http://www.mozilla.org/xbl"
+   xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   xmlns:xbl="http://www.mozilla.org/xbl">
+
+  <binding id="button" display="xul:button"
+           extends="chrome://global/content/bindings/button.xml#button-base">
+    <resources>
+      <stylesheet src="chrome://global/skin/button.css"/>
+    </resources>
+
+    <content>
+      <children includes="observes|template|menupopup|tooltip"/>
+      <xul:hbox class="box-inherit button-box" xbl:inherits="align,dir,pack,orient"
+                align="center" pack="center" flex="1">
+        <children>
+          <xul:image class="button-icon" xbl:inherits="src=image"/>
+          <xul:label class="button-text" xbl:inherits="value=label,accesskey,crop" flex="1"/>
+        </children>
+      </xul:hbox>
+    </content>
+  </binding>
+ 
+</bindings>

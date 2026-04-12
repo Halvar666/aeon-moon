@@ -1,0 +1,43 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== progressmeter.css ==============================================
+  == Styles used by the XUL progressmeter element.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: progressmeter ::::: */
+
+progressmeter {
+  -moz-appearance: none !important; /* progressbar; */
+  margin: 2px 4px;
+  border: 2px solid;
+  -moz-border-top-colors: #9F9F9F #E1E1E1; /*ThreeDShadow -moz-Dialog;*/
+  -moz-border-right-colors: white #E1E1E1; /*ThreeDHighlight -moz-Dialog;*/
+  -moz-border-bottom-colors: white #E1E1E1; /*ThreeDHighlight -moz-Dialog;*/
+  -moz-border-left-colors: #9F9F9F #E1E1E1; /*ThreeDShadow -moz-Dialog;*/
+  background-color: transparent; /* -moz-Dialog; */
+  min-width: 128px;
+  min-height: 16px;
+}
+
+.progress-bar 
+{
+  -moz-appearance: none !important; /* progresschunk; */
+  min-width: 0px;
+  background-image: url('pmeter.png') !important;
+}
+
+/* ::::: statusbar progressmeter ::::: */
+
+.progressmeter-statusbar {
+  margin: 0;
+  border: 0px;
+  -moz-border-top-colors: white #E1E1E1; /*ThreeDHighlight -moz-Dialog;*/
+  -moz-border-right-colors: #9F9F9F #E1E1E1; /*ThreeDShadow -moz-Dialog;*/
+  -moz-border-bottom-colors: #9F9F9F #E1E1E1; /*ThreeDShadow -moz-Dialog;*/
+  -moz-border-left-colors: white #E1E1E1; /*ThreeDHighlight -moz-Dialog;*/
+  min-width: 96px;
+}

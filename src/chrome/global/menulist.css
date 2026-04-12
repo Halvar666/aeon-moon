@@ -1,0 +1,221 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * Version: MPL 1.1/GPL 2.0/LGPL 2.1
+ *
+ * The contents of this file are subject to the Mozilla Public License Version
+ * 1.1 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at
+ * http://www.mozilla.org/MPL/
+ *
+ * Software distributed under the License is distributed on an "AS IS" basis,
+ * WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+ * for the specific language governing rights and limitations under the
+ * License.
+ *
+ * The Original Code is Mozilla Communicator client code, released
+ * March 31, 1998.
+ *
+ * The Initial Developer of the Original Code is
+ * Netscape Communications Corporation.
+ * Portions created by the Initial Developer are Copyright (C) 1998-1999
+ * the Initial Developer. All Rights Reserved.
+ *
+ * Contributor(s):
+ *   Joe Hewitt (hewitt@netscape.com)
+ *
+ * Alternatively, the contents of this file may be used under the terms of
+ * either the GNU General Public License Version 2 or later (the "GPL"), or
+ * the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+ * in which case the provisions of the GPL or the LGPL are applicable instead
+ * of those above. If you wish to allow use of your version of this file only
+ * under the terms of either the GPL or the LGPL, and not to allow others to
+ * use your version of this file under the terms of the MPL, indicate your
+ * decision by deleting the provisions above and replace them with the notice
+ * and other provisions required by the GPL or the LGPL. If you do not delete
+ * the provisions above, a recipient may use your version of this file under
+ * the terms of any one of the MPL, the GPL or the LGPL.
+ *
+ * ***** END LICENSE BLOCK ***** */
+
+/* ===== menulist.css ===================================================
+  == Styles used by the XUL menulist element.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+/* :::::::::: menulist :::::::::: */
+
+menulist {
+  -moz-appearance: none !important; /*menulist;*/
+  margin: 2px 4px;
+  border: 1px solid #A9A9A9;
+  background-color: white; /* -moz-Field; */
+  color: black; /* -moz-FieldText; */
+}
+
+.menulist-label-box {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 1px;
+  min-height: 1.3em;
+}
+
+menulist[open="true"]:focus > .menulist-label-box,
+.menulist-label-box {
+  border: 1px solid transparent;
+  background-color: transparent;
+  color: inherit;
+  -moz-box-align: center;
+}
+
+.menulist-icon[src] {
+  margin: 0px 2px 0px 2px;
+}
+
+.menulist-label {
+  margin: 1px 3px !important;
+}
+
+.menulist-description {
+  font-style: italic;
+  color: #ACA899; /*GrayText;*/
+  -moz-margin-start: 1ex !important;
+}
+
+/* ..... dropmarker ..... */
+
+.menulist-dropmarker {
+  -moz-appearance: none !important; /*menulist-button;*/
+  min-width: 17px;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  border: 2px solid;
+  color: black; /* ButtonText; */
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+}
+
+.menulist-dropmarker,
+menulist[disabled="true"]:hover:active > .menulist-dropmarker {
+  -moz-border-top-colors: #EAEAEA white;
+  -moz-border-right-colors: #A9A9A9 #EAEAEA;
+  -moz-border-bottom-colors: #A9A9A9 #EAEAEA;
+  -moz-border-left-colors: #A9A9A9 white;
+  padding: 1px;
+}
+
+menulist:hover > .menulist-dropmarker {
+  -moz-border-top-colors: #6B6B6B orange; /*ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-right-colors: #6B6B6B orange; /*ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-bottom-colors: #6B6B6B orange; /*ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-left-colors: #6B6B6B orange; /*ThreeDDarkShadow ThreeDShadow;*/
+  padding: 1px;
+}
+
+menulist[disabled="true"] > .menulist-dropmarker {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
+}
+
+menulist:not([disabled="true"]) > .menulist-dropmarker {
+  background-image: url("button.png");
+}
+
+menulist:hover:active > .menulist-dropmarker {
+  -moz-border-top-colors: #9F9F9F #E1E1E1; /*ThreeDShadow ThreeDFace;*/
+  -moz-border-right-colors: #9F9F9F #E1E1E1; /*ThreeDShadow ThreeDFace;*/
+  -moz-border-bottom-colors: #9F9F9F #E1E1E1; /*ThreeDShadow ThreeDFace;*/
+  -moz-border-left-colors: #9F9F9F #E1E1E1; /*ThreeDShadow ThreeDFace;*/
+  padding-top: 2px;
+  padding-bottom: 0px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
+  background-image: url("buttonDown.png");
+}
+
+/* ..... focused state ..... */
+
+menulist:focus > .menulist-label-box {
+  border: 1px dotted #F5DB95;
+  background-color: #82E6F9; /* Highlight; */
+  color: black !important; /* HighlightText; */
+}
+
+/* ..... disabled state ..... */
+
+menulist[disabled="true"] {
+  background-color: #FAFAFA; /* -moz-Dialog; */
+  color: #ACA899; /*GrayText;*/
+}
+
+/* ::::: editable menulists ::::: */
+
+.menulist-editable-box {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  -moz-padding-start: 2px;
+  -moz-padding-end: 0px;
+}
+
+html|*.menulist-editable-input {
+  margin: 0px !important;
+  border: none !important;
+  padding: 0px !important;
+  background: inherit;
+  font: inherit;
+}
+
+/* ::::: compact menulists ::::: */
+
+.menulist-compact {
+  -moz-appearance: none;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 0;
+  border: 2px solid;
+  -moz-border-top-colors: #A9A9A9 transparent;
+  -moz-border-right-colors: #A9A9A9 transparent;
+  -moz-border-bottom-colors: #A9A9A9 transparent;
+  -moz-border-left-colors: #A9A9A9 transparent;
+  background-color: white; /* -moz-Dialog; */
+  color: black !important; /* -moz-DialogText; */
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+}
+
+.menulist-compact:hover {
+  border: 2px solid;
+  -moz-border-top-colors: #A9A9A9 orange;
+  -moz-border-right-colors: #A9A9A9 orange;
+  -moz-border-bottom-colors: #A9A9A9 orange;
+  -moz-border-left-colors: #A9A9A9 orange;
+}
+
+.menulist-compact > .menulist-label-box > .menulist-label {
+  margin: 0 3px !important;
+  text-align: right;
+}  
+
+.menulist-compact > .menulist-label-box > .menulist-icon {
+  -moz-margin-start: 2px;
+  border: none;
+  padding: 0 !important;
+  background: transparent;
+}
+
+.menulist-compact[open="true"] {
+  border: 2px solid;
+  -moz-border-top-colors: #A9A9A9 transparent;
+  -moz-border-right-colors: #A9A9A9 transparent;
+  -moz-border-bottom-colors: #A9A9A9 transparent;
+  -moz-border-left-colors: #A9A9A9 transparent;
+  background-color: #82E6F9; /* ThreeDShadow; */
+  color: black !important; /* ThreeDHighlight; */
+}
+
+.menulist-compact[disabled="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
+}
+
+.menulist-compact:-moz-focusring:not([open="true"]) > .menulist-label-box {
+  border: 1px dotted;
+  background-color: transparent;
+  color: inherit;
+}

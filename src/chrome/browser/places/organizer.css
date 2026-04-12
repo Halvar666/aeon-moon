@@ -1,0 +1,289 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+toolbar {
+  overflow-x: auto;
+}
+
+/* Toolbar */
+#placesToolbar {
+/*  border: none; - need a border */
+}
+
+/* back & forward buttons */
+#back-button, #forward-button {
+  list-style-image: url("chrome://browser/skin/backforward-large.png");
+  -moz-appearance: none;
+  padding: 0;
+  border: none;
+}
+
+#placesToolbar > toolbarbutton > image,
+#back-button > .toolbarbutton-menubutton-stack > toolbarbutton,
+#forward-button > .toolbarbutton-menubutton-stack > toolbarbutton,
+#placesToolbar > toolbarbutton > label {
+  -moz-appearance: none;
+  padding: 0;
+  border: none;
+}
+
+/*No dropmarkers for forward and back arrows.*/
+#back-button > stack > dropmarker,
+#forward-button > stack > dropmarker {
+  display: none;
+}
+
+/* back button */
+
+#back-button,
+#forward-button[chromedir="rtl"] {  
+  -moz-binding: url("chrome://browser/skin/browser.xml#toolbar-menu-button");
+  -moz-image-region: rect(0px 32px 32px 0px);
+}
+#back-button:not([disabled="true"]):hover,
+#forward-button:not([disabled="true"]):hover[chromedir="rtl"] {
+  -moz-image-region: rect(32px 32px 64px 0px);
+}
+#back-button[disabled="true"],
+#forward-button[chromedir="rtl"][disabled="true"] {
+  -moz-image-region: rect(64px 32px 96px 0px);
+}
+#back-button:not([disabled="true"]):hover:active,
+#forward-button:not([disabled="true"]):hover:active[chromedir="rtl"] {
+  -moz-image-region: rect(96px 32px 128px 0px);
+}
+#back-button[disabled="true"]:hover:active,
+#forward-button[disabled="true"][chromedir="rtl"]:hover:active {
+  -moz-image-region: rect(160px 32px 192px 0px);
+}
+
+/* forward button */
+
+#forward-button,
+#back-button[chromedir="rtl"] {
+  -moz-binding: url("chrome://browser/skin/browser.xml#toolbar-menu-button");
+  -moz-image-region: rect(0px 64px 32px 32px);
+  -moz-box-orient: vertical
+}
+#forward-button:not([disabled="true"]):hover,
+#back-button:not([disabled="true"]):hover[chromedir="rtl"] {
+  -moz-image-region: rect(32px 64px 64px 32px);
+}
+#forward-button[disabled="true"],
+#back-button[chromedir="rtl"][disabled="true"] {
+  -moz-image-region: rect(64px 64px 96px 32px);
+}
+#forward-button:not([disabled="true"]):hover:active,
+#back-button:not([disabled="true"]):hover:active[chromedir="rtl"] {
+  -moz-image-region: rect(96px 64px 128px 32px);
+}
+#forward-button[disabled="true"]:hover:active, 
+#back-button[disabled="true"][chromedir="rtl"]:hover:active {
+  -moz-image-region: rect(160px 64px 192px 32px);
+}
+
+/* Menu */
+#placesMenu {
+  -moz-appearance: none;
+  border: none;
+}
+
+#placesMenu > menu > label {
+  -moz-padding-end: 14px; /* must leave room for 11px arrow */
+  background: url(chrome://global/skin/arrow/arrow-dn.gif) right center no-repeat;
+}
+
+#placesMenu > menu > .menubar-text:-moz-locale-dir(rtl) {
+  background-position: left center;
+}
+
+/* organize button */
+#organizeButton {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 96px 32px 64px) !important;
+}
+#organizeButton:hover {
+  -moz-image-region: rect(32px 96px 64px 64px) !important;
+}
+#organizeButton[open],
+#organizeButton:hover:active {
+  -moz-image-region: rect(64px 96px 96px 64px) !important;
+}
+
+/* view button */
+#viewMenu {
+  list-style-image: url("chrome://browser/skin/extrabuttons-l.png") !important;
+  -moz-image-region: rect(0px 800px 32px 768px) !important;
+}
+#viewMenu:hover {
+  -moz-image-region: rect(32px 800px 64px 768px) !important;
+}
+#viewMenu:hover:active {
+  -moz-image-region: rect(64px 800px 96px 768px) !important;
+}
+
+/* maintenance button */
+#maintenanceButton {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 128px 32px 96px) !important;
+}
+#maintenanceButton:hover {
+  -moz-image-region: rect(32px 128px 64px 96px) !important;
+}
+#maintenanceButton:hover:active {
+  -moz-image-region: rect(64px 128px 96px 96px) !important;
+}
+
+#maintenanceButton[open],
+#viewMenu[open],
+#organizeButton[open] {
+  background-color: transparent;
+}
+#maintenanceButton[open]:hover,
+#viewMenu[open]:hover,
+#organizeButton[open]:hover {
+  background-color: #82E6F9;
+}
+
+/* Root View */
+
+#detailsDeck,
+#splitter,
+#placesView {
+  background-image: url('chrome://global/skin/background.gif') !important;
+}
+
+/* Place List, Place Content */
+.placesTree {
+  margin: 0px;
+  border: 1px solid silver;
+}
+
+#placesList {
+  -moz-appearance: none;
+  margin: 0px;
+  padding: 0;
+}
+
+#placesList treechildren {
+  border: 1px solid silver;
+  border-top-width: 0px !important;
+}
+
+#placeContent {
+  -moz-appearance: none;
+  border-top: 1px solid #6B6B6B; /*ThreeDDarkShadow;*/
+}
+
+/* Search Bar */
+#searchbar {
+  margin: 6px -4px 0px 2px;
+}
+
+#infoPaneBox {
+  border-top: 1px solid #9F9F9F; /*ThreeDShadow;*/
+  padding: 5px;
+}
+
+/* this is actually the searchbar clear button */
+
+.textbox-input-closebutton {
+  -moz-appearance: none;
+  margin: 1px 2px 1px 1px;
+  min-width: 0;
+  background-color: transparent;
+  background-image: none;  /* buttons have background images when -moz-appearance: none */ 
+  border: none;
+  padding: 0 !important;
+  list-style-image: url("chrome://browser/skin/cleanup.png") !important;
+  -moz-image-region: rect(0 16px 16px 0);
+  width: 16px;
+  height: 16px;
+  cursor: default;
+}
+
+.textbox-input-closebutton > .button-box {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.textbox-input-closebutton:hover {
+  -moz-image-region: rect(16px 16px 32px 0);
+}
+
+.textbox-input-closebutton:hover:active {
+  -moz-image-region: rect(32px 16px 48px 0);
+}
+
+.small:hover:active,
+.small, .small[disabled="true"] {
+  min-width: 0px;
+  padding: 0px 4px 0px 4px;
+  margin: 0px;  
+  border: 0px;
+  border: 2px solid;
+  -moz-border-top-colors: #585858 transparent;
+  -moz-border-right-colors: #585858 transparent;
+  -moz-border-bottom-colors: #585858 transparent;
+  -moz-border-left-colors: #585858 transparent;
+}
+
+.small:hover {
+  -moz-border-top-colors: #585858 orange;
+  -moz-border-right-colors: #585858 orange;
+  -moz-border-bottom-colors: #585858 orange;
+  -moz-border-left-colors: #585858 orange;
+}
+
+.small .button-text,
+.small .button-box {
+  padding: 0px;
+  border: 0px;
+}
+
+#searchFilter {
+  padding: 0px;
+  -moz-box-flex: 1 !important; /* allows for large text */
+}
+
+#searchFilter .textbox-input-box {
+  padding: 2px 2px 3px 4px;
+}
+
+
+#infoBoxExpanderLabel {
+  -moz-padding-start: 2px;
+}
+
+#organizerScopeBar {
+  -moz-appearance: none !important; /*toolbox;*/
+  padding: 2px 0;
+  -moz-padding-end: 3px;
+}
+
+#organizerScopeBar > toolbarbutton {
+  -moz-appearance: none;
+  border-radius: 2px;
+  padding: 0 !important;
+  margin: 0 1px;
+}
+
+#organizerScopeBar > toolbarbutton > label,
+#organizerScopeBar > toolbarbutton > image {
+  padding: 0;
+  margin: 0;
+}
+
+#organizerScopeBar > toolbarbutton > .toolbarbutton-text {
+   margin: 0;
+   padding: 2px 5px;
+}
+
+#organizerScopeBar > toolbarbutton:not([disabled="true"]):not([checked="true"]):hover {
+}
+
+#organizerScopeBar > toolbarbutton[checked="true"] {
+}

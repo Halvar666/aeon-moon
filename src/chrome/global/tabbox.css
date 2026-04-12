@@ -1,0 +1,104 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== tabbox.css =================================================
+  == Styles used by XUL tab-related elements.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: tabs ::::: */
+
+.tabs-left,
+.tabs-right {
+  border-bottom: 3px solid;
+  -moz-border-bottom-colors: #000000 #E2E2E2 #D6D6D6;
+}
+
+/* ::::: tabpanels ::::: */
+
+tabpanels {
+  -moz-appearance: none;
+  border: 3px solid;
+  border-top-width: 0;
+  margin-top: 0;
+  -moz-border-top-colors: transparent;
+  -moz-border-right-colors: #000000 #E2E2E2 #D6D6D6;
+  -moz-border-bottom-colors: #000000 #E2E2E2 #D6D6D6;
+  -moz-border-left-colors: #000000 #E2E2E2 #D6D6D6;
+  padding: 5px;
+  background-image: url('chrome://global/skin/F2.gif') !important;
+  color: black; /* -moz-DialogText; */
+}
+
+/* ::::: tab ::::: */
+
+tab
+{
+  -moz-appearance: none;
+  margin-top: 1px;
+  -moz-margin-end: 2px;
+  margin-bottom: 0px;
+  -moz-margin-start: 0px;
+  border: 3px solid;
+  border-bottom-width: 3px;
+  -moz-border-top-colors: #000000 #E2E2E2 #D6D6D6;
+  -moz-border-right-colors: #000000 #E2E2E2 #D6D6D6;
+  -moz-border-bottom-colors: #000000 #E2E2E2 #D6D6D6;
+  -moz-border-left-colors: #000000 #E2E2E2 #D6D6D6;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  padding: 0px 3px;
+  background-color: transparent /*-moz-Dialog*/;
+  color: #000000 /*-moz-DialogText*/;
+  font: menu;
+}
+
+tab:-moz-locale-dir(rtl) {
+}
+
+.tab-text {
+  margin: 0 !important;
+}
+
+tab[selected="true"] {
+  border: 3px solid;
+  border-bottom-width: 0px;
+  margin-bottom: 0px;
+  padding: 0px 3px 3px 3px;
+  -moz-border-top-colors: #000000 #E2E2E2 #D6D6D6;
+  -moz-border-right-colors: #000000 #E2E2E2 #D6D6D6;
+  -moz-border-bottom-colors: transparent;
+  -moz-border-left-colors: #000000 #E2E2E2 #D6D6D6;
+  background-image: url('chrome://global/skin/F4.gif');
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: #000000;
+  font: menu;
+}
+
+tab:hover {
+  background-color: #BAE9EE;
+}
+
+tab:hover:active {
+  -moz-border-top-colors: transparent #939393 #9A9A9A;
+  -moz-border-right-colors: transparent #939393 #9A9A9A;
+  -moz-border-left-colors: transparent #939393 #9A9A9A;
+  background-color: #9C9C9C;
+  color: #0859F0;
+}
+tab:-moz-focusring > .tab-middle {
+  /* Don't specify the outline-color, we should always use initial value. */
+}
+
+tab[beforeselected="true"]:-moz-locale-dir(ltr),
+tab[selected="true"]:-moz-locale-dir(rtl) + tab {
+}
+
+
+/* ::::: tab-bottom ::::::::::
+   :: Tabs that are attached to the bottom of a panel, but not necessarily
+   :: a tabpanels.
+   ::::: */

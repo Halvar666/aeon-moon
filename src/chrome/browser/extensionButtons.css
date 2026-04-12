@@ -1,0 +1,1503 @@
+/* extensionButtons.css - For Toolbar Enhancements, Toolbar Control and Toolbar Extras extensions */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml"); /* namespace for HTML elements */
+
+/* Options - preferences */
+
+toolbarpaletteitem[place="palette"] > #preferences-button,
+#preferences > .toolbarbutton-icon, /* toolbar buttons extension */
+#simpleOptionsButton, /* MR Tech Local Install */
+#OptionsButton, /* Toolbar Extras */
+#tbx-options-button { /* Toolbar Enhancements */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 32px 32px 0) !important;
+}
+toolbarpaletteitem[place="palette"] > #preferences-button:hover,
+#wrapper-preferences-button:hover,
+#preferences:hover > .toolbarbutton-icon,
+#simpleOptionsButton:hover,
+#OptionsButton:hover,
+#tbx-options-button:hover {
+  -moz-image-region: rect(32px 32px 64px 0) !important;
+}
+toolbarpaletteitem[place="palette"] > #preferences-button:hover:active,
+#wrapper-preferences-button:hover:active,
+#preferences:hover:active > .toolbarbutton-icon,
+#simpleOptionsButton:hover:active,
+#OptionsButton:hover:active,
+#tbx-options-button:hover:active {
+  -moz-image-region: rect(64px 32px 96px 0) !important;
+}
+
+#preferences-button,
+toolbar[iconsize=small] #preferences > .toolbarbutton-icon,
+toolbar[iconsize=small] #simpleOptionsButton,
+toolbar[iconsize=small] #OptionsButton,
+toolbar[iconsize=small] #tbx-options-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 24px 22px 0) !important;
+}
+#preferences-button:hover,
+toolbar[iconsize=small] #preferences:hover > .toolbarbutton-icon,
+toolbar[iconsize=small] #simpleOptionsButton:hover,
+toolbar[iconsize=small] #OptionsButton:hover,
+toolbar[iconsize=small] #tbx-options-button:hover {
+  -moz-image-region: rect(22px 24px 44px 0) !important;
+}
+#preferences-button:hover:active,
+toolbar[iconsize=small] #preferences:hover:active > .toolbarbutton-icon,
+toolbar[iconsize=small] #simpleOptionsButton:hover:active,
+toolbar[iconsize=small] #OptionsButton:hover:active,
+toolbar[iconsize=small] #tbx-options-button:hover:active {
+  -moz-image-region: rect(44px 24px 66px 0) !important;
+}
+
+/* Add Bookmarks */
+
+#bookmark, /* toolbar buttons extension */
+#addbookmark-button, /* Toolbar Extras */
+#tbx-addbookmark-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 64px 32px 32px) !important;
+}
+#bookmark:hover,
+#addbookmark-button:hover,
+#tbx-addbookmark-button:hover {
+  -moz-image-region: rect(32px 64px 64px 32px) !important;
+}
+#bookmark:hover:active,
+#addbookmark-button:hover:active,
+#tbx-addbookmark-button:hover:active {
+  -moz-image-region: rect(64px 64px 96px 32px) !important;
+}
+
+#bookmark > .toolbarbutton-icon, /* toolbar buttons extension 1.0 */
+toolbar[iconsize=small] #bookmark,
+toolbar[iconsize=small] #addbookmark-button,
+toolbar[iconsize=small] #tbx-addbookmark-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 48px 22px 24px) !important;
+}
+#bookmark:hover > .toolbarbutton-icon, /* toolbar buttons extension 1.0 */
+toolbar[iconsize=small] #bookmark:hover,
+toolbar[iconsize=small] #addbookmark-button:hover,
+toolbar[iconsize=small] #tbx-addbookmark-button:hover {
+  -moz-image-region: rect(22px 48px 44px 24px)!important;
+}
+#bookmark:hover:active > .toolbarbutton-icon, /* toolbar buttons extension 1.0 */
+toolbar[iconsize=small] #bookmark:hover:active,
+toolbar[iconsize=small] #addbookmark-button:hover:active,
+toolbar[iconsize=small] #tbx-addbookmark-button:hover:active {
+  -moz-image-region: rect(44px 48px 66px 24px)!important;
+}
+
+/* Manage Bookmarks, Manage Places */
+
+#bookmark-manager, /* toolbar buttons extension */
+#ManagebookmarksButton, /* Toolbar Extras */
+#tbx-managebookmarks-button { /* Toolbar Enhancements */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 96px 32px 64px) !important;
+}
+#bookmark-manager:hover,
+#ManagebookmarksButton:hover,
+#tbx-managebookmarks-button:hover {
+  -moz-image-region: rect(32px 96px 64px 64px) !important;
+}
+#bookmark-manager:hover:active,
+#ManagebookmarksButton:hover:active,
+#tbx-managebookmarks-button:hover:active {
+  -moz-image-region: rect(64px 96px 96px 64px) !important;
+}
+
+#bookmark-manager > .toolbarbutton-icon, /* toolbar buttons extension */
+toolbar[iconsize=small] #bookmark-manager,
+toolbar[iconsize=small] #ManagebookmarksButton,
+toolbar[iconsize=small] #tbx-managebookmarks-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 72px 22px 48px) !important;
+}
+#bookmark-manager:hover > .toolbarbutton-icon, /* toolbar buttons extension */
+toolbar[iconsize=small] #bookmark-manager:hover,
+toolbar[iconsize=small] #ManagebookmarksButton:hover,
+toolbar[iconsize=small] #tbx-managebookmarks-button:hover {
+  -moz-image-region: rect(22px 72px 44px 48px) !important;
+}
+#bookmark-manager:hover:active > .toolbarbutton-icon, /* toolbar buttons extension */
+toolbar[iconsize=small] #bookmark-manager:hover:active,
+toolbar[iconsize=small] #ManagebookmarksButton:hover:active,
+toolbar[iconsize=small] #tbx-managebookmarks-button:hover:active {
+  -moz-image-region: rect(44px 72px 66px 48px) !important;
+}
+
+/* Save Page As... */
+
+#saveas > .toolbarbutton-icon, /* toolbar buttons extension */
+#save-button, /* Toolbar Extras */
+#tbx-save-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 128px 32px 96px) !important;
+}
+#saveas:hover > .toolbarbutton-icon,
+#save-button:hover,
+#tbx-save-button:hover {
+  -moz-image-region: rect(32px 128px 64px 96px) !important;
+}
+#saveas:hover:active > .toolbarbutton-icon,
+#save-button:hover:active,
+#tbx-save-button:hover:active {
+  -moz-image-region: rect(64px 128px 96px 96px) !important;
+}
+
+#save-page-button[cui-areatype="toolbar"],
+#wrapper-save-page-button,
+#verticaltoolbar-save-page-button,
+toolbar[iconsize=small] #saveas > .toolbarbutton-icon,
+toolbar[iconsize=small] #save-button,
+toolbar[iconsize=small] #tbx-save-button,
+#save-page-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 96px 22px 72px) !important;
+}
+#save-page-button[cui-areatype="toolbar"]:hover,
+#verticaltoolbar-save-page-button:hover,
+toolbar[iconsize=small] #saveas:hover > .toolbarbutton-icon,
+toolbar[iconsize=small] #save-button:hover,
+toolbar[iconsize=small] #tbx-save-button:hover,
+#save-page-button:hover {
+  -moz-image-region: rect(22px 96px 44px 72px) !important;
+}
+#save-page-button[cui-areatype="toolbar"]:hover:active,
+#verticaltoolbar-save-page-button:hover:active,
+toolbar[iconsize=small] #saveas:hover:active > .toolbarbutton-icon,
+toolbar[iconsize=small] #save-button:hover:active,
+toolbar[iconsize=small] #tbx-save-button:hover:active,
+#save-page-button:hover:active {
+  -moz-image-region: rect(44px 96px 66px 72px) !important;
+}
+
+/* View Source - page source */
+
+#page-source > .toolbarbutton-icon, /* toolbar buttons extension */
+#verticaltoolbar-view-source-button,
+toolbar > #source-button .toolbarbutton-icon, /* aios */
+#ViewSourceButton, /* Toolbar Extras */
+#tbx-viewsource-button {  /* Toolbar Enhancement */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 160px 32px 128px) !important;
+}
+#page-source:hover > .toolbarbutton-icon,
+#verticaltoolbar-view-source-button:hover,
+toolbar > #source-button:hover .toolbarbutton-icon,
+#ViewSourceButton:hover,
+#tbx-viewsource-button:hover {
+  -moz-image-region: rect(32px 160px 64px 128px) !important;
+}
+#page-source:hover:active > .toolbarbutton-icon,
+#verticaltoolbar-view-source-button:hover:active,
+toolbar > #source-button:hover:active .toolbarbutton-icon,
+#ViewSourceButton:hover:active,
+#tbx-viewsource-button:hover:active {
+  -moz-image-region: rect(64px 160px 96px 128px) !important;
+}
+
+toolbar[iconsize=small] #page-source > .toolbarbutton-icon,
+toolbar[iconsize=small] #verticaltoolbar-view-source-button,
+toolbar[iconsize=small] > #source-button .toolbarbutton-icon, /* aios */
+#source-button .toolbarbutton-icon, /* aios */
+toolbar[iconsize=small] #ViewSourceButton,
+toolbar[iconsize=small] #tbx-viewsource-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 120px 22px 96px) !important;
+}
+toolbar[iconsize=small] #page-source:hover > .toolbarbutton-icon,
+toolbar[iconsize=small] #verticaltoolbar-view-source-button:hover,
+toolbar[iconsize=small] > #source-button:hover .toolbarbutton-icon,
+#source-button:hover .toolbarbutton-icon,
+toolbar[iconsize=small] #ViewSourceButton:hover,
+toolbar[iconsize=small] #tbx-viewsource-button:hover {
+  -moz-image-region: rect(22px 120px 44px 96px) !important;
+}
+toolbar[iconsize=small] #page-source:hover:active > .toolbarbutton-icon,
+toolbar[iconsize=small] #verticaltoolbar-view-source-button:hover:active,
+toolbar[iconsize=small] > #source-button:hover:active .toolbarbutton-icon,
+#source-button:hover:active .toolbarbutton-icon,
+toolbar[iconsize=small] #ViewSourceButton:hover:active,
+toolbar[iconsize=small] #tbx-viewsource-button:hover:active {
+  -moz-image-region: rect(44px 120px 66px 96px) !important;
+}
+
+/* JS Console - Error Console - javascript console */
+
+#verticaltoolbar-error-console-button,
+#javaScriptConsole > .toolbarbutton-icon, /* toolbar buttons extension */
+#console-button, /* aios */
+#jsConsole-button, /*MR Tech Local Install */
+#JSconsoleButton, /* Toolbar Extras */
+#tbx-jsconsole-button { /* Toolbar Enhancements */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 192px 32px 160px) !important;
+}
+#verticaltoolbar-error-console-button:hover,
+#javaScriptConsole:hover > .toolbarbutton-icon,
+#console-button:hover,
+#jsConsole-button:hover,
+#JSconsoleButton:hover,
+#tbx-jsconsole-button:hover {
+  -moz-image-region: rect(32px 192px 64px 160px) !important;
+}
+#verticaltoolbar-error-console-button:hover:active,
+#javaScriptConsole:hover:active > .toolbarbutton-icon,
+#console-button:hover:active, /* aios */
+#jsConsole-button:hover:active,
+#JSconsoleButton:hover:active,
+#tbx-jsconsole-button:hover:active {
+  -moz-image-region: rect(64px 192px 96px 160px) !important;
+}
+
+toolbar[iconsize=small] #javaScriptConsole,
+toolbar[iconsize=small] #verticaltoolbar-error-console-button,
+toolbar[iconsize=small] #javaScriptConsole > .toolbarbutton-icon,
+toolbar[iconsize=small] #console-button,
+toolbar[iconsize=small] #jsConsole-button,
+toolbar[iconsize=small] #JSconsoleButton,
+toolbar[iconsize=small] #tbx-jsconsole-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 144px 22px 120px) !important;
+}
+toolbar[iconsize=small] #verticaltoolbar-error-console-button:hover,
+toolbar[iconsize=small] #javaScriptConsole:hover > .toolbarbutton-icon,
+toolbar[iconsize=small] #console-button:hover,
+toolbar[iconsize=small] #jsConsole-button:hover,
+toolbar[iconsize=small] #JSconsoleButton:hover,
+toolbar[iconsize=small] #tbx-jsconsole-button:hover {
+  -moz-image-region: rect(22px 144px 44px 120px) !important;
+}
+toolbar[iconsize=small] #verticaltoolbar-error-console-button:hover:active,
+toolbar[iconsize=small] #javaScriptConsole:hover:active > .toolbarbutton-icon,
+toolbar[iconsize=small] #console-button:hover:active,
+toolbar[iconsize=small] #jsConsole-button:hover:active,
+toolbar[iconsize=small] #JSconsoleButton:hover:active,
+toolbar[iconsize=small] #tbx-jsconsole-button:hover:active {
+  -moz-image-region: rect(44px 144px 66px 120px) !important;
+}
+
+/* Full Screen */
+
+#fullscreen-button[cui-areatype="toolbar"] > .toolbarbutton-icon,
+#full-screen > .toolbarbutton-icon,
+#fullscreen-button, /* Toolbar Extras */
+#tbx-fullscreen-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 224px 32px 192px) !important;
+}
+#fullscreen-button[cui-areatype="toolbar"]:hover > .toolbarbutton-icon,
+#full-screen:hover > .toolbarbutton-icon,
+#fullscreen-button:hover,
+#tbx-fullscreen-button:hover {
+  -moz-image-region: rect(32px 224px 64px 192px) !important;
+}
+#fullscreen-button[cui-areatype="toolbar"]:hover:active > .toolbarbutton-icon,
+#full-screen:hover:active > .toolbarbutton-icon,
+#fullscreen-button:hover:active,
+#tbx-fullscreen-button:hover:active {
+  -moz-image-region: rect(64px 224px 96px 192px) !important;
+}
+
+toolbar[iconsize=small] #full-screen > .toolbarbutton-icon,
+toolbar[iconsize=small] #fullscreen-button,
+toolbar[iconsize=small] #tbx-fullscreen-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 168px 22px 144px) !important;
+}
+toolbar[iconsize=small] #full-screen:hover > .toolbarbutton-icon,
+toolbar[iconsize=small] #fullscreen-button:hover,
+toolbar[iconsize=small] #tbx-fullscreen-button:hover {
+  -moz-image-region: rect(22px 168px 44px 144px) !important;
+}
+toolbar[iconsize=small] #full-screen:hover:active > .toolbarbutton-icon,
+toolbar[iconsize=small] #fullscreen-button:hover:active,
+toolbar[iconsize=small] #tbx-fullscreen-button:hover:active {
+  -moz-image-region: rect(44px 168px 66px 144px) !important;
+}
+
+/* reduce text size */
+
+#reduce { /* toolbar buttons extension */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 256px 32px 224px) !important;
+}
+#reduce:hover {
+  -moz-image-region: rect(32px 256px 64px 224px) !important;
+}
+#reduce:hover:active {
+  -moz-image-region: rect(64px 256px 96px 224px) !important;
+}
+
+toolbar[iconsize=small] #reduce {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 192px 22px 168px) !important;
+}
+toolbar[iconsize=small] #reduce:hover {
+  -moz-image-region: rect(22px 192px 44px 168px) !important;
+}
+toolbar[iconsize=small] #reduce:hover:active {
+  -moz-image-region: rect(44px 192px 66px 168px) !important;
+}
+
+/* reset text size */
+
+#reset > .toolbarbutton-icon { /* toolbar buttons extension */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 288px 32px 256px) !important;
+}
+#reset:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(32px 288px 64px 256px) !important;
+}
+#reset:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(64px 288px 96px 256px) !important;
+}
+
+toolbar[iconsize=small] #reset > .toolbarbutton-icon {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 216px 22px 192px) !important;
+}
+toolbar[iconsize=small] #reset:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(22px 216px 44px 192px) !important;
+}
+toolbar[iconsize=small] #reset:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(44px 216px 66px 192px) !important;
+}
+
+/* enlarge text size */
+
+#enlarge { /* toolbar buttons extension */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 320px 32px 288px) !important;
+}
+#enlarge:hover {
+  -moz-image-region: rect(32px 320px 64px 288px) !important;
+}
+#enlarge:hover:active {
+  -moz-image-region: rect(64px 320px 96px 288px) !important;
+}
+
+toolbar[iconsize=small] #enlarge {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 240px 22px 216px) !important;
+}
+toolbar[iconsize=small] #enlarge:hover {
+  -moz-image-region: rect(22px 240px 44px 216px) !important;
+}
+toolbar[iconsize=small] #enlarge:hover:active {
+  -moz-image-region: rect(44px 240px 66px 216px) !important;
+}
+
+/* page info */
+
+#verticaltoolbar-page-info-button,
+#pageinfo > .toolbarbutton-icon, /* toolbar buttons extension */
+#pageinfo-button, /* Toolbar Extras */
+#tbx-pageinfo-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 352px 32px 320px) !important;
+}
+#verticaltoolbar-page-info-button:hover,
+#pageinfo:hover > .toolbarbutton-icon,
+#pageinfo-button:hover,
+#tbx-pageinfo-button:hover {
+  -moz-image-region: rect(32px 352px 64px 320px) !important;
+}
+#verticaltoolbar-page-info-button:hover:active,
+#pageinfo:hover:active > .toolbarbutton-icon,
+#pageinfo-button:hover:active,
+#tbx-pageinfo-button:hover:active {
+  -moz-image-region: rect(64px 352px 96px 320px) !important;
+}
+
+toolbar[iconsize=small] #verticaltoolbar-page-info-button,
+toolbar[iconsize=small] #pageinfo > .toolbarbutton-icon,
+toolbar[iconsize=small] #pageinfo-button,
+toolbar[iconsize=small] #tbx-pageinfo-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 264px 22px 240px) !important;
+}
+toolbar[iconsize=small] #verticaltoolbar-page-info-button:hover,
+toolbar[iconsize=small] #pageinfo:hover > .toolbarbutton-icon,
+toolbar[iconsize=small] #pageinfo-button:hover,
+toolbar[iconsize=small] #tbx-pageinfo-button:hover {
+  -moz-image-region: rect(22px 264px 44px 240px) !important;
+}
+toolbar[iconsize=small] #verticaltoolbar-page-info-button:hover:active,
+toolbar[iconsize=small] #pageinfo:hover:active > .toolbarbutton-icon,
+toolbar[iconsize=small] #pageinfo-button:hover:active,
+toolbar[iconsize=small] #tbx-pageinfo-button:hover:active {
+  -moz-image-region: rect(44px 264px 66px 240px) !important;
+}
+
+/* Clear Private Data - clear data */
+
+#clear-data > .toolbarbutton-icon, /* toolbar buttons extension */
+#simpleClearButton, /* MR Tech Local Install */
+#ClearDataButton{ /* Toolbar Extras */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 384px 32px 352px) !important;
+}
+#clear-data > .toolbarbutton-icon:hover,
+#simpleClearButton:hover,
+#ClearDataButton:hover {
+  -moz-image-region: rect(32px 384px 64px 352px) !important;
+}
+#clear-data > .toolbarbutton-icon:hover:active,
+#simpleClearButton:hover:active,
+#ClearDataButton:hover:active {
+  -moz-image-region: rect(64px 384px 96px 352px) !important;
+}
+
+toolbar[iconsize="small"] #clear-data > .toolbarbutton-icon,
+toolbar[iconsize="small"] #simpleClearButton,
+toolbar[iconsize=small] #ClearDataButton {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 288px 22px 264px) !important;
+}
+toolbar[iconsize="small"] #clear-data:hover > .toolbarbutton-icon,
+toolbar[iconsize="small"] #simpleClearButton:hover,
+toolbar[iconsize=small] #ClearDataButton:hover:active {
+  -moz-image-region: rect(22px 288px 44px 264px) !important;
+}
+toolbar[iconsize="small"] #clear-data:hover:active > .toolbarbutton-icon,
+toolbar[iconsize="small"] #simpleClearButton:hover:active,
+toolbar[iconsize=small] #ClearDataButton:hover:active {
+  -moz-image-region: rect(44px 288px 66px 264px) !important;
+}
+
+/*** Clear Cache ***/
+
+#clearcache-button, /* Toolbar Extras */
+#tbx-clearcache-button, /* Toolbar Enhancements */
+#clearcache-toolbarbutton { /* MR Tech Local Install */
+  list-style-image: url("chrome://browser/skin/extrabuttons-l.png") !important;
+  -moz-image-region: rect(0px 1024px 32px 992px) !important;
+}
+#clearcache-button:hover,
+#tbx-clearcache-button:hover,
+#clearcache-toolbarbutton:hover {
+  -moz-image-region: rect(32px 1024px 64px 992px) !important;
+}
+#clearcache-button:hover:active,
+#tbx-clearcache-button:hover:active,
+#clearcache-toolbarbutton:hover:active {
+  -moz-image-region: rect(64px 1024px 96px 992px) !important;
+}
+
+toolbar[iconsize=small] #clearcache-button,
+toolbar[iconsize=small] #tbx-clearcache-button,
+toolbar[iconsize="small"] #clearcache-toolbarbutton {
+  list-style-image: url("chrome://browser/skin/extrabuttons-s.png") !important;
+  -moz-image-region: rect(0px 768px 22px 744px) !important;
+}
+toolbar[iconsize=small] #clearcache-button:hover,
+toolbar[iconsize=small] #tbx-clearcache-button:hover,
+toolbar[iconsize="small"] #clearcache-toolbarbutton:hover {
+  -moz-image-region: rect(22px 768px 44px 744px) !important;
+}
+toolbar[iconsize=small] #clearcache-button:hover:active,
+toolbar[iconsize=small] #tbx-clearcache-button:hover:active,
+toolbar[iconsize="small"] #clearcache-toolbarbutton:hover:active {
+  -moz-image-region: rect(44px 768px 66px 744px) !important;
+}
+
+/* Go Up */
+
+#goup-button:not([disabled="true"]) {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 480px 32px 448px);
+}
+#goup-button:hover:not([disabled="true"]) {
+  -moz-image-region: rect(32px 480px 64px 448px);
+}
+#goup-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(64px 480px 96px 448px);
+}
+
+toolbar[iconsize=small] #goup-button:not([disabled="true"]) {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0px 360px 22px 336px);
+}
+toolbar[iconsize=small] #goup-button:not([disabled="true"]):hover {
+  -moz-image-region: rect(22px 360px 44px 336px);
+}
+toolbar[iconsize=small] #goup-button:not([disabled="true"]):hover:active {
+  -moz-image-region: rect(44px 360px 66px 336px);
+}
+
+/* DOM Inspector button - DOMi */
+
+#verticaltoolbar-inspect-button > .toolbarbutton-icon,
+#verticaltoolbar-inspect-button,
+#inspecter > .toolbarbutton-icon, /* toolbar buttons extension */
+#dominspector-button { /* aios */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 512px 32px 480px) !important;
+}
+#verticaltoolbar-inspect-button:hover > .toolbarbutton-icon,
+#verticaltoolbar-inspect-button:hover,
+#inspecter:hover > .toolbarbutton-icon,
+#dominspector-button:hover {
+  -moz-image-region: rect(32px 512px 64px 480px) !important;
+}
+#verticaltoolbar-inspect-button:hover:active > .toolbarbutton-icon,
+#verticaltoolbar-inspect-button:hover:active,
+#inspecter:hover:active > .toolbarbutton-icon,
+#dominspector-button:hover:active {
+  -moz-image-region: rect(64px 512px 96px 480px) !important;
+}
+
+toolbar[iconsize=small] #verticaltoolbar-inspect-button,
+toolbar[iconsize=small] #inspecter > .toolbarbutton-icon,
+toolbar[iconsize=small] #dominspector-button { /* aios */
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0px 384px 22px 360px) !important;
+}
+toolbar[iconsize=small] #verticaltoolbar-inspect-button:hover,
+toolbar[iconsize=small] #inspecter:hover > .toolbarbutton-icon,
+toolbar[iconsize=small] #dominspector-button:hover {
+  -moz-image-region: rect(22px 384px 44px 360px) !important;
+}
+toolbar[iconsize=small] #verticaltoolbar-inspect-button:hover:active,
+toolbar[iconsize=small] #inspecter:hover:active > .toolbarbutton-icon,
+toolbar[iconsize=small] #dominspector-button:hover:active {
+  -moz-image-region: rect(44px 384px 66px 360px) !important;
+}
+
+/* aios multipanel button */
+
+#multipanel-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 544px 32px 512px);
+}
+#multipanel-button:not([checked="true"]):hover{
+  -moz-image-region: rect(32px 544px 64px 512px);
+}
+#multipanel-button:not([checked="true"]):hover:active {
+  -moz-image-region: rect(64px 544px 96px 512px);
+}
+
+toolbar[iconsize=small] #multipanel-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0px 408px 22px 384px);
+}
+toolbar[iconsize=small] #multipanel-button:not([checked="true"]):hover{
+  -moz-image-region: rect(22px 408px 44px 384px);
+}
+toolbar[iconsize=small] #multipanel-button:not([checked="true"]):hover:active {
+  -moz-image-region: rect(44px 408px 66px 384px);
+}
+
+/** aios extension buttons **/
+
+/* aios sidebar toggle button */
+
+#sidebars-togglebutton[checked="true"]:hover,
+#sidebars-togglebutton {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 576px 32px 544px);
+}
+#sidebars-togglebutton[checked="true"],
+#sidebars-togglebutton:hover {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important; /* need this */
+  -moz-image-region: rect(32px 576px 64px 544px);
+}
+#sidebars-togglebutton:hover:active {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important; /* need this */
+  -moz-image-region: rect(64px 576px 96px 544px);
+}
+
+toolbar[iconsize=small] #sidebars-togglebutton[checked="true"]:hover,
+toolbar[iconsize=small] #sidebars-togglebutton {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0px 432px 22px 408px);
+}
+toolbar[iconsize=small] #sidebars-togglebutton[checked="true"],
+toolbar[iconsize=small] #sidebars-togglebutton:hover {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(22px 432px 44px 408px);
+}
+toolbar[iconsize=small] #sidebars-togglebutton:hover:active {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(44px 432px 66px 408px);
+}
+
+/* aios toolbar toggle */
+
+#toolbar-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 608px 32px 576px);
+}
+#toolbar-button:hover {
+  -moz-image-region: rect(32px 608px 64px 576px);
+}
+#toolbar-button:active {
+  -moz-image-region: rect(64px 608px 96px 576px);
+}
+
+toolbar[iconsize=small] #toolbar-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0px 456px 22px 432px);
+}
+toolbar[iconsize=small] #toolbar-button:hover {
+  -moz-image-region: rect(22px 456px 44px 432px);
+}
+toolbar[iconsize=small] #toolbar-button:active {
+  -moz-image-region: rect(44px 456px 66px 432px);
+}
+
+/* aios sidebars button */
+
+#sidebars-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 640px 32px 608px);
+}
+#sidebars-button:hover {
+  -moz-image-region: rect(32px 640px 64px 608px);
+}
+#sidebars-button:active {
+  -moz-image-region: rect(64px 640px 96px 608px);
+}
+
+toolbar[iconsize=small] #sidebars-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0px 480px 22px 456px);
+}
+toolbar[iconsize=small] #sidebars-button:hover {
+  -moz-image-region: rect(22px 480px 44px 456px);
+}
+toolbar[iconsize=small] #sidebars-button:active {
+  -moz-image-region: rect(44px 480px 66px 456px);
+}
+
+/* aios autohide button */
+
+#autohide-button:not([checked="true"]) {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 672px 32px 640px);
+}
+#autohide-button[checked="true"]:active,
+#autohide-button:not([checked="true"]):hover {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(32px 672px 64px 640px);
+}
+#autohide-button[checked="true"],
+#autohide-button:not([checked="true"]):active {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(64px 672px 96px 640px);
+}
+
+toolbar[iconsize=small] #toolbar-button[checked="true"]:hover,
+toolbar[iconsize=small] #autohide-button:not([checked="true"]) {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0px 504px 22px 480px);
+}
+toolbar[iconsize=small] #autohide-button[checked="true"]:active,
+toolbar[iconsize=small] #autohide-button:hover {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(22px 504px 44px 480px);
+}
+toolbar[iconsize=small] #autohide-button[checked="true"],
+toolbar[iconsize=small] #autohide-button:not([checked="true"]):active {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(44px 504px 66px 480px);
+}
+
+/* aios as a whole */
+
+#autohide-button[checked="true"]:hover,
+#toolbar-button[checked="true"]:hover,
+#sidebars-togglebutton[checked="true"]:hover,
+#multipanel-button[checked="true"]:not([disabled="true"]):hover {
+  background-image: url('chrome://global/skin/F1.gif');
+}
+#autohide-button[checked="true"]:active,
+#toolbar-button[checked="true"]:active,
+#sidebars-togglebutton[checked="true"]:active,
+#multipanel-button[checked="true"]:not([disabled="true"]):active {
+  background-image: none;
+  background-color: #82E6F9;
+}
+
+#sidebars-togglebutton[checked="true"] {
+  border: 1px solid #6B6B6B /*ThreeDDarkShadow*/ !important;
+} /* new borders; must make room for them; see below */
+
+#sidebars-togglebutton[checked="true"] > .toolbarbutton-menubutton-button {
+  border: none !important;
+} /* otherwise this has 1px borders, which enlarges the button */
+
+/* Full Map */
+
+#fullmap-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 1056px 32px 1024px) !important;
+}
+
+#fullmap-button:hover {
+  -moz-image-region: rect(32px 1056px 64px 1024px) !important;
+}
+#fullmap-button:hover:active {
+  -moz-image-region: rect(64px 1056px 96px 1024px) !important;
+}
+
+toolbar[iconsize=small] #fullmap-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 792px 22px 768px) !important;
+}
+toolbar[iconsize=small] #fullmap-button:hover {
+  -moz-image-region: rect(22px 792px 44px 768px) !important;
+}
+toolbar[iconsize=small] #fullmap-button:hover:active {
+  -moz-image-region: rect(44px 792px 66px 768px) !important;
+}
+
+/* find in page - toolbar buttons extension */
+
+#find {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 1088px 32px 1056px) !important;
+}
+#find:hover {
+  -moz-image-region: rect(32px 1088px 64px 1056px) !important;
+}
+#find:hover:active {
+  -moz-image-region: rect(64px 1088px 96px 1056px) !important;
+}
+
+#find-button> .toolbarbutton-icon,
+#wrapper-find-button,
+#find > .toolbarbutton-icon, /* toolbar buttons ext 1.0 */
+toolbar[iconsize=small] #find {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 816px 22px 792px) !important;
+}
+#find-button:hover > .toolbarbutton-icon,
+#wrapper-find-button:hover,
+#find:hover > .toolbarbutton-icon, /* toolbar buttons ext 1.0 */
+toolbar[iconsize=small] #find:hover {
+  -moz-image-region: rect(22px 816px 44px 792px) !important;
+}
+#find-button:hover:active > .toolbarbutton-icon,
+#wrapper-find-button:hover:active,
+#find:hover:active > .toolbarbutton-icon, /* toolbar buttons ext 1.0 */
+toolbar[iconsize=small] #find:hover:active {
+  -moz-image-region: rect(44px 816px 66px 792px) !important;
+}
+
+/* customize toolbar */
+
+#customize-toolbar > .toolbarbutton-icon { /* toolbar buttons extension */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 1120px 32px 1088px) !important;
+}
+#customize-toolbar:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(32px 1120px 64px 1088px) !important;
+}
+#customize-toolbar:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(64px 1120px 96px 1088px) !important;
+}
+
+toolbar[iconsize=small] #customize-toolbar > .toolbarbutton-icon {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 840px 22px 816px) !important;
+}
+toolbar[iconsize=small] #customize-toolbar:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(22px 840px 44px 816px) !important;
+}
+toolbar[iconsize=small] #customize-toolbar:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(44px 840px 66px 816px) !important;
+}
+
+/* gmail */
+
+#gmail > .toolbarbutton-icon { /* toolbar buttons extension */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 1152px 32px 1120px) !important;
+}
+#gmail:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(32px 1152px 64px 1120px) !important;
+}
+#gmail:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(64px 1152px 96px 1120px) !important;
+}
+
+toolbar[iconsize=small] #gmail > .toolbarbutton-icon {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 888px 22px 864px) !important;
+}
+toolbar[iconsize=small] #gmail:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(22px 888px 44px 864px) !important;
+}
+toolbar[iconsize=small] #gmail:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(44px 888px 66px 864px) !important;
+}
+
+/* install addons */
+
+#installaddons > .toolbarbutton-icon { /* toolbar buttons extension */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 1184px 32px 1152px) !important;
+}
+#installaddons:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(32px 1184px 64px 1152px) !important;
+}
+#installaddons:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(64px 1184px 96px 1152px) !important;
+}
+
+toolbar[iconsize=small] #installaddons > .toolbarbutton-icon {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 912px 22px 888px) !important;
+}
+toolbar[iconsize=small] #installaddons:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(22px 912px 44px 888px) !important;
+}
+toolbar[iconsize=small] #installaddons:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(44px 912px 66px 888px) !important;
+}
+
+/* translate */
+
+#translate > .toolbarbutton-icon { /* toolbar buttons extension */
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 1216px 32px 1184px) !important;
+}
+#translate:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(32px 1216px 64px 1184px) !important;
+}
+#translate:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(64px 1216px 96px 1184px) !important;
+}
+
+toolbar[iconsize=small] #translate > .toolbarbutton-icon {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 936px 22px 912px) !important;
+}
+toolbar[iconsize=small] #translate:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(22px 936px 44px 912px) !important;
+}
+toolbar[iconsize=small] #translate:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(44px 936px 66px 912px) !important;
+}
+
+/* Private Browsing */
+
+#menu_newPrivateWindow,
+#verticaltoolbar-private-browsing-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0px 1248px 32px 1216px) !important;
+}
+#menu_newPrivateWindow:hover,
+#verticaltoolbar-private-browsing-button:hover {
+  -moz-image-region: rect(32px 1248px 64px 1216px) !important;
+}
+#menu_newPrivateWindow:hover:active,
+#verticaltoolbar-private-browsing-button:hover:active {
+  -moz-image-region: rect(64px 1248px 96px 1216px) !important;
+}
+
+#wrapper-privatebrowsing-button,
+#privatebrowsing-button[cui-areatype="menu-panel"],
+#privatebrowsing-button[cui-areatype="toolbar"],
+toolbar[iconsize=small] #verticaltoolbar-private-browsing-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 960px 22px 936px) !important;
+}
+#wrapper-privatebrowsing-button:hover,
+#privatebrowsing-button[cui-areatype="menu-panel"]:hover,
+#privatebrowsing-button[cui-areatype="toolbar"]:hover,
+toolbar[iconsize=small] #verticaltoolbar-private-browsing-button:hover {
+  -moz-image-region: rect(22px 960px 44px 936px) !important;
+}
+#wrapper-privatebrowsing-button:hover:active,
+#privatebrowsing-button[cui-areatype="menu-panel"]:hover:active,
+#privatebrowsing-button[cui-areatype="toolbar"]:hover:active,
+toolbar[iconsize=small] #verticaltoolbar-private-browsing-button:hover:active {
+  -moz-image-region: rect(44px 960px 66px 936px) !important;
+}
+
+/*** Other EXTENSIONS ***/
+
+/* MenuX and EMButtons Themes and Extensions toolbar buttons */
+
+#extensions, /* toolbar buttons extension */
+#addons > .toolbarbutton-icon, /* toolbar buttons extension */
+#AddOnsButton,
+#addons-button,
+#embuttonExtensions,
+#menuxExtensionManager {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 704px 32px 672px) !important;
+  padding: 0px 4px !important;
+  margin: 0px !important;
+}
+#extensions:hover,
+#addons:hover > .toolbarbutton-icon,
+#AddOnsButton:hover,
+#addons-button:hover,
+#embuttonExtensions:hover,
+#menuxExtensionManager:hover { 
+-moz-image-region: rect(32px 704px 64px 672px) !important;
+}
+#extensions:hover:active,
+#addons:hover:active > .toolbarbutton-icon,
+#AddOnsButton:hover:active,
+#addons-button:hover:active,
+#embuttonExtensions:hover:active,
+#menuxExtensionManager:hover:active { 
+-moz-image-region: rect(64px 704px 96px 672px) !important;
+}
+
+#wrapper-add-ons-button,
+#verticaltoolbar-addons-button, /* vertical toolbar ext. */
+toolbar[iconsize=small] #extensions,
+toolbar[iconsize=small] #addons > .toolbarbutton-icon,
+toolbar[iconsize=small] #AddOnsButton,
+toolbar[iconsize=small] #addons-button, /* aios */
+toolbar[iconsize=small] #embuttonExtensions,
+toolbar[iconsize=small] #menuxExtensionManager,
+#add-ons-button {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 528px 22px 504px) !important;
+  padding: 0px 4px !important;
+  margin: 0px !important;
+}
+#verticaltoolbar-addons-button:hover, /* vertical toolbar ext. */
+toolbar[iconsize=small] #extensions:hover,
+toolbar[iconsize=small] #addons:hover > .toolbarbutton-icon,
+toolbar[iconsize=small] #AddOnsButton:hover,
+toolbar[iconsize=small] #addons-button:hover,
+toolbar[iconsize=small] #embuttonExtensions:hover,
+toolbar[iconsize=small] #menuxExtensionManager:hover,
+#add-ons-button:hover {
+  -moz-image-region: rect(22px 528px 44px 504px) !important;
+}
+#verticaltoolbar-addons-button:hover:active, /* vertical toolbar ext. */
+toolbar[iconsize=small] #extensions:hover:active,
+toolbar[iconsize=small] #addons:hover:active > .toolbarbutton-icon,
+toolbar[iconsize=small] #AddOnsButton:hover:active,
+toolbar[iconsize=small] #addons-button:hover:active,
+toolbar[iconsize=small] #embuttonExtensions:hover:active,
+toolbar[iconsize=small] #menuxExtensionManager:hover:active,
+#add-ons-button:hover:active {
+  -moz-image-region: rect(44px 528px 66px 504px) !important;
+}
+
+#themes, /* toolbar buttons extension */
+toolbar #themes, /* toolbar buttons extension */
+#embuttonThemes,
+#menuxThemeManagerBtn {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 416px 32px 384px) !important;
+  padding: 0px 4px !important;
+  margin: 0px !important;
+}
+#themes:hover,
+#embuttonThemes:hover,
+#menuxThemeManagerBtn:hover { 
+  -moz-image-region: rect(32px 416px 64px 384px) !important;
+}
+#themes:hover:active,
+#embuttonThemes:hover:active,
+#menuxThemeManagerBtn:hover:active { 
+  -moz-image-region: rect(64px 416px 96px 384px) !important;
+}
+
+#themes > .toolbarbutton-icon, /* toolbar buttons extension 1.0 */
+toolbar[iconsize=small] #themes,
+toolbar[iconsize=small] #embuttonThemes,
+toolbar[iconsize=small] #menuxThemeManagerBtn {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 312px 22px 288px) !important;
+  padding: 0px 4px !important;
+  margin: 0px !important;
+}
+#themes:hover > .toolbarbutton-icon, /* toolbar buttons extension 1.0 */
+toolbar[iconsize=small] #themes:hover,
+toolbar[iconsize=small] #embuttonThemes:hover,
+toolbar[iconsize=small] #menuxThemeManagerBtn:hover {
+  -moz-image-region: rect(22px 312px 44px 288px) !important;
+}
+#themes:hover:active > .toolbarbutton-icon, /* toolbar buttons extension 1.0 */
+toolbar[iconsize=small] #themes:hover:active,
+toolbar[iconsize=small] #embuttonThemes:hover:active,
+toolbar[iconsize=small] #menuxThemeManagerBtn:hover:active {
+  -moz-image-region: rect(44px 312px 66px 288px) !important;
+}
+
+/* Print Preview buttons from extensions */
+/* must use separate image file to allow Scribblies and Halloween to use this css file */
+
+#print-preview > .toolbarbutton-icon, /* toolbar buttons ext. */
+#printitpreviewbutton, /* print it ext. */
+#prntprvw-button /* print preview ext.*/ {
+  list-style-image: url("chrome://browser/skin/print-preview-32.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#print-preview:hover > .toolbarbutton-icon, 
+#printitpreviewbutton:hover,
+#prntprvw-button:hover {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+#print-preview:hover:active > .toolbarbutton-icon, 
+#printitpreviewbutton:hover:active,
+#prntprvw-button:hover:active {
+  -moz-image-region: rect(64px 32px 96px 0px) !important;
+}
+
+#verticaltoolbar-print-preview-button, /* vertical toolbar ext. */
+toolbar[iconsize="small"] #print-preview > .toolbarbutton-icon, 
+toolbar[iconsize="small"] #printitpreviewbutton,
+toolbar[iconsize="small"] #prntprvw-button {
+  list-style-image: url("chrome://browser/skin/print-preview-22.png") !important;
+  -moz-image-region: rect(0px 24px 22px 0px) !important;
+}
+#verticaltoolbar-print-preview-button:hover, /* vertical toolbar ext. */
+toolbar[iconsize="small"] #print-preview:hover > .toolbarbutton-icon, 
+toolbar[iconsize="small"] #printitpreviewbutton:hover,
+toolbar[iconsize="small"] #prntprvw-button:hover {
+  -moz-image-region: rect(22px 24px 44px 0px) !important;
+}
+#verticaltoolbar-print-preview-button:hover:active, /* vertical toolbar ext. */
+toolbar[iconsize="small"] #print-preview:hover:active > .toolbarbutton-icon, 
+toolbar[iconsize="small"] #printitpreviewbutton:hover:active,
+toolbar[iconsize="small"] #prntprvw-button:hover:active {
+  -moz-image-region: rect(44px 24px 66px 0px) !important;
+}
+
+/* Cookie Culler */
+
+#cookieculler-button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-l.png") !important;
+  -moz-image-region: rect(0px 736px 32px 704px) !important;
+}
+#cookieculler-button:hover {
+  -moz-image-region: rect(32px 736px 64px 704px) !important;
+}
+#cookieculler-button:hover:active {
+  -moz-image-region: rect(64px 736px 96px 704px) !important;
+}
+
+toolbar[iconsize="small"] #cookieculler-button{
+  list-style-image: url("chrome://browser/skin/extrabuttons-s.png") !important;
+  -moz-image-region: rect(0px 552px 22px 528px) !important;
+}
+toolbar[iconsize="small"] #cookieculler-button:hover {
+  -moz-image-region: rect(22px 552px 44px 528px) !important;
+}
+toolbar[iconsize="small"] #cookieculler-button:hover:active {
+  -moz-image-region: rect(44px 552px 66px 528px) !important;
+}
+
+/* Translation */
+
+#translation-button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-l.png") !important;
+  -moz-image-region: rect(0px 768px 32px 736px) !important;
+}
+#translation-button:hover {
+  -moz-image-region: rect(32px 768px 64px 736px) !important;
+}
+#translation-button:hover:active {
+  -moz-image-region: rect(64px 768px 96px 736px) !important;
+}
+
+toolbar[iconsize="small"] #translation-button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-s.png") !important;
+  -moz-image-region: rect(0px 576px 22px 552px) !important;
+}
+toolbar[iconsize="small"] #translation-button:hover {
+  -moz-image-region: rect(22px 576px 44px 552px) !important;
+}
+toolbar[iconsize="small"] #translation-button:hover:active {
+  -moz-image-region: rect(44px 576px 66px 552px) !important;
+}
+
+/* Web Developer */
+
+#webdeveloper-button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-l.png") !important;
+  -moz-image-region: rect(0px 800px 32px 768px) !important;
+}
+#webdeveloper-button:hover {
+  -moz-image-region: rect(32px 800px 64px 768px) !important;
+}
+#webdeveloper-button:hover:active {
+  -moz-image-region: rect(64px 800px 96px 768px) !important;
+}
+
+toolbar[iconsize="small"] #webdeveloper-button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-s.png") !important;
+  -moz-image-region: rect(0px 600px 22px 576px) !important;
+}
+toolbar[iconsize="small"] #webdeveloper-button:hover {
+  -moz-image-region: rect(22px 600px 44px 576px) !important;
+}
+toolbar[iconsize="small"] #webdeveloper-button:hover:active {
+  -moz-image-region: rect(44px 600px 66px 576px) !important;
+}
+
+/* Info Lister */
+
+#myconfig-button,
+#infolister-button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-l.png") !important;
+  -moz-image-region: rect(0px 832px 32px 800px) !important;
+}
+#myconfig-button:hover,
+#infolister-button:hover {
+  -moz-image-region: rect(32px 832px 64px 800px) !important;
+}
+#myconfig-button:hover:active,
+#infolister-button:hover:active {
+  -moz-image-region: rect(64px 832px 96px 800px) !important;
+}
+
+#about-button .toolbarbutton-icon,
+toolbar[iconsize="small"] #myconfig-button,
+toolbar[iconsize="small"] #infolister-button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-s.png") !important;
+  -moz-image-region: rect(0px 624px 22px 600px) !important;
+}
+#about-button:hover .toolbarbutton-icon,
+toolbar[iconsize="small"] #myconfig-button:hover,
+toolbar[iconsize="small"] #infolister-button:hover {
+  -moz-image-region: rect(22px 624px 44px 600px) !important;
+}
+#about-button:hover:active .toolbarbutton-icon,
+toolbar[iconsize="small"] #myconfig-button:hover:active,
+toolbar[iconsize="small"] #infolister-button:hover:active {
+  -moz-image-region: rect(44px 624px 66px 600px) !important;
+}
+
+/** MR Tech Local Install - About Config**/
+
+toolbar[iconsize="small"] #aboutConfig-button,
+#aboutConfig-button {
+  list-style-image: url("chrome://browser/skin/MRTech-24x22.png") !important;
+  -moz-image-region: rect(0px 24px 22px 0px);
+}
+toolbar[iconsize="small"] #aboutConfig-button:hover,
+#aboutConfig-button:hover {
+  -moz-image-region: rect(22px 24px 44px 0px);
+}
+toolbar[iconsize="small"] #aboutConfig-button:hover:active,
+#aboutConfig-button:hover:active {
+  -moz-image-region: rect(44px 24px 66px 0px);
+}
+
+/** MR Tech Local Install - About Plugins **/
+
+toolbar[iconsize="small"] #aboutPlugins-button,
+#aboutPlugins-button {
+	list-style-image: url("chrome://browser/skin/MRTech-24x22.png") !important;
+  -moz-image-region: rect(0px 48px 22px 24px);
+}
+toolbar[iconsize="small"] #aboutPlugins-button:hover,
+#aboutPlugins-button:hover {
+  -moz-image-region: rect(22px 48px 44px 24px);
+}
+toolbar[iconsize="small"] #aboutPlugins-button:hover:active,
+#aboutPlugins-button:hover:active {
+  -moz-image-region: rect(44px 48px 66px 24px);
+}
+
+/** Restart **/
+
+#restart-app > .toolbarbutton-icon,
+#restartbuttonButton,
+#restart-app, /* toolbar buttons extension */
+toolbar[iconsize="small"] #restart-app,
+toolbar[iconsize="small"] #restartfirefox-button, /* MR Tech Local Install */
+#restartfirefox-button { /* see also in global.css */
+	list-style-image: url("chrome://browser/skin/MRTech-24x22.png") !important;
+  -moz-image-region: rect(0px 72px 22px 48px) !important;
+}
+#restart-app:hover > .toolbarbutton-icon,
+#restartbuttonButton:hover,
+#restart-app:hover,
+toolbar[iconsize="small"] #restart-app:hover,
+toolbar[iconsize="small"] #restartfirefox-button:hover,
+#restartfirefox-button:hover {
+  -moz-image-region: rect(22px 72px 44px 48px) !important;
+}
+#restart-app:hover:active > .toolbarbutton-icon,
+#restartbuttonButton:hover:active,
+#restart-app:hover:active,
+toolbar[iconsize="small"] #restart-app:hover:active,
+toolbar[iconsize="small"] #restartfirefox-button:hover:active,
+#restartfirefox-button:hover:active {
+  -moz-image-region: rect(44px 72px 66px 48px) !important;
+}
+
+/** IE View **/
+/* Moved from extensionButtons.css to xulscrollbars.css to disable this on Macs */
+/* Safari View uses the same ID as IE View Lite */
+
+/* Duplicate Tabs extension - Duplicate tab to new tab */
+
+#duplicatetab-duptab-button {
+  list-style-image: url(chrome://browser/skin/tabs-duplicate-32.png) !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#duplicatetab-duptab-button:hover {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+#duplicatetab-duptab-button:hover:active {
+  -moz-image-region: rect(64px 32px 96px 0px) !important;
+}
+
+toolbar[iconsize=small] #duplicatetab-duptab-button {
+  list-style-image: url(chrome://browser/skin/tabs-duplicate-22.png) !important;
+  -moz-image-region: rect(0 24px 22px 0px) !important;
+}
+toolbar[iconsize=small] #duplicatetab-duptab-button:hover {
+  -moz-image-region: rect(22px 24px 44px 0px) !important;
+}
+toolbar[iconsize=small] #duplicatetab-duptab-button:hover:active {
+  -moz-image-region: rect(44px 24px 66px 0px) !important;
+}
+
+/* Duplicate Tabs extension - Duplicate tab to new window */
+
+#duplicatetab-duptab-win-button {
+  list-style-image: url(chrome://browser/skin/tab-dup-in-new-window-32.png) !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#duplicatetab-duptab-win-button:hover {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+#duplicatetab-duptab-win-button:hover:active {
+  -moz-image-region: rect(64px 32px 96px 0px) !important;
+}
+
+toolbar[iconsize=small] #duplicatetab-duptab-win-button {
+  list-style-image: url(chrome://browser/skin/tab-dup-in-new-window-22.png) !important;
+  -moz-image-region: rect(0 24px 22px 0px) !important;
+}
+toolbar[iconsize=small] #duplicatetab-duptab-win-button:hover {
+  -moz-image-region: rect(22px 24px 44px 0px) !important;
+}
+toolbar[iconsize=small] #duplicatetab-duptab-win-button:hover:active {
+  -moz-image-region: rect(44px 24px 66px 0px) !important;
+}
+
+/** IE Tab **/
+
+#ietab-button[engine="fx"] {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 896px 32px 864px) !important;
+}
+#ietab-button[engine="fx"]:hover {
+  -moz-image-region: rect(32px 896px 64px 864px) !important;
+}
+#ietab-button[engine="fx"]:hover:active {
+  -moz-image-region: rect(64px 896px 96px 864px) !important;
+}
+
+toolbar[iconsize=small] #ietab-button[engine="fx"] {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 672px 22px 648px) !important;
+}
+toolbar[iconsize=small] #ietab-button[engine="fx"]:hover {
+  -moz-image-region: rect(22px 672px 44px 648px) !important;
+}
+toolbar[iconsize=small] #ietab-button[engine="fx"]:hover:active {
+  -moz-image-region: rect(44px 672px 66px 648px) !important;
+}
+
+#ietab-button[engine="ie"] {
+  list-style-image: url(chrome://browser/skin/extrabuttons-l.png) !important;
+  -moz-image-region: rect(0 928px 32px 896px) !important;
+}
+#ietab-button[engine="ie"]:hover {
+  -moz-image-region: rect(32px 928px 64px 896px) !important;
+}
+#ietab-button[engine="ie"]:hover:active {
+  -moz-image-region: rect(64px 928px 96px 896px) !important;
+}
+
+toolbar[iconsize=small] #ietab-button[engine="ie"] {
+  list-style-image: url(chrome://browser/skin/extrabuttons-s.png) !important;
+  -moz-image-region: rect(0 696px 22px 672px) !important;
+}
+toolbar[iconsize=small] #ietab-button[engine="ie"]:hover {
+  -moz-image-region: rect(22px 696px 44px 672px) !important;
+}
+toolbar[iconsize=small] #ietab-button[engine="ie"]:hover:active {
+  -moz-image-region: rect(44px 696px 66px 672px) !important;
+}
+
+#ietab-status-image[engine="fx"]:hover:active,
+#ietab-status-image[engine="ie"]  {
+  list-style-image: url("chrome://browser/skin/16x3.png") !important;
+  -moz-image-region: rect(0px 1104px 16px 1088px) !important;
+}
+#ietab-status-image[engine="ie"]:hover {
+  -moz-image-region: rect(16px 1104px 32px 1088px) !important;
+}
+
+/* InspectorWidget extension */
+
+#tbtnInspect {
+  list-style-image: url("chrome://browser/skin/inspectW-large.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#tbtnInspect:hover {
+  -moz-image-region: rect(0px 64px 32px 32px) !important;
+}
+#tbtnInspect:hover:active {
+  -moz-image-region: rect(0px 96px 32px 64px) !important;
+}
+
+toolbar[iconsize="small"] #tbtnInspect {
+  list-style-image: url("chrome://browser/skin/inspectW-small.png") !important;
+  -moz-image-region: rect(0px 24px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #tbtnInspect:hover {
+  -moz-image-region: rect(22px 24px 44px 0px) !important;
+}
+toolbar[iconsize="small"] #tbtnInspect:hover:active {
+  -moz-image-region: rect(44px 24px 66px 0px) !important;
+}
+
+/* Calculator extension button */
+
+#calculator_button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-l.png") !important;
+  -moz-image-region: rect(0px 960px 32px 928px) !important;
+}
+#calculator_button:hover {
+  -moz-image-region: rect(32px 960px 64px 928px) !important;
+}
+#calculator_button:hover:active {
+  -moz-image-region: rect(64px 960px 96px 928px) !important;
+}
+
+toolbar[iconsize="small"] #calculator_button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-s.png") !important;
+  -moz-image-region: rect(0px 720px 22px 696px) !important;
+}
+toolbar[iconsize="small"] #calculator_button:hover {
+  -moz-image-region: rect(22px 720px 44px 696px) !important;
+}
+toolbar[iconsize="small"] #calculator_button:hover:active {
+  -moz-image-region: rect(44px 720px 66px 696px) !important;
+}
+
+/* Scrapbook extension button */
+
+#scrapbook-button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-l.png") !important;
+  -moz-image-region: rect(0px 992px 32px 960px) !important;
+}
+#scrapbook-button:hover {
+  -moz-image-region: rect(32px 992px 64px 960px) !important;
+}
+#scrapbook-button:hover:active {
+  -moz-image-region: rect(64px 992px 96px 960px) !important;
+}
+
+toolbar[iconsize="small"] #scrapbook-button {
+  list-style-image: url("chrome://browser/skin/extrabuttons-s.png") !important;
+  -moz-image-region: rect(0px 744px 22px 720px) !important;
+}
+toolbar[iconsize="small"] #scrapbook-button:hover {
+  -moz-image-region: rect(22px 744px 44px 720px) !important;
+}
+toolbar[iconsize="small"] #scrapbook-button:hover:active {
+  -moz-image-region: rect(44px 744px 66px 720px) !important;
+}
+
+/* Mail, Get Mail button */
+
+#Getallmail-button, /* Get Mail extension */
+#Getmail-button, /* Toolbar Extras extension */
+#mail-button { /* Firefox 1.5 native button */
+  list-style-image: url("chrome://browser/skin/Mail-large.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+}
+#Getallmail-button:hover,
+#Getmail-button:hover,
+#mail-button:hover {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+#Getallmail-button[disabled="true"],
+#Getmail-button[disabled="true"],
+#mail-button[disabled="true"] {
+  -moz-image-region: rect(64px 32px 96px 0px) !important;
+}
+#Getallmail-button:hover:active,
+#Getmail-button:hover:active,
+#Getmail-button[checked="true"],
+#mail-button:hover:active,
+#mail-button[checked="true"] {
+  -moz-image-region: rect(96px 32px 128px 0px) !important;
+}
+
+toolbar[iconsize="small"] #Getallmail-button, /* Get Mail extension */
+toolbar[iconsize="small"] #Getmail-button,
+toolbar[iconsize="small"] #mail-button,
+#wrapper-email-link-button,
+#email-link-button[cui-areatype="toolbar"] {
+  list-style-image: url("chrome://browser/skin/Mail-small.png") !important;
+  -moz-image-region: rect(0px 24px 22px 0px) !important;
+}
+toolbar[iconsize="small"] #Getallmail-button:hover,
+toolbar[iconsize="small"] #Getmail-button:hover,
+toolbar[iconsize="small"] #mail-button:hover,
+#wrapper-email-link-button:hover,
+#email-link-button[cui-areatype="toolbar"]:hover {
+  -moz-image-region: rect(22px 24px 44px 0px) !important;
+}
+toolbar[iconsize="small"] #Getallmail-button[disabled="true"],
+toolbar[iconsize="small"] #Getmail-button[disabled="true"],
+toolbar[iconsize="small"] #mail-button[disabled="true"] {
+  -moz-image-region: rect(44px 24px 66px 0px) !important;
+}
+toolbar[iconsize="small"] #Getallmail-button:hover:active,
+toolbar[iconsize="small"] #Getmail-button:hover:active,
+toolbar[iconsize="small"] #Getmail-button[checked="true"],
+toolbar[iconsize="small"] #mail-button:hover:active,
+toolbar[iconsize="small"] #mail-button[checked="true"],
+#wrapper-email-link-button:hover:active,
+#email-link-button[cui-areatype="toolbar"]:hover:active  {
+  -moz-image-region: rect(66px 24px 88px 0px) !important;
+}
+
+/* new tab button */
+  /* see browser.css */
+
+/* toggle minimum font size: toggle font */
+
+#min-font-size > .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/Toggle-font-24.png");
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+#min-font-size:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(24px 24px 48px 0px);
+}
+#min-font-size:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(48px 24px 72px 0px);
+}
+
+/* theme font & size changer */
+
+#themefontsizechanger-toolbarbutton  > .toolbarbutton-icon  {
+  list-style-image: url("chrome://browser/skin/Theme-Font-&-Size-Changer-24.png");
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+#themefontsizechanger-toolbarbutton[cui-areatype="toolbar"]:hover > .toolbarbutton-icon {
+  -moz-image-region: rect(24px 24px 48px 0px);
+}
+#themefontsizechanger-toolbarbutton[cui-areatype="toolbar"]:hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(48px 24px 72px 0px);
+}

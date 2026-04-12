@@ -1,0 +1,27 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Linux-only helper for Aeon Moon menu icons.
+   Keep Windows rendering untouched by scoping the broader binding model to the os skin package.
+   This does not assign any new images; it only helps Pale Moon expose the icon slot
+   for menu/menuitem markup that Aeon already maps in browser/menuIcons.css. */
+
+menuitem[id|="context"],
+menuitem[tabid],
+menuitem[label],
+menuitem[name],
+menuitem[key],
+menuitem[id|="textlink"],
+.splitmenu-menuitem {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menuitem-iconic") !important;
+}
+
+menupopup menu[label],
+menupopup menu[key],
+menupopup menu[name],
+menupopup menu[tabid],
+popup menu[label],
+popup menu[key],
+popup menu[name],
+popup menu[tabid] {
+  -moz-binding: url("chrome://global/content/bindings/menu.xml#menu-iconic") !important;
+}

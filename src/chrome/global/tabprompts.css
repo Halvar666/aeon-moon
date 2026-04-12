@@ -1,0 +1,33 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* Tab Modal Prompt boxes */
+tabmodalprompt {
+  background-image: url(chrome://global/skin/icons/tabprompts-bgtexture.png);
+  background-color: hsla(0,0%,10%,.5);
+  font-family: sans-serif; /* use content font not system UI font */
+}
+
+.mainContainer {
+  color: black;
+  background-color: white;
+  background-image: url('chrome://global/skin/background.gif');
+background-clip: padding-box;
+  border-radius: 5px;
+  border: 4px solid;
+  -moz-border-top-colors: #000000 #E2E2E2 #D6D6D6;
+  -moz-border-right-colors: #000000 #E2E2E2 #D6D6D6;
+  -moz-border-bottom-colors: #000000 #E2E2E2 #D6D6D6;
+  -moz-border-left-colors: #000000 #E2E2E2 #D6D6D6;
+}
+
+.topContainer {
+  padding: 20px;
+}
+
+.buttonContainer {
+  padding: 12px 20px 15px;
+  background-color: hsla(0,0%,0%,.05);
+  border-top: 1px solid hsla(0,0%,0%,.05);
+}

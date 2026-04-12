@@ -1,0 +1,143 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== toolbarbutton.css =====================================================
+  == Styles used by the XUL button element.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: toolbarbutton ::::: */
+
+toolbarbutton {
+  -moz-appearance: none; /* toolbarbutton; */
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  margin: 0;
+  border: 1px solid transparent;
+  padding: 3px;
+  background-color: transparent;
+  color: black; /* -moz-DialogText; */
+}
+
+.toolbarbutton-icon {
+/*  -moz-margin-end: 5px; - deleting this prevents too much space when bookmark has no text */
+}
+
+.toolbarbutton-text {
+  margin: 0 !important;
+  text-align: center;
+}
+
+toolbarbutton.tabbable {
+  -moz-user-focus: normal !important;
+}
+
+toolbarbutton:-moz-focusring {
+}
+
+toolbarbutton:hover:not([disabled="true"]) {
+  border-color: white #9D9DA1 #9D9DA1 white; /*ThreeDHighlight ThreeDShadow ThreeDShadow ThreeDHighlight;*/
+}
+
+toolbarbutton:hover:active:not([disabled="true"]),
+toolbarbutton[open="true"]:not([disabled="true"]),
+toolbarbutton[open="true"] {
+  border-color: #9D9DA1 white white #9D9DA1; /*ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow;*/
+  padding: 3px;
+}
+
+toolbarbutton[disabled="true"] {
+  color: #ACA899; /*GrayText;*/
+  text-shadow: none;
+}
+
+@media (-moz-windows-classic) {
+  toolbarbutton[disabled="true"] {
+    color: #6B6B6B; /*ThreeDShadow;*/
+    text-shadow: 1px 1px white; /*ThreeDHighlight;*/
+  }
+}
+
+toolbarbutton[checked="true"]:not([disabled="true"]) {
+  -moz-border-top-colors: #6B6B6B #9F9F9F /*ThreeDDarkShadow ThreeDShadow*/ transparent;
+  -moz-border-right-colors: #6B6B6B #9F9F9F /*ThreeDDarkShadow ThreeDShadow*/ transparent;
+  -moz-border-bottom-colors: #6B6B6B #9F9F9F /*ThreeDDarkShadow ThreeDShadow*/ transparent;
+  -moz-border-left-colors: #6B6B6B #9F9F9F /*ThreeDDarkShadow ThreeDShadow*/ transparent;
+  background-color: white;
+  color: black;
+}
+
+@media (-moz-windows-default-theme) {
+  toolbarbutton:-moz-lwtheme {
+    text-shadow: none;
+  }
+
+  toolbarbutton:-moz-lwtheme:not(:hover):not([checked="true"]):not([open="true"]):not([disabled="true"]) {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+@media not all and (-moz-windows-default-theme) {
+  toolbarbutton:-moz-lwtheme {
+    -moz-appearance: none;
+  }
+
+  toolbarbutton:-moz-lwtheme:not([disabled="true"]) {
+    color: inherit;
+    text-shadow: inherit;
+  }
+}
+
+/* ::::: toolbarbutton menu ::::: */
+
+.toolbarbutton-menu-dropmarker {
+  -moz-appearance: none !important;
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+  -moz-image-region: auto; /* cut off inheritance */
+}
+
+.toolbarbutton-menu-dropmarker[disabled="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif");
+}
+
+/* ::::: toolbarbutton menu-button ::::: */
+
+toolbarbutton[type="menu-button"] {
+  -moz-box-align: stretch;
+  -moz-box-orient: horizontal !important;
+}
+
+toolbarbutton[type="menu-button"],
+toolbarbutton[type="menu-button"]:hover,
+toolbarbutton[type="menu-button"]:hover:active,
+toolbarbutton[type="menu-button"][open="true"],
+toolbarbutton[type="menu-button"][disabled="true"],
+toolbarbutton[type="menu-button"][disabled="true"]:hover,
+toolbarbutton[type="menu-button"][disabled="true"]:hover:active {
+  border-style: none;
+  padding: 0 !important;
+}
+
+.toolbarbutton-menubutton-button {
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  -moz-box-orient: vertical;
+}
+
+/* .......... dropmarker .......... */
+
+.toolbarbutton-menubutton-dropmarker {
+  -moz-appearance: none !important;
+  -moz-box-align: center;
+  padding: 3px 0;
+  -moz-padding-end: 3px;
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
+  -moz-image-region: auto; /* cut off inheritance */
+}
+
+/*.toolbarbutton-menubutton-dropmarker[disabled="true"] {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn-dis.gif") !important;
+}*/

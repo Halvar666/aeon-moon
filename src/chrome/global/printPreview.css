@@ -1,0 +1,93 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ..... page navigation ..... */
+
+.home-arrow,
+.end-arrow:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://global/skin/arrow/arrow-lft-sharp-end.gif");
+  -moz-margin-end: 3px;
+}
+
+.home-arrow:hover,
+.end-arrow:-moz-locale-dir(rtl):hover {
+  background-color: #82E6F9; /* -moz-menuhover; */
+}
+
+.home-arrow:hover:active,
+.end-arrow:-moz-locale-dir(rtl):hover:active {
+  background-color: #0BC4E5; /* -moz-menuhover; */
+}
+
+.end-arrow,
+.home-arrow:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://global/skin/arrow/arrow-rit-sharp-end.gif");
+  -moz-margin-start: 3px;
+}
+
+.end-arrow:hover,
+.home-arrow:-moz-locale-dir(rtl):hover {
+  background-color: #82E6F9; /* -moz-menuhover; */
+}
+
+.end-arrow:hover:active,
+.home-arrow:-moz-locale-dir(rtl):hover:active {
+  background-color: #0BC4E5; /* -moz-menuhover; */
+}
+
+.previous-arrow,
+.next-arrow:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://global/skin/arrow/arrow-lft-sharp.gif");
+}
+
+.previous-arrow:hover,
+.next-arrow:-moz-locale-dir(rtl):hover {
+  background-color: #82E6F9; /* -moz-menuhover; */
+}
+
+.previous-arrow:hover:active,
+.next-arrow:-moz-locale-dir(rtl):hover:active {
+  background-color: #0BC4E5; /* -moz-menuhover; */
+}
+
+.next-arrow,
+.previous-arrow:-moz-locale-dir(rtl) {
+  list-style-image: url("chrome://global/skin/arrow/arrow-rit-sharp.gif");
+}
+
+.next-arrow:hover,
+.previous-arrow:-moz-locale-dir(rtl):hover {
+  background-color: #82E6F9; /* -moz-menuhover; */
+}
+
+.next-arrow:hover:active,
+.previous-arrow:-moz-locale-dir(rtl):hover:active {
+  background-color: #0BC4E5; /* -moz-menuhover; */
+}
+
+/* ...... scale in/decrement ..... */
+
+.up-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-up-sharp.gif");
+}
+
+.down-arrow {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dn-sharp.gif");
+}
+
+
+/* ..... orientation ..... */
+
+.toolbar-portrait-page {
+  list-style-image: url("chrome://global/skin/Portrait.png");
+}
+
+.toolbar-landscape-page {
+  list-style-image: url("chrome://global/skin/Landscape.png");
+}
+
+.toolbar-portrait-page .toolbarbutton-icon,
+.toolbar-landscape-page .toolbarbutton-icon {
+  -moz-margin-end: 5px;
+}

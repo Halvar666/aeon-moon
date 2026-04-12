@@ -1,0 +1,276 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* Sidebars */
+.sidebar-placesTree {
+  -moz-appearance: none;
+  border: 0;
+  margin: 0;
+  border-top: 1px solid #9F9F9F; /*ThreeDShadow;*/
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell(leaf) ,
+.sidebar-placesTreechildren::-moz-tree-image(leaf) {
+  cursor: pointer;
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell-text(leaf, hover) {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell(separator) {
+  cursor: default;
+}
+
+/* Trees */
+treechildren::-moz-tree-image(title) {
+  list-style-image: url("chrome://global/skin/icons/item.png");
+  padding-right: 2px;
+  margin: 0px 2px;
+  width: 16px;
+  height: 16px;
+}
+
+treechildren::-moz-tree-image(title, hover),
+treechildren::-moz-tree-image(title, selected) {
+  list-style-image: url("chrome://global/skin/icons/item-hover.png");
+}
+
+/* livemark items */
+
+treechildren::-moz-tree-image(title, livemarkItem) {
+  list-style-image: url("chrome://browser/skin/livemark-item.png");
+}
+
+treechildren::-moz-tree-image(title, livemarkItem, hover) {
+  list-style-image: url("chrome://browser/skin/livemark-item-hover.png");
+}
+
+treechildren::-moz-tree-image(title, livemarkItem, selected) {
+  list-style-image: url("chrome://browser/skin/livemark-item-active.png");
+}
+
+treechildren::-moz-tree-image(title, separator) {
+  list-style-image: none;
+  width: 0;
+  height: 0;
+}
+
+/* folders */
+
+treechildren::-moz-tree-image(title, container) {
+  list-style-image: url("chrome://global/skin/icons/folder.png"); /* not !important */
+  margin: 0px 2px;
+}
+
+treechildren::-moz-tree-image(title, container, hover) {
+  list-style-image: url("chrome://global/skin/icons/folder-hover.png"); /* not !important */
+}
+
+treechildren::-moz-tree-image(title, container, open),
+treechildren::-moz-tree-image(title, open) {
+  list-style-image: url("chrome://global/skin/icons/folder-open.png"); /* not !important */
+}
+
+/* livemark containers */
+
+treechildren::-moz-tree-image(title, container, livemark) {
+  list-style-image: url("chrome://browser/skin/livemark-folder.png") !important;
+}
+
+treechildren::-moz-tree-image(title, container, livemark, hover) {
+  list-style-image: url("chrome://browser/skin/livemark-folder-hover.png") !important;
+}
+
+treechildren::-moz-tree-image(title, container, livemark, selected) {
+  list-style-image: url("chrome://browser/skin/livemark-folder-open.png") !important;
+}
+
+/* all bookmarks icon */
+
+treechildren::-moz-tree-image(container, OrganizerQuery_AllBookmarks) {
+  list-style-image: url("chrome://browser/skin/places/allBookmarks.png") !important;
+}
+treechildren::-moz-tree-image(container, OrganizerQuery_AllBookmarks, hover) {
+  list-style-image: url("chrome://browser/skin/places/allBookmarks-hover.png") !important;
+}
+treechildren::-moz-tree-image(container, OrganizerQuery_AllBookmarks, open) {
+  list-style-image: url("chrome://browser/skin/places/allBookmarks-open.png") !important;
+}
+
+/* bookmarks toolbar */
+
+treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksToolbar) {
+  list-style-image: url("chrome://browser/skin/toolbarsIcon.png") !important;
+  -moz-image-region: auto;
+}
+treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksToolbar, hover) {
+  list-style-image: url("chrome://browser/skin/toolbarsIcon-hover.png") !important;
+  -moz-image-region: auto;
+}
+treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksToolbar, open) {
+  list-style-image: url("chrome://browser/skin/toolbarsIcon-open.png") !important;
+  -moz-image-region: auto;
+}
+
+/* bookmarks menu icon */
+
+treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu) {
+  list-style-image: url("chrome://browser/skin/places/bookmarksIcon.png") !important;
+}
+treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu, hover) {
+  list-style-image: url("chrome://browser/skin/places/bookmarksIcon-hover.png") !important;
+}
+treechildren::-moz-tree-image(container, OrganizerQuery_BookmarksMenu, open) {
+  list-style-image: url("chrome://browser/skin/places/bookmarksIcon-open.png") !important;
+}
+
+/* unsorted bookmarks */
+
+treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks) {
+  list-style-image: url("chrome://browser/skin/folderOpen.png") !important;
+}
+treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks, hover) {
+  list-style-image: url("chrome://browser/skin/folderOpen-hover.png") !important;
+}
+treechildren::-moz-tree-image(container, OrganizerQuery_UnfiledBookmarks, selected) {
+  list-style-image: url("chrome://browser/skin/folderOpen-active.png") !important;
+}
+
+/* query */
+
+/* query-nodes should be styled even if they're not expandable */
+treechildren::-moz-tree-image(title, query) {
+  list-style-image: url("chrome://browser/skin/places/query.png");
+}
+
+treechildren::-moz-tree-image(title, query, hover) {
+  list-style-image: url("chrome://browser/skin/places/query-hover.png");
+}
+
+treechildren::-moz-tree-image(title, query, open) {
+  list-style-image: url("chrome://browser/skin/places/query-open.png");
+}
+
+/* tag containers */
+
+treechildren::-moz-tree-image(title, query, tagContainer),
+treechildren::-moz-tree-image(query, OrganizerQuery_Tags) {
+  list-style-image: url("chrome://mozapps/skin/places/tagContainerIcon.png") !important;
+}
+
+treechildren::-moz-tree-image(title, query, tagContainer, hover) {
+  list-style-image: url("chrome://mozapps/skin/places/tagContainerIcon-hover.png") !important;
+}
+
+treechildren::-moz-tree-image(title, query, tagContainer, selected) {
+  list-style-image: url("chrome://mozapps/skin/places/tagContainerIcon-active.png") !important;
+}
+
+/* calendar icon for folders grouping items by date */
+treechildren::-moz-tree-image(title, query, dayContainer) {
+  list-style-image: url("chrome://browser/skin/history.png") !important;
+}
+
+treechildren::-moz-tree-image(title, query, dayContainer, hover) {
+  list-style-image: url("chrome://browser/skin/history-hover.png") !important;
+}
+
+treechildren::-moz-tree-image(title, query, dayContainer, open) {
+  list-style-image: url("chrome://browser/skin/history-open.png") !important;
+}
+
+/* other queries - host containers */
+
+treechildren::-moz-tree-image(title, query, hostContainer) {
+  list-style-image: url("chrome://browser/skin/WebDoc.png") !important;
+}
+
+treechildren::-moz-tree-image(title, query, hostContainer, hover) {
+  list-style-image: url("chrome://browser/skin/WebDoc-hover.png") !important;
+}
+
+treechildren::-moz-tree-image(title, query, hostContainer, open) {
+  list-style-image: url("chrome://browser/skin/WebDoc-open.png") !important;
+}
+
+/* history */
+
+treechildren::-moz-tree-image(title, query, OrganizerQuery_History) {
+  list-style-image: url("chrome://browser/skin/history-large.png") !important;
+  -moz-image-region: rect(0px 32px 32px 0px) !important;
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px;
+}
+
+treechildren::-moz-tree-image(title, query, OrganizerQuery_History, hover) {
+  -moz-image-region: rect(32px 32px 64px 0px) !important;
+}
+
+treechildren::-moz-tree-image(title, query, OrganizerQuery_History, selected) {
+  -moz-image-region: rect(96px 32px 128px 0px) !important;
+}
+
+/* query folders */
+
+/* We want some queries to look like ordinary folders. This must come
+   after the (title, query) selector, or it would get overridden. */
+treechildren::-moz-tree-image(title, query, folder) {
+  list-style-image: url("chrome://global/skin/icons/folder.png") !important;
+  margin: 0px 2px;
+}
+
+treechildren::-moz-tree-image(title, query, folder, hover) {
+  list-style-image: url("chrome://global/skin/icons/folder-hover.png") !important;
+}
+
+treechildren::-moz-tree-image(title, query, folder, open) {
+  list-style-image: url("chrome://global/skin/icons/folder-open.png") !important;
+}
+
+treechildren::-moz-tree-row(session-start) {
+  border-top:1px dotted #9F9F9F; /*ThreeDShadow;*/
+  font-weight: bold;
+}
+
+treechildren::-moz-tree-cell-text(date, session-continue) {
+  color: white; /* -moz-Field; */
+}
+
+/* Browser Sidebars */
+
+/* Default button vert. margins are 1px/2px, and this can cause misalignment */
+#viewButton {
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+
+#viewButton > .button-box > .button-menu-dropmarker {
+  height: auto;
+  width: auto;
+  -moz-margin-end: -3px;
+}
+
+/* tree row colors */
+
+treechildren::-moz-tree-row(hover) {
+  background-color: #FFD5EA; /* -moz-Dialog; nice pink */
+}
+
+treechildren::-moz-tree-row(selected) {
+  background-color: #C3F4FD; /* -moz-Dialog; */
+}
+
+treechildren::-moz-tree-row(selected, focus) {
+  background-color: #82E6F9; /* Highlight; */
+  color: black !important;
+}
+
+/* ::::: twisty :::::  */
+
+#placeContent treechildren::-moz-tree-twisty {
+  width: 0;
+}
