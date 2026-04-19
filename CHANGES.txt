@@ -1,25 +1,18 @@
-Aeon Moon 1.1.0b1
-=================
+Aeon Moon 1.1.2
+================
 
-Public test build for modern Pale Moon.
+Stable release based on the final 1.1.2 beta cycle.
 
 Highlights
 ----------
-- Based on the working Aeon Moon 1.0.4 baseline.
-- Keeps the Pale Moon toolbar icon fixes from 1.0.1.
-- Keeps the address-bar bookmark star fix from 1.0.0.
-- Adds Linux menu icon binding support inspired by Moonola.
-- Preserves the same menu rendering on Windows.
+- Windows 10/11: custom titlebar buttons now work correctly when the text menu bar is hidden or autohides.
+- Final recolored titlebar buttons for minimize, maximize/restore, and close.
+- Toolbar button icon-size switching fixed for History popup, Bookmarks popup, and Downloads.
+- Bookmarks popup now correctly returns to the large icon when switching back from small icons.
+- Keeps the previously verified Aeon Moon 1.1.1b12 base fixes, including Customize Toolbar widget visibility improvements.
 
-Toolbar compatibility fixes included
------------------------------------
-- Status Bar Preferences icon
-- History button icon
-- Bookmarks menu-button icon
-- Download Status icon
-
-Notes
------
-- Customize Toolbar drag and drop works; on Linux the cursor feedback may still show a forbidden symbol even though the drop is accepted.
-- Original theme by Ed Hume.
-- Pale Moon port and adaptation by Halvar.
+Cleanup
+-------
+- Built from the last fully verified beta state.
+- Removed beta numbering and refreshed release metadata.
+- Kept only the titlebar and toolbar-icon changes that were confirmed in testing.

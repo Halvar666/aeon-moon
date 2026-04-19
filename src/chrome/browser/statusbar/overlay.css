@@ -1,3 +1,24 @@
+/* Additional widget visibility for Customize Toolbar (Status-4-Evar) */
+
+#status4evar-status-widget,
+#status4evar-progress-widget {
+  -moz-box-align: center;
+}
+
+[forcevisible="true"] {
+  visibility: visible !important;
+}
+
+#wrapper-status4evar-progress-widget progressmeter,
+#wrapper-status4evar-download-button toolbarbutton {
+  visibility: visible !important;
+}
+
+#wrapper-status4evar-status-widget toolbaritem label {
+  background-color: rgba(0,0,0,0.2);
+  padding: 2px 4px;
+}
+
 /* Pale Moon compatibility additions for Status-4-Evar / Status Bar Preferences */
 
 #status4evar-options-button,
