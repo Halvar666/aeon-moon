@@ -1,2 +1,2 @@
 # aeon-moon
-Unofficial Pale Moon fork of the classic Aeon full theme
+Unofficial Pale Moon port of the classic Aeon full theme, adapted from the original theme by Ed Hume.
