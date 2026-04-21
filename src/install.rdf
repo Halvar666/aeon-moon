@@ -5,7 +5,7 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>aeonmoon@palemoon-theme</em:id>
-    <em:version>1.1.2</em:version>
+    <em:version>1.1.3</em:version>
     <em:type>4</em:type>
 
     <em:targetApplication>
@@ -19,7 +19,7 @@
 
     <em:name>Aeon Moon</em:name>
     <em:description>Port of the classic Aeon theme by Ed Hume for modern Pale Moon.</em:description>
-    <em:creator>Ed Hume</em:creator>
+    <em:creator>Halvar</em:creator>
     <em:contributor>Pale Moon port and adaptation: Halvar</em:contributor>
     <em:contributor>Based on SphereGnome, created by Ken S. Lynch.</em:contributor>
     <em:contributor>BlueSphere SVG Icons and others by Vadim Plessky, http://svgicons.sf.net</em:contributor>
