@@ -1,3 +1,15 @@
+Aeon Moon 1.1.4b1hotfix2
+==========================
+
+Test build based on Aeon Moon 1.1.2.
+
+Autoscroll fix
+--------------
+- Replaced the 3 × 3 autoscroll sprite with a safer single-column 28 × 84 px sprite.
+- Removed the white square cells that could appear when middle-click autoscroll was enabled.
+- Reworked the autoscroll icon to keep a rounder shape and better contrast on dark backgrounds.
+
+
 Aeon Moon 1.1.2
 ================
 
