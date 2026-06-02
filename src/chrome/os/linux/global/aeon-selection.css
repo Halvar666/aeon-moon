@@ -1,0 +1,33 @@
+/* Aeon Moon b31 Linux adaptive pink selection fallback.
+ * Pale Moon on GTK may ignore -moz-system-dark-theme, so use translucent pink over the actual system background.
+ */
+
+listbox listitem[selected="true"],
+listbox:focus > listitem[selected="true"] {
+  background-color: rgba(255, 160, 210, 0.55) !important;
+  color: #000000 !important;
+}
+
+richlistbox > richlistitem[selected="true"],
+richlistbox:focus > richlistitem[selected="true"] {
+  background-color: rgba(255, 160, 210, 0.55) !important;
+  color: #000000 !important;
+}
+
+treechildren::-moz-tree-row(selected),
+treechildren::-moz-tree-row(selected, focus),
+tree[seltype="cell"] > treechildren::-moz-tree-cell(active, selected),
+tree[seltype="cell"] > treechildren::-moz-tree-cell(active, selected, focus),
+tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected),
+tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, focus) {
+  background-color: rgba(255, 160, 210, 0.55) !important;
+}
+
+treechildren::-moz-tree-cell-text(selected),
+treechildren::-moz-tree-cell-text(selected, focus),
+tree[seltype="cell"] > treechildren::-moz-tree-cell-text(active, selected),
+tree[seltype="cell"] > treechildren::-moz-tree-cell-text(active, selected, focus),
+tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected),
+tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, focus) {
+  color: #000000 !important;
+}

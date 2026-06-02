@@ -115,3 +115,40 @@
 .searchbar-engine-menuitem[selected="true"] > .menu-iconic-text {
   font-weight: bold;
 }
+
+
+/* Searchbar history dropmarker cleanup */
+#searchbar .autocomplete-history-dropmarker {
+  -moz-appearance: none !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 1px 0 0 !important;
+  padding: 0 2px !important;
+  min-width: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+#searchbar .autocomplete-history-dropmarker:hover,
+#searchbar .autocomplete-history-dropmarker:hover:active,
+#searchbar .autocomplete-history-dropmarker[open="true"],
+#searchbar .autocomplete-history-dropmarker:active {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+#searchbar .autocomplete-history-dropmarker > .dropmarker-icon {
+  list-style-image: url("chrome://browser/skin/searchbar-dropdown-arrow.png") !important;
+  -moz-image-region: rect(0, 13px, 11px, 0) !important;
+  margin: 0 !important;
+  width: 13px;
+  height: 11px;
+}
+
+#searchbar .autocomplete-history-dropmarker:hover > .dropmarker-icon,
+#searchbar .autocomplete-history-dropmarker[open="true"] > .dropmarker-icon,
+#searchbar .autocomplete-history-dropmarker:active > .dropmarker-icon {
+  -moz-image-region: rect(0, 26px, 11px, 13px) !important;
+}

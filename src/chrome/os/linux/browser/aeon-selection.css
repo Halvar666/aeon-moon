@@ -1,0 +1,27 @@
+/* Aeon Moon b31 Linux adaptive pink selection for browser sidebars and Permission Manager. */
+
+.sidebar-placesTreechildren::-moz-tree-row(selected),
+.sidebar-placesTreechildren::-moz-tree-row(selected, focus),
+#placeContent treechildren::-moz-tree-row(selected),
+#placeContent treechildren::-moz-tree-row(selected, focus),
+treechildren::-moz-tree-row(selected),
+treechildren::-moz-tree-row(selected, focus) {
+  background-color: rgba(255, 160, 210, 0.55) !important;
+}
+
+.sidebar-placesTreechildren::-moz-tree-cell-text(selected),
+.sidebar-placesTreechildren::-moz-tree-cell-text(selected, focus),
+#placeContent treechildren::-moz-tree-cell-text(selected),
+#placeContent treechildren::-moz-tree-cell-text(selected, focus),
+treechildren::-moz-tree-cell-text(selected),
+treechildren::-moz-tree-cell-text(selected, focus) {
+  color: #000000 !important;
+}
+
+#permissions-box #sites-list .site[selected="true"],
+#permissions-box #sites-list .site:hover,
+#sites-list .site[selected="true"],
+#sites-list .site:hover {
+  background-color: rgba(255, 160, 210, 0.55) !important;
+  color: #000000 !important;
+}

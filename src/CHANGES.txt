@@ -1,13 +1,223 @@
+Aeon Moon 1.1.4b31
+===================
+
+Cleanup build
+-------------
+- Based on 1.1.4b30.
+- Removed obsolete duplicate downloads-indicator rules from the earlier b25 test block; kept the final b26 downloads state logic.
+- Removed unused -moz-system-dark-theme media-query selection experiments from the main skin; Linux adaptive pink selection now lives only in the Linux OS-skin override layer.
+- Cleaned comments around the final bookmarks/history menu-button geometry, downloads button mapping, and searchbar history dropmarker cleanup.
+- No intended visual changes compared with 1.1.4b30.
+
+
+Aeon Moon 1.1.4b30
+===================
+
+Linux adaptive pink selection fallback
+--------------------------------------
+- Replaced the ignored -moz-system-dark-theme-only selection test with a Linux-only OS-skin fallback.
+- Uses translucent Aeon pink over the current GTK/system background, keeping a light pink look on light themes and a darker pink look on dark themes.
+- Applies to Add-ons Manager categories/items, Places/sidebar trees, Permission Manager, and global tree/listbox/richlistbox selections.
+
+
+Aeon Moon 1.1.4b29
+===================
+
+Adaptive pink selection test
+----------------------------
+- Based on 1.1.4b26.
+- Restores the classic light Aeon pink selection color (#FFD5EA) by default.
+- Adds a Linux dark-system-theme override using a darker balanced pink (#AD5C83) for Add-ons Manager, Places/sidebar trees, Permission Manager, listbox, richlistbox and tree selections.
+
+
+Aeon Moon 1.1.4b26
+===================
+
+Downloads and searchbar dropmarker follow-up
+--------------------------------------------
+- Maps both the legacy downloads button icon layer and the modern downloads indicator layer to the original Aeon floppy-disk sprites.
+- Keeps large and small downloads icon states synchronized before and after opening the downloads panel.
+- Restores the cleaned searchbar history dropmarker styling so the flat/partial-border button does not return.
+
+
+Aeon Moon 1.1.4b25
+===================
+
+Tabstrip separator cleanup and downloads icon
+---------------------------------------------
+- Removed the earlier experimental bottom tabstrip separator from b23.
+- Kept the corrected top separator between the navigation bar and tab bar.
+- Added the original Aeon floppy-disk downloads artwork and applied it to Pale Moon's modern downloads indicator anchor.
+
+
+Aeon Moon 1.1.4b24
+===================
+
+Tabstrip separator follow-up
+----------------------------
+- Draws the original-style thin separator at the top of the tabstrip, directly between the nav-bar and tab bar.
+- Uses CSS gradients over the system-color texture instead of restoring the old fixed light GIF background.
+
+
+Aeon Moon 1.1.4b23
+===================
+
+CSS tabstrip separator line
+---------------------------
+- Replaced the old tabstrip-bottom.png separator layer on TabsToolbar with a CSS-drawn three-pixel line.
+- Keeps the synthetic Aeon chrome texture and system-color background handling intact.
+- Preserves the original Aeon separator look without relying on the fixed bitmap background layer.
+
+
+Aeon Moon 1.1.4b22
+===================
+
+Bookmarks menu button state/geometry test
+-----------------------------------------
+- Rebased the bookmarks menu button handling on the original Aeon button-state logic.
+- Kept the open-folder state on the real toolbarbutton node instead of forcing anonymous inner button states.
+- Fixed bookmarks/history menu dropmarker geometry so the arrow sits beside the icon.
+- Restored the 32px bookmarks sprite for normal/large toolbar mode while preserving the small-toolbar sprite mapping.
+
+
+Aeon Moon 1.1.4b12
+=====================
+
+Test build based on Aeon Moon 1.1.4b11.
+
+Add-ons Manager category text fix
+---------------------------------
+- Followed the Fox 2 The Moon / in-content approach: category text is now separated from the general page text/background layer.
+- Unselected Add-ons Manager categories now use the system dialog text color, so they remain readable on the synthetic Aeon texture in dark Linux/Windows system themes.
+- Selected and hovered categories keep Aeon's light cyan/pink backgrounds with dark text.
+
+
+Aeon Moon 1.1.4b11
+===================
+
+Test build based on Aeon Moon 1.1.4b10.
+
+Synthetic texture follow-up
+---------------------------
+- Applies the CSS-generated Aeon horizontal stripe texture to the Add-ons Manager page background.
+- Applies the same system-color based texture to browser-bottombox and Customize mode bottom/footer areas.
+- Keeps the dark system theme color-layer from 1.1.4b9 and the toolbar texture from 1.1.4b10.
+
+
+Aeon Moon 1.1.4b10
+===================
+
+Test build based on Aeon Moon 1.1.4b9.
+
+Synthetic toolbar texture
+-------------------------
+- Restores the subtle Aeon horizontal stripe texture on browser toolbars without using the old fixed white background.gif as the primary background.
+- Uses CSS repeating gradients over system colors, so Linux/Windows dark system themes can keep a dark UI while preserving the classic Aeon lined texture.
+- Applies the texture to the menubar, navigation bar, bookmarks toolbar, tabs toolbar, add-on bar, status bar, and generic XUL toolbars.
+
+
+Aeon Moon 1.1.4b9
+===================
+
+System color layer test build.
+
+Dark system theme handling
+--------------------------
+- Added the theme-template OS skin layer for Linux and Windows.
+- Rebased core XUL controls on system colors instead of fixed Aeon light backgrounds.
+- Let windows, dialogs, tab panels, trees, listboxes, textboxes, menus, buttons, checkboxes and radio buttons follow GTK/Windows light/dark colors.
+- Replaced local Page Info and Preferences text-color fixes with system-color based styling.
+- Kept the Permission Manager geometry/icon-size fixes from 1.1.4b2/b3, but adjusted its list colors to follow the system theme.
+- Kept the autoscroll indicator fix from 1.1.4b1hotfix2.
+
+
+Aeon Moon 1.1.4b5
+===================
+
+Follow-up test build for the Linux/system dark theme text-color work.
+
+Dark system theme text fixes
+----------------------------
+- Kept the global system-color text handling introduced in 1.1.4b4.
+- Added explicit dark text color only to Aeon panels that use a light custom background.
+- Fixed Page Info permission/feed list text that became unreadable on the light panel background.
+- Fixed Pale Moon Preferences panes that inherit system dark text colors while using Aeon light backgrounds.
+
+
+Aeon Moon 1.1.4b4
+===================
+
+Linux/system dark theme text fix test build based on 1.1.4b3.
+
+System color fix
+----------------
+- Replaced hard-coded black text in global buttons with system ButtonText.
+- Replaced hard-coded black toolbarbutton text with -moz-DialogText.
+- Let inactive tab labels follow -moz-DialogText, while keeping selected/hovered light Aeon tabs black.
+- Fixed readonly textbox text so Page Info and similar dialogs remain readable on dark system themes.
+- Kept the Permissions Manager geometry fixes from 1.1.4b2/b3.
+
+
+Aeon Moon 1.1.4b3
+==================
+
+Test build based on Aeon Moon 1.1.4b2.
+
+Permissions Manager right pane polish
+-------------------------------------
+- Increased spacing between permission rows in the right pane.
+- Added right-pane padding so controls are not packed tightly together.
+- Normalized spacing for permission menulists and default/action buttons.
+- Kept the left pane geometry and icon-size normalization from 1.1.4b2.
+
+
+Aeon Moon 1.1.4b2
+==================
+
+Test build based on Aeon Moon 1.1.4b1hotfix2.
+
+Permissions Manager polish
+--------------------------
+- Added the current Pale Moon Permissions Manager stylesheet path: chrome/browser/permissions/aboutPermissions.css.
+- Kept chrome/browser/preferences/aboutPermissions.css as a compatibility wrapper.
+- Adjusted the left sites column geometry and row spacing.
+- Normalized site favicon sizing to 16 × 16 px.
+- Normalized permission icon containers to 32 × 32 px.
+
+
 Aeon Moon 1.1.4b1hotfix2
 ==========================
 
-Test build based on Aeon Moon 1.1.2.
+Second hotfix build for 1.1.4b1.
+
+Autoscroll icon contrast tweak
+------------------------------
+- Adjusted the replacement autoscroll icon so the upper part stays light on dark page backgrounds.
+- Removed the background-dependent darkening in the top highlight area.
+- Keeps the rounder shape introduced in the previous hotfix.
+
+
+Aeon Moon 1.1.4b1hotfix
+=========================
+
+Hotfix build for 1.1.4b1.
+
+Autoscroll icon adjustment
+--------------------------
+- Reworked the replacement autoscroll sprite to use rounder, more circular button shapes.
+- Keeps the 28 × 84 px single-column layout introduced in 1.1.4b1, but reduces the vertically stretched look of the icon.
+
+
+Aeon Moon 1.1.4b1
+===================
+
+Test build based on Aeon Moon 1.1.3.
 
 Autoscroll fix
 --------------
 - Replaced the 3 × 3 autoscroll sprite with a safer single-column 28 × 84 px sprite.
 - Removed the white square cells that could appear when middle-click autoscroll was enabled.
-- Reworked the autoscroll icon to keep a rounder shape and better contrast on dark backgrounds.
+- Updated the autoscroller CSS to use explicit 28 × 28 px dimensions, no-repeat rendering, and center/top-center/bottom positioning.
 
 
 Aeon Moon 1.1.2

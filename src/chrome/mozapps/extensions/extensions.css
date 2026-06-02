@@ -4,6 +4,7 @@
 
 @import url("chrome://global/skin/inContentUI.css");
 
+@import url("chrome://os/skin/mozapps/extensions/aeon-selection.css");
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 
@@ -1183,4 +1184,81 @@ button.button-link:not([disabled="true"]):active:hover {
 
 .header-button > .toolbarbutton-text {
   display: none;
+}
+
+/* ::::: Aeon Moon b11 synthetic Add-ons Manager texture :::::
+ * Replaces the visual role of background.gif on the Add-ons Manager page
+ * without forcing a light background under dark GTK/Windows system themes.
+ */
+#addons-page {
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
+  background-image: repeating-linear-gradient(to bottom,
+                    rgba(255,255,255,.10) 0px,
+                    rgba(255,255,255,.10) 1px,
+                    rgba(0,0,0,.055) 1px,
+                    rgba(0,0,0,.055) 2px,
+                    transparent 2px,
+                    transparent 4px);
+  background-repeat: repeat;
+}
+
+
+/* ::::: Aeon Moon b12 Add-ons Manager category color layer :::::
+ * Fox 2 The Moon keeps category colors separate from the page background
+ * layer through in-content category text/background colors.  Aeon keeps its
+ * classic light selected/hover category backgrounds, so only the inactive
+ * category text should follow the system dialog color.
+ */
+#addons-page {
+  --aeon-addon-category-text: -moz-DialogText;
+  --aeon-addon-category-active-text: #252F3B;
+}
+
+#categories > .category {
+  color: var(--aeon-addon-category-text);
+}
+
+#categories > .category[selected],
+#categories > .category:hover {
+  color: var(--aeon-addon-category-active-text);
+}
+
+
+/* Aeon Moon b31 selection layer
+ * Main skin keeps the classic Aeon light pink.  Linux-specific adaptive
+ * selection color is applied from chrome://os/skin/.../aeon-selection.css.
+ */
+#addons-page {
+  --aeon-selection-pink: #FFD5EA;
+  --aeon-selection-text: #000000;
+}
+
+#categories > .category[selected],
+#categories > .category[selected][current] {
+  background-color: var(--aeon-selection-pink) !important;
+  color: var(--aeon-selection-text) !important;
+}
+
+.addon[selected],
+.addon[active="false"][selected],
+.addon-view[selected],
+.addon-view[active="false"][selected] {
+  background-color: var(--aeon-selection-pink) !important;
+  background-image: none !important;
+  color: var(--aeon-selection-text) !important;
+}
+
+.addon[selected] .name-container,
+.addon[selected] .description,
+.addon[selected] .creator,
+.addon[selected] .text-link,
+.addon[active="false"][selected] .name-container,
+.addon-view[selected] .name-container,
+.addon-view[selected] .description,
+.addon-view[selected] .creator,
+.addon-view[selected] .text-link,
+.addon-view[active="false"][selected],
+.addon-view[active="false"][selected] .name-container {
+  color: var(--aeon-selection-text) !important;
 }

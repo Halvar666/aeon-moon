@@ -1,0 +1,30 @@
+/* Aeon Moon b31 Linux adaptive pink selection for Add-ons Manager. */
+
+#addons-page #categories > .category[selected],
+#addons-page #categories > .category[selected][current] {
+  background-color: rgba(255, 160, 210, 0.55) !important;
+  color: #000000 !important;
+}
+
+#addons-page .addon[selected],
+#addons-page .addon[active="false"][selected],
+#addons-page .addon-view[selected],
+#addons-page .addon-view[active="false"][selected] {
+  background-color: rgba(255, 160, 210, 0.55) !important;
+  background-image: none !important;
+  color: #000000 !important;
+}
+
+#addons-page .addon[selected] .name-container,
+#addons-page .addon[selected] .description,
+#addons-page .addon[selected] .creator,
+#addons-page .addon[selected] .text-link,
+#addons-page .addon[active="false"][selected] .name-container,
+#addons-page .addon-view[selected] .name-container,
+#addons-page .addon-view[selected] .description,
+#addons-page .addon-view[selected] .creator,
+#addons-page .addon-view[selected] .text-link,
+#addons-page .addon-view[active="false"][selected],
+#addons-page .addon-view[active="false"][selected] .name-container {
+  color: #000000 !important;
+}

@@ -4,6 +4,7 @@
 
 @import url("chrome://global/skin/");
 @import url("chrome://browser/skin/extensionButtons.css"); /* Toolbar-related extensions */
+@import url("chrome://browser/skin/padlock/padlock.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");
@@ -2734,7 +2735,7 @@ toolbar[iconsize="small"] #navigator-throbber:not([busy="true"]):hover:active {
   -moz-border-left-colors: #000000 #E2E2E2 #D6D6D6;
   padding-top: 0;
   padding-bottom: 0;
-  color: black; /* -moz-DialogText; */
+  color: -moz-DialogText;
   min-width: 14ex;
 }
 
@@ -2744,9 +2745,11 @@ toolbar[iconsize="small"] #navigator-throbber:not([busy="true"]):hover:active {
 
 .tabbrowser-tab:not([selected="true"]):hover {
   background-color: #A7F2FF;
+  color: black;
 }
 
 .tabbrowser-tab[selected="true"] {
+  color: black;
   background-image: url('chrome://global/skin/tabs.png');
   margin-bottom: -3px;
   border: 3px solid;
@@ -6420,35 +6423,6 @@ toolbar[iconsize="small"] .toolbarbutton-menubutton-button {
 
 /* Toolbar compatibility additions */
 
-/* bookmarks menu button (with dropmarker) */
-#bookmarks-menu-button[cui-areatype="toolbar"],
-#bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
-#wrapper-bookmarks-menu-button {
-  list-style-image: url("chrome://browser/skin/bookmarks-large.png") !important;
-  -moz-image-region: rect(0 32px 32px 0) !important;
-}
-
-#bookmarks-menu-button[cui-areatype="toolbar"]:not([disabled="true"]):hover,
-#bookmarks-menu-button[cui-areatype="toolbar"]:not([disabled="true"]):hover > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
-#wrapper-bookmarks-menu-button:hover {
-  -moz-image-region: rect(32px 32px 64px 0) !important;
-}
-
-#bookmarks-menu-button[cui-areatype="toolbar"]:not([disabled="true"]):hover:active,
-#bookmarks-menu-button[cui-areatype="toolbar"][open="true"],
-#bookmarks-menu-button[cui-areatype="toolbar"]:not([disabled="true"]):hover:active > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
-#wrapper-bookmarks-menu-button:hover:active {
-  -moz-image-region: rect(96px 32px 128px 0) !important;
-}
-
-/* small icons */
-toolbar[iconsize="small"] #bookmarks-menu-button,
-toolbar[iconsize="small"] #bookmarks-menu-button > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
-  list-style-image: url("chrome://browser/skin/bookmarks-small.png") !important;
-  -moz-image-region: rect(0 24px 22px 0) !important;
-}
-
-
 /* Windows titlebar buttons for hidden menubar/autohide state */
 @media not all and (-moz-windows-classic) {
   @media (-moz-windows-compositor) {
@@ -6582,18 +6556,6 @@ toolbar[iconsize="small"] #wrapper-history-menu-button:hover:active {
   -moz-image-region: rect(66px 24px 88px 0) !important;
 }
 
-/* Bookmarks popup button: keep wrapper consistent in small-icons mode */
-toolbar[iconsize="small"] #wrapper-bookmarks-menu-button {
-  list-style-image: url("chrome://browser/skin/bookmarks-small.png") !important;
-  -moz-image-region: rect(0 24px 22px 0) !important;
-}
-toolbar[iconsize="small"] #wrapper-bookmarks-menu-button:hover {
-  -moz-image-region: rect(22px 24px 44px 0) !important;
-}
-toolbar[iconsize="small"] #wrapper-bookmarks-menu-button:hover:active {
-  -moz-image-region: rect(66px 24px 88px 0) !important;
-}
-
 /* Downloads button: small-icons mapping and wrapper support */
 #wrapper-downloads-button {
   list-style-image: url("chrome://browser/skin/downloads-32.png") !important;
@@ -6624,18 +6586,291 @@ toolbar[iconsize="small"] #wrapper-downloads-button:hover:active {
 }
 
 
-/* Bookmarks popup icon dimensions for large and small toolbar modes */
-#bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
-  width: 32px !important;
-  height: 32px !important;
+/* === Aeon Moon 1.1.4b4: system dark theme text safety ================
+ * Pale Moon's default theme relies on system text colors for chrome controls.
+ * Aeon historically hard-coded some labels to black.  Keep selected/hovered
+ * light Aeon tab states black, but let inactive chrome text follow the active
+ * GTK/Windows dialog text color so Linux dark system themes remain readable.
+ */
+#TabsToolbar:not(:-moz-lwtheme) .tabbrowser-tab:not([selected="true"]):not(:hover) {
+  color: -moz-DialogText;
 }
 
-#bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
-  width: auto !important;
-  height: auto !important;
+
+/* ::::: Aeon Moon b10 browser chrome texture :::::
+ * Keep b9's system-color layer, but restore the classic fine Aeon horizontal
+ * texture on the browser's chrome bars with CSS instead of the fixed white GIF.
+ */
+#main-window:not(:-moz-lwtheme) #toolbar-menubar,
+#main-window:not(:-moz-lwtheme) #nav-bar,
+#main-window:not(:-moz-lwtheme) #PersonalToolbar,
+#main-window:not(:-moz-lwtheme) toolbar[customindex],
+#main-window:not(:-moz-lwtheme) #addon-bar,
+#main-window:not(:-moz-lwtheme) #status-bar {
+  background-color: -moz-Dialog !important;
+  background-image: repeating-linear-gradient(to bottom,
+                    rgba(255,255,255,.10) 0px,
+                    rgba(255,255,255,.10) 1px,
+                    rgba(0,0,0,.055) 1px,
+                    rgba(0,0,0,.055) 2px,
+                    transparent 2px,
+                    transparent 4px) !important;
+  background-repeat: repeat !important;
 }
 
-toolbar[iconsize="small"] #bookmarks-menu-button[cui-areatype="toolbar"] > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
-  width: 24px !important;
-  height: 24px !important;
+#main-window:not(:-moz-lwtheme) #navigator-toolbox {
+  background-color: -moz-Dialog;
+}
+
+/* ::::: Aeon Moon b11 synthetic bottom/customize texture :::::
+ * Keep the classic Aeon lined background on browser-bottombox and
+ * Customize mode bottom areas while retaining system light/dark colors.
+ */
+#browser-bottombox:not(:-moz-lwtheme),
+#main-window:-moz-any([customize-entering],[customize-entered]) #browser-bottombox,
+#customization-footer,
+#customization-container {
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
+  background-image: repeating-linear-gradient(to bottom,
+                    rgba(255,255,255,.10) 0px,
+                    rgba(255,255,255,.10) 1px,
+                    rgba(0,0,0,.055) 1px,
+                    rgba(0,0,0,.055) 2px,
+                    transparent 2px,
+                    transparent 4px);
+  background-repeat: repeat;
+}
+
+#main-window[customize-entered] #browser-bottombox {
+  background-clip: padding-box;
+}
+
+
+/* Bookmarks/History menu button geometry
+ * Keep the original Aeon button-state logic on the real toolbarbutton node.
+ * Only fix the two Pale Moon port problems: dropmarkers must sit beside the
+ * icon, and the bookmarks menu button must use the 32px sprite in normal/large
+ * toolbar mode while preserving the original open-folder state.
+ */
+#bookmarks-menu-button,
+#history-menu-button {
+  -moz-box-orient: horizontal !important;
+  -moz-box-align: center !important;
+}
+
+#bookmarks-menu-button > .toolbarbutton-menu-dropmarker,
+#bookmarks-menu-button > .toolbarbutton-menubutton-dropmarker,
+#history-menu-button > .toolbarbutton-menu-dropmarker,
+#history-menu-button > .toolbarbutton-menubutton-dropmarker {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  -moz-margin-start: 0 !important;
+  -moz-margin-end: 1px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  -moz-box-align: center !important;
+  -moz-box-pack: center !important;
+}
+
+/* Normal/large toolbar: use the original Aeon large bookmarks sprite. */
+#navigator-toolbox toolbar:not([iconsize="small"]) #bookmarks-menu-button:not(.bookmark-item),
+#navigator-toolbox toolbar:not([iconsize="small"]) #bookmarks-menu-button:not(.bookmark-item) > .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/bookmarks-large.png") !important;
+  -moz-image-region: rect(0 32px 32px 0) !important;
+}
+
+#navigator-toolbox toolbar:not([iconsize="small"]) #bookmarks-menu-button:not(.bookmark-item):not([disabled="true"]):not([open="true"]):hover,
+#navigator-toolbox toolbar:not([iconsize="small"]) #bookmarks-menu-button:not(.bookmark-item):not([disabled="true"]):not([open="true"]):hover > .toolbarbutton-icon {
+  -moz-image-region: rect(32px 32px 64px 0) !important;
+}
+
+#navigator-toolbox toolbar:not([iconsize="small"]) #bookmarks-menu-button:not(.bookmark-item)[disabled="true"],
+#navigator-toolbox toolbar:not([iconsize="small"]) #bookmarks-menu-button:not(.bookmark-item)[disabled="true"] > .toolbarbutton-icon {
+  -moz-image-region: rect(64px 32px 96px 0) !important;
+}
+
+#navigator-toolbox toolbar:not([iconsize="small"]) #bookmarks-menu-button:not(.bookmark-item)[open="true"],
+#navigator-toolbox toolbar:not([iconsize="small"]) #bookmarks-menu-button:not(.bookmark-item):not([disabled="true"]):hover:active,
+#navigator-toolbox toolbar:not([iconsize="small"]) #bookmarks-menu-button:not(.bookmark-item)[open="true"] > .toolbarbutton-icon,
+#navigator-toolbox toolbar:not([iconsize="small"]) #bookmarks-menu-button:not(.bookmark-item):not([disabled="true"]):hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(96px 32px 128px 0) !important;
+}
+
+/* Small toolbar: preserve original Aeon small sprite/state mapping. */
+toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item),
+toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item) > .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/bookmarks-small.png") !important;
+  -moz-image-region: rect(0 24px 22px 0) !important;
+}
+
+toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item):not([disabled="true"]):not([open="true"]):hover,
+toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item):not([disabled="true"]):not([open="true"]):hover > .toolbarbutton-icon {
+  -moz-image-region: rect(22px 24px 44px 0) !important;
+}
+
+toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item)[disabled="true"],
+toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item)[disabled="true"] > .toolbarbutton-icon {
+  -moz-image-region: rect(44px 24px 66px 0) !important;
+}
+
+toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item)[open="true"],
+toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item):not([disabled="true"]):hover:active,
+toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item)[open="true"] > .toolbarbutton-icon,
+toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item):not([disabled="true"]):hover:active > .toolbarbutton-icon {
+  -moz-image-region: rect(66px 24px 88px 0) !important;
+}
+
+
+/* Aeon original-style separator between navigation toolbar and tab bar.
+ * The old Aeon look had a thin line at the top of the tabstrip, directly under
+ * the nav-bar. Draw it via CSS so the system-color toolbar texture remains intact. */
+#main-window:not(:-moz-lwtheme) #TabsToolbar {
+  background-color: -moz-Dialog !important;
+  background-image:
+    linear-gradient(to bottom,
+      #8A8A8A 0px,
+      #8A8A8A 1px,
+      #E6E6E6 1px,
+      #E6E6E6 2px,
+      transparent 2px,
+      transparent 100%),
+    repeating-linear-gradient(to bottom,
+      rgba(255,255,255,.10) 0px,
+      rgba(255,255,255,.10) 1px,
+      rgba(0,0,0,.055) 1px,
+      rgba(0,0,0,.055) 2px,
+      transparent 2px,
+      transparent 4px) !important;
+  background-repeat: no-repeat, repeat !important;
+  background-position: left top, left top !important;
+  background-size: 100% 3px, auto auto !important;
+}
+
+
+/* Downloads button state logic
+ * Pale Moon's modern downloads button can initially paint the legacy
+ * .toolbarbutton-icon and only later repaint #downloads-indicator-icon.
+ * Map both layers to the same original Aeon floppy-disk sprites so the icon
+ * is correct before and after opening the downloads panel.
+ */
+#downloads-button,
+#downloads-button > .toolbarbutton-icon,
+#downloads-button[cui-areatype="toolbar"],
+#wrapper-downloads-button {
+  list-style-image: url("chrome://browser/skin/downloads-large.png") !important;
+  -moz-image-region: rect(0 32px 32px 0) !important;
+}
+
+#downloads-button:hover,
+#downloads-button:hover > .toolbarbutton-icon,
+#downloads-button[cui-areatype="toolbar"]:hover,
+#wrapper-downloads-button:hover {
+  -moz-image-region: rect(32px 32px 64px 0) !important;
+}
+
+#downloads-button:hover:active,
+#downloads-button:hover:active > .toolbarbutton-icon,
+#downloads-button[open="true"],
+#downloads-button[open="true"] > .toolbarbutton-icon,
+#downloads-button[checked="true"],
+#downloads-button[checked="true"] > .toolbarbutton-icon,
+#downloads-button[cui-areatype="toolbar"]:hover:active,
+#wrapper-downloads-button:hover:active {
+  -moz-image-region: rect(96px 32px 128px 0) !important;
+}
+
+#downloads-button[disabled="true"],
+#downloads-button[disabled="true"] > .toolbarbutton-icon {
+  -moz-image-region: rect(64px 32px 96px 0) !important;
+}
+
+#downloads-button > #downloads-indicator-anchor {
+  min-width: 32px !important;
+  min-height: 32px !important;
+  -moz-box-align: center !important;
+  -moz-box-pack: center !important;
+}
+
+#downloads-indicator-icon {
+  background: -moz-image-rect(url("chrome://browser/skin/downloads-large.png"),
+                              0, 32, 32, 0) center no-repeat !important;
+  min-width: 32px !important;
+  min-height: 32px !important;
+}
+
+#downloads-button:hover > #downloads-indicator-anchor > #downloads-indicator-icon {
+  background: -moz-image-rect(url("chrome://browser/skin/downloads-large.png"),
+                              32, 32, 64, 0) center no-repeat !important;
+}
+
+#downloads-button:hover:active > #downloads-indicator-anchor > #downloads-indicator-icon,
+#downloads-button[open="true"] > #downloads-indicator-anchor > #downloads-indicator-icon,
+#downloads-button[checked="true"] > #downloads-indicator-anchor > #downloads-indicator-icon {
+  background: -moz-image-rect(url("chrome://browser/skin/downloads-large.png"),
+                              96, 32, 128, 0) center no-repeat !important;
+}
+
+#downloads-button[disabled="true"] > #downloads-indicator-anchor > #downloads-indicator-icon {
+  background: -moz-image-rect(url("chrome://browser/skin/downloads-large.png"),
+                              64, 32, 96, 0) center no-repeat !important;
+}
+
+/* Small toolbar mode. */
+toolbar[iconsize="small"] #downloads-button,
+toolbar[iconsize="small"] #downloads-button > .toolbarbutton-icon,
+toolbar[iconsize="small"] #downloads-button[cui-areatype="toolbar"],
+toolbar[iconsize="small"] #wrapper-downloads-button {
+  list-style-image: url("chrome://browser/skin/downloads-small.png") !important;
+  -moz-image-region: rect(0 24px 22px 0) !important;
+}
+
+toolbar[iconsize="small"] #downloads-button:hover,
+toolbar[iconsize="small"] #downloads-button:hover > .toolbarbutton-icon,
+toolbar[iconsize="small"] #wrapper-downloads-button:hover {
+  -moz-image-region: rect(22px 24px 44px 0) !important;
+}
+
+toolbar[iconsize="small"] #downloads-button:hover:active,
+toolbar[iconsize="small"] #downloads-button:hover:active > .toolbarbutton-icon,
+toolbar[iconsize="small"] #downloads-button[open="true"],
+toolbar[iconsize="small"] #downloads-button[open="true"] > .toolbarbutton-icon,
+toolbar[iconsize="small"] #downloads-button[checked="true"],
+toolbar[iconsize="small"] #downloads-button[checked="true"] > .toolbarbutton-icon,
+toolbar[iconsize="small"] #wrapper-downloads-button:hover:active {
+  -moz-image-region: rect(66px 24px 88px 0) !important;
+}
+
+toolbar[iconsize="small"] #downloads-button[disabled="true"],
+toolbar[iconsize="small"] #downloads-button[disabled="true"] > .toolbarbutton-icon {
+  -moz-image-region: rect(44px 24px 66px 0) !important;
+}
+
+toolbar[iconsize="small"] #downloads-button > #downloads-indicator-anchor {
+  min-width: 24px !important;
+  min-height: 22px !important;
+}
+
+toolbar[iconsize="small"] #downloads-indicator-icon {
+  background: -moz-image-rect(url("chrome://browser/skin/downloads-small.png"),
+                              0, 24, 22, 0) center no-repeat !important;
+  min-width: 24px !important;
+  min-height: 22px !important;
+}
+
+toolbar[iconsize="small"] #downloads-button:hover > #downloads-indicator-anchor > #downloads-indicator-icon {
+  background: -moz-image-rect(url("chrome://browser/skin/downloads-small.png"),
+                              22, 24, 44, 0) center no-repeat !important;
+}
+
+toolbar[iconsize="small"] #downloads-button:hover:active > #downloads-indicator-anchor > #downloads-indicator-icon,
+toolbar[iconsize="small"] #downloads-button[open="true"] > #downloads-indicator-anchor > #downloads-indicator-icon,
+toolbar[iconsize="small"] #downloads-button[checked="true"] > #downloads-indicator-anchor > #downloads-indicator-icon {
+  background: -moz-image-rect(url("chrome://browser/skin/downloads-small.png"),
+                              66, 24, 88, 0) center no-repeat !important;
+}
+
+toolbar[iconsize="small"] #downloads-button[disabled="true"] > #downloads-indicator-anchor > #downloads-indicator-icon {
+  background: -moz-image-rect(url("chrome://browser/skin/downloads-small.png"),
+                              44, 24, 66, 0) center no-repeat !important;
 }
