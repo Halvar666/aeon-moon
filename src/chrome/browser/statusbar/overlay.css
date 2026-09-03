@@ -54,3 +54,57 @@ toolbar[iconsize="small"] #wrapper-status4evar-download-button {
   background-position: center center !important;
   background-repeat: no-repeat !important;
 }
+
+/* Aeon Moon b39: Status-4-Evar Preferences tab icons.
+ * These rules are intentionally scoped only to the Status-4-Evar prefwindow
+ * and its top pane selector, so the new icons cannot leak into other windows.
+ */
+
+#status4evar-prefs radiogroup.paneSelector > radio[label="Status"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="paneStatus"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="statusPane"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="status"] {
+  list-style-image: url("chrome://browser/skin/statusbar/preferences/status-32.png") !important;
+}
+
+#status4evar-prefs radiogroup.paneSelector > radio[label="Progress"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="paneProgress"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="progressPane"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="progress"] {
+  list-style-image: url("chrome://browser/skin/statusbar/preferences/progress-32.png") !important;
+}
+
+#status4evar-prefs radiogroup.paneSelector > radio[label="Download"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="paneDownload"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="downloadPane"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="download"] {
+  list-style-image: url("chrome://browser/skin/statusbar/preferences/download-32.png") !important;
+}
+
+#status4evar-prefs radiogroup.paneSelector > radio[label="Status Bar"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="paneStatusBar"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="statusbarPane"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="statusBarPane"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="statusbar"] {
+  list-style-image: url("chrome://browser/skin/statusbar/preferences/statusbar-32.png") !important;
+}
+
+#status4evar-prefs radiogroup.paneSelector > radio[label="Advanced"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="paneAdvanced"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="advancedPane"],
+#status4evar-prefs radiogroup.paneSelector > radio[pane="advanced"] {
+  list-style-image: url("chrome://browser/skin/statusbar/preferences/advanced-32.png") !important;
+}
+
+/* Keep the generated tab icons in the preferences toolbar compact and centered. */
+#status4evar-prefs radiogroup.paneSelector > radio > .radio-icon {
+  width: 32px !important;
+  height: 32px !important;
+  margin-bottom: 2px !important;
+}
+
+#status4evar-prefs radiogroup.paneSelector > radio {
+  -moz-box-orient: vertical;
+  -moz-box-align: center;
+}
+

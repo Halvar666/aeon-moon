@@ -2,44 +2,51 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+/* ===== config.css ==============================================
+   == Styles for about:config
+   ======================================================================= */
 
 @import url("chrome://global/skin/");
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
+/* ::::: warning screen ::::: */
 
 #warningScreen
 {
-  background-color: #E0DFE3; /*-moz-Dialog;*/
+  background-color: -moz-dialog;
 }
 
 #warningBox
 {
-  background-color: white; /*-moz-Field;*/
-  color: black; /*-moz-FieldText;*/
-  border: 1px solid #9F9F9F; /*ThreeDShadow;*/
+  background-color: -moz-Field;
+  background-image: url("chrome://global/skin/icons/warning-large.png");
+  background-repeat: no-repeat;
+  background-position: 30px 3em;
+  color: -moz-FieldText;
+  border: 1px solid ThreeDShadow;
   border-radius: 10px;
   padding: 3em;
-  -moz-padding-start: 30px;
-  margin-left: 1em;
-  margin-right: 1em;
+  padding-inline-start: 78px;
+  margin: 0 1em;
 }
 
-#warningInnerBox
+.title, .description
 {
- max-width: 50em;
+  max-width: 50em;
+  padding-inline-start: 3em;
 }
 
 #warningTitle
 {
-  margin: 0 0 .6em 0;
+  margin: 0 0 .6em;
   font-size: 160%;
-  border-bottom: 1px solid #EAEAEA; /*ThreeDLightShadow;*/
+  border-bottom: 1px solid ThreeDLightShadow;
 }
 
 #warningText
 {
   font-size: 110%;
-  margin-left: 0;
+  margin-inline-start: 0;
 }
 
 #warningButton
@@ -52,29 +59,14 @@
   margin-top: 0.6em;
 }
 
-#exclam
-{
-  list-style-image: url("chrome://branding/content/icon64.png");
-  -moz-margin-end: 3em;
-}
+/* ::::: tree rows ::::: */
 
-#configTreeBody::-moz-tree-cell-text(user)
+treechildren::-moz-tree-cell-text(user)
 {
   font-weight: bold;
 }
 
-#configTreeBody::-moz-tree-cell-text(locked)
+treechildren::-moz-tree-cell-text(locked)
 {
   font-style: italic;
-}
-
-#configTree 
-{  
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-#filterRow
-{
-  margin-top: 5px;
 }

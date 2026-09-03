@@ -18,19 +18,19 @@ datepicker, timepicker {
 }
 
 .datetimepicker-input-box {
-  -moz-appearance: none !important; /*textfield;*/
+  -moz-appearance: textfield;
   cursor: text;
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
   border: 2px solid;
-  -moz-border-top-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
-  -moz-border-right-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-bottom-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-left-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
+  -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
   padding: 2px 0 3px 0;
-  -moz-padding-start: 4px;
-  -moz-padding-end: 2px;
-  background-color: white; /*-moz-Field;*/
-  color: black; /*-moz-FieldText;*/
+  padding-inline-start: 4px;
+  padding-inline-end: 2px;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
 }
 
 .datetimepicker-input-subbox {
@@ -51,26 +51,26 @@ html|*.datetimepicker-input {
 
 datepicker[readonly="true"],
 timepicker[readonly="true"] {
-  background-color: #E0DFE3; /*-moz-Dialog;*/
-  color: black; /*-moz-DialogText*/
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
 }
 
 datepicker[disabled="true"],
 timepicker[disabled="true"] {
   cursor: default;
-  background-color: #E0DFE3; /*-moz-Dialog;*/
-  color: #ACA899; /*GrayText;*/
+  background-color: -moz-Dialog;
+  color: GrayText;
 } 
 
 .datepicker-mainbox {
   margin: 2px 4px;
   border: 2px solid;
-  -moz-border-top-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
-  -moz-border-right-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-bottom-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-left-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
-  background-color: #E0DFE3; /*-moz-Dialog;*/
-  color: black; /*-moz-DialogText*/
+  -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
 }
 
 .datepicker-popupgrid > .datepicker-mainbox {
@@ -88,8 +88,8 @@ timepicker[disabled="true"] {
 }
 
 .datepicker-gridlabel[selected="true"] {
-  background-color: #82E6F9; /*Aeon - Highlight;*/
-  color: black /*HighlightText;*/
+  background-color: Highlight;
+  color: HighlightText;
 }
 
 .datepicker-button {

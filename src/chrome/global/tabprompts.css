@@ -10,16 +10,10 @@ tabmodalprompt {
 }
 
 .mainContainer {
-  color: black;
-  background-color: white;
-  background-image: url('chrome://global/skin/background.gif');
-background-clip: padding-box;
-  border-radius: 5px;
-  border: 4px solid;
-  -moz-border-top-colors: #000000 #E2E2E2 #D6D6D6;
-  -moz-border-right-colors: #000000 #E2E2E2 #D6D6D6;
-  -moz-border-bottom-colors: #000000 #E2E2E2 #D6D6D6;
-  -moz-border-left-colors: #000000 #E2E2E2 #D6D6D6;
+  color: -moz-fieldText;
+  background-color: -moz-field;
+  border-radius: 2px;
+  border: 1px solid threeDDarkShadow;
 }
 
 .topContainer {

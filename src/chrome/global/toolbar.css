@@ -210,3 +210,21 @@ toolbarpaletteitem[dragover="left"] {
 toolbarpaletteitem[dragover="right"] {
   border-right-color: #000000;
 }
+
+
+/* ::::: Aeon Moon b10 synthetic system-color toolbar texture :::::
+ * Replaces the visual role of background.gif on toolbars without forcing
+ * a light UI background under dark GTK/Windows system themes.
+ */
+toolbar:not(:-moz-lwtheme),
+menubar:not(:-moz-lwtheme) {
+  background-color: -moz-Dialog;
+  background-image: repeating-linear-gradient(to bottom,
+                    rgba(255,255,255,.10) 0px,
+                    rgba(255,255,255,.10) 1px,
+                    rgba(0,0,0,.055) 1px,
+                    rgba(0,0,0,.055) 2px,
+                    transparent 2px,
+                    transparent 4px);
+  background-repeat: repeat;
+}

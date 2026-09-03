@@ -2,31 +2,28 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import url("chrome://os/skin/global/richlistbox.css");
+
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 richlistbox {
-  -moz-appearance: none; /*listbox;*/
+  -moz-appearance: listbox;
   margin: 2px 4px;
-  background-color: #F1FDFF; /* -moz-Field; */
-  color: black; /* -moz-FieldText; */
+  background-color: -moz-Field;
+  color: -moz-FieldText;
 }
 
 richlistbox[disabled="true"] {
-  color: #ACA899; /*GrayText;*/
-}
-
-richlistitem[selected="true"] {
-  background-color: #C3F4FD; /* -moz-cellhighlight; */ /* light blue */
-  color: black; /* -moz-cellhighlighttext; */
+  color: GrayText;
 }
 
 richlistbox:focus > richlistitem[selected="true"] {
-  background-color: #82E6F9; /* Highlight; */
-  color: black; /* HighlightText; */
+  background-color: Highlight;
+  color: HighlightText;
 }
 
 richlistbox[seltype="multiple"]:focus > richlistitem[current="true"] {
-  outline: 1px dotted #B2B4BF; /*Highlight;*/
+  outline: 1px dotted Highlight;
   outline-offset: -1px;
 }
 
@@ -34,12 +31,12 @@ richlistbox[seltype="multiple"]:focus > richlistitem[current="true"][selected="t
   outline: 1px dotted #F3D982; /* TODO: find a suitable system color */
 }
 
-richlistitem:hover {
-  background-color: #FFD9ED;
-  color: black;
+
+
+/* Aeon Moon b31 default light selection color; Linux adaptive override lives in os/linux. */
+richlistbox > richlistitem[selected="true"],
+richlistbox:focus > richlistitem[selected="true"] {
+  background-color: #FFD5EA;
+  color: #000000;
 }
 
-richlistitem:hover:active {
-  background-color: #0BC4E5;
-  color: white;
-}

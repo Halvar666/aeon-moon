@@ -12,14 +12,18 @@
 /* ::::: textbox ::::: */
 
 textbox {
-  -moz-appearance: none; /* textfield; */
+  -moz-appearance: textfield;
   cursor: text;
   margin: 2px 4px;
-  border: 1px solid #A9A9A9;
+  border: 2px solid;
+  -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
   padding: 2px 2px 3px;
-  -moz-padding-start: 4px;
-  background-color: white; /* -moz-Field; */
-  color: black; /* -moz-FieldText; */
+  padding-inline-start: 4px;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
 }
 
 html|*.textbox-input, 
@@ -31,11 +35,6 @@ html|*.textbox-textarea {
   color: inherit;
   font: inherit;
 }
-textbox[empty="true"],
-html|*.textbox-input:-moz-placeholder,
-html|*.textbox-textarea:-moz-placeholder {
-  color: #ACA899 /*GrayText;*/
-}
 
 .textbox-contextmenu {
   cursor: default;
@@ -44,23 +43,23 @@ html|*.textbox-textarea:-moz-placeholder {
 /* ..... readonly state ..... */
 
 textbox[readonly="true"] {
-  background-color: #E0DFE3; /* -moz-Dialog; */
-  color: black; /* -moz-DialogText; */
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
 }
 
 /* ..... disabled state ..... */
 
 textbox[disabled="true"] {
   cursor: default;
-  background-color: #E0DFE3; /* -moz-Dialog; */
-  color: #ACA899 /*GrayText;*/
+  background-color: -moz-Dialog;
+  color: GrayText;
 }
 
 /* ::::: plain textbox ::::: */
 
 textbox.plain {
   -moz-appearance: none !important;
-/*  background-color: transparent; don't do this */
+  background-color: transparent;
   padding: 0px !important;
   margin: 0px !important;
   border: none !important;
@@ -69,20 +68,12 @@ textbox.plain {
 /* ::::: search textbox ::::: */
 
 .textbox-search-icon {
-  list-style-image: url(chrome://browser/skin/16x3.png);
-  -moz-image-region: rect(0px 272px 16px 256px) !important;
+  list-style-image: url(chrome://global/skin/icons/Search-glass.png);
+  -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
 .textbox-search-icon:-moz-locale-dir(rtl) {
   transform: scaleX(-1);
-}
-
-.textbox-search-icon:hover {
-  -moz-image-region: rect(32px 720px 48px 704px) !important;
-}
-
-.textbox-search-icon:hover:active {
-  -moz-image-region: rect(16px 272px 32px 256px) !important;
 }
 
 .textbox-search-icon[searchbutton]:not([disabled]) {
@@ -90,10 +81,8 @@ textbox.plain {
 }
 
 .textbox-search-clear {
-  list-style-image: url(chrome://browser/skin/cleanup.png);
-  -moz-image-region: rect(0 16px 16px 0);
-  width: 16px;
-  height: 16px;
+  list-style-image: url(chrome://global/skin/icons/Search-close.png);
+  -moz-image-region: rect(0, 16px, 16px, 0);
 }
 
 .textbox-search-clear:not([disabled]) {
@@ -102,12 +91,12 @@ textbox.plain {
 
 .textbox-search-clear:not([disabled]):hover ,
 .textbox-search-icon[searchbutton]:not([disabled]):hover {
-  -moz-image-region: rect(16px 16px 32px 0);
+  -moz-image-region: rect(0, 32px, 16px, 16px);
 }
 
 .textbox-search-clear:not([disabled]):hover:active ,
 .textbox-search-icon[searchbutton]:not([disabled]):hover:active {
-  -moz-image-region: rect(32px 16px 48px 0);
+  -moz-image-region: rect(0, 48px, 16px, 32px);
 }
 
 /* ::::: textboxes inside toolbarpaletteitems ::::: */

@@ -1,10 +1,8 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-
-/* ===== tree.css ===================================================
-  == Styles used by the XUL outline element.
-  ======================================================================= */
+ 
+@import url("chrome://os/skin/global/tree.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
@@ -13,17 +11,13 @@
 tree {
   margin: 0px 4px;
   border: 2px solid;
-  -moz-border-top-colors: #9D9DA1 #716F64; /*ThreeDShadow ThreeDDarkShadow;*/
-  -moz-border-right-colors: white #F1EFE2; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-bottom-colors: white #F1EFE2; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-left-colors: #9D9DA1 #716F64; /*ThreeDShadow ThreeDDarkShadow;*/
-  background-color: white; /* -moz-Field; */
-  color: black; /* -moz-FieldText; */
-  -moz-appearance: none !important; /*listbox;*/
-}
-
-.tree-bodybox {
-  border: 1px solid silver;
+  -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+  -moz-appearance: listbox;
 }
 
 /* ::::: tree focusring ::::: */
@@ -32,7 +26,7 @@ tree {
   border: 1px solid transparent;  
 }
 
-.focusring:focus > .tree-stack > .tree-rows > .tree-bodybox {
+.focusring:-moz-focusring > .tree-stack > .tree-rows > .tree-bodybox {
   border: 1px solid #000000;
 }
 
@@ -41,21 +35,16 @@ tree {
 
 treechildren::-moz-tree-row {
   border: 1px solid transparent;
-  min-height: 20px;
+  min-height: 18px;
   height: 1.3em;
 }
 
-treechildren::-moz-tree-row(hover) {
-  background-color: #FFD5EA; /* -moz-Dialog; */
-}
-
 treechildren::-moz-tree-row(selected) {
-  background-color: #C3F4FD; /* -moz-cellhighlight; */
+  background-color: -moz-cellhighlight;
 }
 
 treechildren::-moz-tree-row(selected, focus) {
-  background-color: #82E6F9; /* Highlight; */
-  color: black !important;
+  background-color: Highlight;
 }
 
 treechildren::-moz-tree-row(current, focus) {
@@ -85,49 +74,49 @@ treechildren::-moz-tree-cell-text {
 }
 
 treechildren::-moz-tree-cell-text(selected) {
-  color: black; /* -moz-cellhighlighttext; */
+  color: -moz-cellhighlighttext;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell {
   border: 1px solid transparent;
-  padding: 0px 2px 0px 2px;
+  padding: 0px 1px 0px 1px;
 }
 
 tree[seltype="text"] > treechildren::-moz-tree-cell-text {
   border: 1px solid transparent;
-  padding: 0px 2px 0px 2px;
+  padding: 0px 1px 1px 1px;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell(active, selected) {
-  background-color: #C3F4FD; /* -moz-cellhighlight; */
+  background-color: -moz-cellhighlight;
 }
 tree[seltype="cell"] > treechildren::-moz-tree-cell-text(active, selected) {
-  color: black; /* -moz-cellhighlighttext; */
+  color: -moz-cellhighlighttext;
 }
 
 tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected) {
-  background-color: #C3F4FD; /* -moz-cellhighlight; */
-  color: black; /* -moz-cellhighlighttext; */
+  background-color: -moz-cellhighlight;
+  color: -moz-cellhighlighttext;
 }
 
 treechildren::-moz-tree-cell-text(selected, focus) {
-  color: black !important; /* HighlightText; */
+  color: HighlightText;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell(active, selected, focus) {
-  background-color: #82E6F9; /* Highlight; */
+  background-color: Highlight;
 }
 
 tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, focus) {
-  background-color: #82E6F9; /* Highlight; */
+  background-color: Highlight;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell-text(active, selected, focus) {
-  color: black !important; /* HighlightText; */
+  color: HighlightText;
 }
 
 tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, focus) {
-  color: black !important; /* HighlightText; */
+  color: HighlightText;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-cell(active, current, focus) {
@@ -151,51 +140,43 @@ tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, curre
 tree[seltype="cell"] > treechildren::-moz-tree-line,
 tree[seltype="text"] > treechildren::-moz-tree-line,
 treechildren::-moz-tree-line {
-  border: 1px dotted black;
-  visibility: visible;
+  border: 1px dotted ThreeDShadow;
 }
 
 tree[seltype="cell"] > treechildren::-moz-tree-line(active, selected, focus),
 treechildren::-moz-tree-line(selected, focus) {
-  border: 1px dotted black; /*HighlightText;*/
-  visibility: visible;
+  border: 1px dotted HighlightText;
 }
 
 /* ::::: tree separator ::::: */
 
 treechildren::-moz-tree-separator {
-  border-top: 1px solid #9D9DA1; /*ThreeDShadow;*/
-  border-bottom: 1px solid #EAEAEA; /*ThreeDLightShadow;*/
+  border-top: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDHighlight;
 }
 
 
 /* ::::: drop feedback ::::: */
 
-tree[seltype="cell"] > treechildren::-moz-tree-cell-text(primary, dropOn),
-tree[seltype="text"] > treechildren::-moz-tree-cell-text(primary, dropOn),
-treechildren::-moz-tree-cell-text(primary, dropOn) {
-  background-color: #C3F4FD; /* Highlight; */
-  color: black !important; /* HighlightText; */
-}
-
 treechildren::-moz-tree-drop-feedback {
-  background-color: #0CD1F4; /* Highlight; */
+  background-color: Highlight;
   width: 50px;
   height: 2px;
-  -moz-margin-start: 5px;
+  margin-inline-start: 5px;
 }
 
 /* ::::: tree progress meter ::::: */
 
 treechildren::-moz-tree-progressmeter {
   margin: 2px 4px;
-  border: 2px solid;
-  -moz-border-top-colors: #9D9DA1 #E0DFE3; /*ThreeDShadow -moz-Dialog;*/
-  -moz-border-right-colors: #E0DFE3 white; /*ThreeDHighlight -moz-Dialog;*/
-  -moz-border-bottom-colors: #E0DFE3 white; /*ThreeDHighlight -moz-Dialog;*/
-  -moz-border-left-colors: #9D9DA1 #E0DFE3; /*ThreeDShadow -moz-Dialog;*/
-  background-color: #C3F4FD; /* -moz-Dialog; */
-  color: black; /* ThreeDShadow; */
+  padding: 1px;
+  border: 1px solid;
+  border-top-color: ThreeDShadow;
+  border-right-color: ThreeDHighlight;
+  border-bottom-color: ThreeDHighlight;
+  border-left-color: ThreeDShadow;
+  background-color: -moz-Dialog;
+  color: ThreeDShadow;
 }
 
 treechildren::-moz-tree-progressmeter(progressUndetermined) {
@@ -210,27 +191,17 @@ treechildren::-moz-tree-cell-text(progressmeter) {
 
 treecol,
 treecolpicker {
-  -moz-appearance: none !important; /*treeheadercell;*/
+  -moz-appearance: treeheadercell;
   -moz-box-align: center;
   -moz-box-pack: center;
   border: 2px solid;
-  -moz-border-top-colors: silver #F1EFE2;
-  -moz-border-right-colors: #9D9DA1 #F1EFE2;
-  -moz-border-bottom-colors: #9D9DA1 #F1EFE2;
-  -moz-border-left-colors: silver #F1EFE2;
-  background-image: url("button.png");
-  color: black; /* -moz-DialogText; */
+  -moz-border-top-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-left-colors: ThreeDHighlight ThreeDLightShadow;
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
   padding: 0px 4px;
-}
-
-treecol:hover,
-treecolpicker:hover {
-  border: 2px solid;
-  -moz-border-top-colors: orange;
-  -moz-border-right-colors: orange;
-  -moz-border-bottom-colors: orange;
-  -moz-border-left-colors: orange;
-  color: black; /* -moz-DialogText; */
 }
 
 .treecol-image {
@@ -255,45 +226,50 @@ treecolpicker:hover:active {
   border-right: 1px solid;
   border-bottom: 1px solid;
   border-left: 2px solid;
-  -moz-border-top-colors: #9D9DA1 #E0DFE3; /*ThreeDShadow -moz-Dialog;*/
-  -moz-border-right-colors: #9D9DA1; /*ThreeDShadow;*/
-  -moz-border-bottom-colors: #9D9DA1; /*ThreeDShadow;*/
-  -moz-border-left-colors: #9D9DA1 #E0DFE3; /*ThreeDShadow -moz-Dialog;*/
-  padding: 1px 4px 0px 5px;
-  background-image: url("buttonDown.png");
+  -moz-border-top-colors: ThreeDShadow -moz-Dialog;
+  -moz-border-right-colors: ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDShadow;
+  -moz-border-left-colors: ThreeDShadow -moz-Dialog;
+  padding-top: 1px;
+  padding-bottom: 0px;
+  padding-inline-start: 5px;
+  padding-inline-end: 4px;
 }
 
 .treecol-image:hover:active {
-  padding: 1px 1px 0px 2px;
+  padding-top: 1px;
+  padding-bottom: 0px;
+  padding-inline-start: 2px;
+  padding-inline-end: 1px;
 }
 
 /* ::::: column drag and drop styles ::::: */
 
 treecol[dragging="true"] {
-  -moz-border-top-colors: /*ThreeDDarkShadow*/ #716F64 transparent !important;
-  -moz-border-right-colors: /*ThreeDDarkShadow*/ #716F64 transparent!important;
-  -moz-border-bottom-colors: /*ThreeDDarkShadow*/ #716F64 transparent !important;
-  -moz-border-left-colors: /*ThreeDDarkShadow*/ #716F64 transparent !important;
-  background-color: #0BC4E5 /* ThreeDShadow */ !important;
-  color: black !important; /* ThreeDHighlight !important; */
+  -moz-border-top-colors: ThreeDDarkShadow transparent !important;
+  -moz-border-right-colors: ThreeDDarkShadow transparent!important;
+  -moz-border-bottom-colors: ThreeDDarkShadow transparent !important;
+  -moz-border-left-colors: ThreeDDarkShadow transparent !important;
+  background-color: ThreeDShadow !important;
+  color: ThreeDHighlight !important;
 }
 
 treecol[insertafter="true"]:-moz-locale-dir(ltr),
 treecol[insertbefore="true"]:-moz-locale-dir(rtl) {
-  -moz-border-right-colors: #716F64 #0BC4E5; /*ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
 }
 
 treecol[insertafter="true"]:-moz-locale-dir(rtl),
 treecol[insertbefore="true"]:-moz-locale-dir(ltr) {
-  -moz-border-left-colors: #716F64 #0BC4E5; /*ThreeDDarkShadow ThreeDShadow;*/
+  -moz-border-left-colors: ThreeDDarkShadow ThreeDShadow;
 }
 
 treechildren::-moz-tree-column(insertbefore) {
-  -moz-border-start: 1px solid #0BC4E5; /*ThreeDShadow;*/
+  border-inline-start: 1px solid ThreeDShadow;
 }
 
 treechildren::-moz-tree-column(insertafter) {
-  -moz-border-end: 1px solid #0BC4E5; /*ThreeDShadow;*/
+  border-inline-end: 1px solid ThreeDShadow;
 }
 
 /* ::::: sort direction indicator :::::  */
@@ -303,11 +279,19 @@ treechildren::-moz-tree-column(insertafter) {
 }
 
 treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="ascending"] {
-  list-style-image: url("chrome://global/skin/tree/sort-asc.gif");
+  list-style-image: url("chrome://global/skin/tree/sort-asc.png");
+}
+
+treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="ascending"]:-moz-system-metric(windows-classic) {
+  list-style-image: url("chrome://global/skin/tree/sort-asc-classic.png");
 }
 
 treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="descending"] {
-  list-style-image: url("chrome://global/skin/tree/sort-dsc.gif");
+  list-style-image: url("chrome://global/skin/tree/sort-dsc.png");
+}
+
+treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="descending"]:-moz-system-metric(windows-classic) {
+  list-style-image: url("chrome://global/skin/tree/sort-dsc-classic.png");
 }
 
 /* ::::: column picker :::::  */
@@ -319,7 +303,7 @@ treecol:not([hideheader="true"]) > .treecol-sortdirection[sortDirection="descend
 /* ::::: twisty :::::  */
 
 treechildren::-moz-tree-twisty {
-  -moz-padding-end: 4px;
+  padding-inline-end: 4px;
   padding-top: 1px;
   width: 9px; /* The image's width is 9 pixels */
   list-style-image: url("chrome://global/skin/tree/twisty-clsd.png");
@@ -358,8 +342,32 @@ treechildren::-moz-tree-cell-text(selected, editing) {
 
 .tree-input {
   -moz-appearance: none;
-  border: 1px solid #B2B4BF; /*Highlight;*/
+  border: 1px solid Highlight;
+  -moz-border-top-colors: Highlight;
+  -moz-border-bottom-colors: Highlight;
+  -moz-border-left-colors: Highlight;
+  -moz-border-right-colors: Highlight;
   margin: 0;
-  -moz-margin-start: -4px;
+  margin-inline-start: -4px;
   padding: 1px;
 }
+
+/* Aeon Moon b31 default light selection color; Linux adaptive override lives in os/linux. */
+treechildren::-moz-tree-row(selected),
+treechildren::-moz-tree-row(selected, focus),
+tree[seltype="cell"] > treechildren::-moz-tree-cell(active, selected),
+tree[seltype="cell"] > treechildren::-moz-tree-cell(active, selected, focus),
+tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected),
+tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, focus) {
+  background-color: #FFD5EA;
+}
+
+treechildren::-moz-tree-cell-text(selected),
+treechildren::-moz-tree-cell-text(selected, focus),
+tree[seltype="cell"] > treechildren::-moz-tree-cell-text(active, selected),
+tree[seltype="cell"] > treechildren::-moz-tree-cell-text(active, selected, focus),
+tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected),
+tree[seltype="text"] > treechildren::-moz-tree-cell-text(active, selected, focus) {
+  color: #000000;
+}
+

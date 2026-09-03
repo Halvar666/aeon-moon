@@ -3232,32 +3232,91 @@ toolbar[mode="text"] > #window-controls > toolbarbutton > .toolbarbutton-text {
 }
 
 
-/* Location bar dropmarker */
-.autocomplete-history-dropmarker,
+/* Location bar history dropmarker
+ * Keep this scoped to #urlbar only. The searchbar history dropmarker is styled
+ * separately in searchbar.css and must not inherit this button geometry.
+ * Based on the Fox 2 The Moon/template split: button background on the
+ * dropmarker, arrow sprite on the anonymous .dropmarker-icon.
+ */
+#urlbar > .urlbar-history-dropmarker,
 #urlbar > .autocomplete-history-dropmarker {
-  -moz-appearance: none;
-  padding: 0 1px;
-  background-color: transparent;
-  height: 16px;
-  width: 18px;
-  margin: 2px;
-  list-style-image: url("chrome://browser/skin/dropmarker.png");
-  -moz-image-region: rect(0 16px 16px 0);
+  -moz-appearance: none !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  margin: 0 1px !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+  width: 16px !important;
+  height: 20px !important;
   -moz-box-align: center;
   -moz-box-pack: center;
-  background-repeat: no-repeat;
 }
 
-.autocomplete-history-dropmarker:hover,
-#urlbar > .autocomplete-history-dropmarker:hover ,
+#urlbar > .urlbar-history-dropmarker:hover,
+#urlbar > .autocomplete-history-dropmarker:hover,
+#urlbar > .urlbar-history-dropmarker[open="true"],
 #urlbar > .autocomplete-history-dropmarker[open="true"] {
-  -moz-image-region: rect(16px 16px 32px 0);
+  background: transparent !important;
 }
 
+#urlbar > .urlbar-history-dropmarker:hover:active,
 #urlbar > .autocomplete-history-dropmarker:hover:active,
-.autocomplete-history-dropmarker[open="true"],
-.autocomplete-history-dropmarker:active {
-  -moz-image-region: rect(48px 16px 64px 0);
+#urlbar > .urlbar-history-dropmarker:active,
+#urlbar > .autocomplete-history-dropmarker:active {
+  background: transparent !important;
+}
+
+#urlbar > .urlbar-history-dropmarker > .dropmarker-icon,
+#urlbar > .autocomplete-history-dropmarker > .dropmarker-icon {
+  list-style-image: url("chrome://browser/skin/dropmarker.png") !important;
+  -moz-image-region: rect(0px, 16px, 16px, 0px) !important;
+  margin: 0 !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+#urlbar > .urlbar-history-dropmarker:hover > .dropmarker-icon,
+#urlbar > .autocomplete-history-dropmarker:hover > .dropmarker-icon,
+#urlbar > .urlbar-history-dropmarker[open="true"] > .dropmarker-icon,
+#urlbar > .autocomplete-history-dropmarker[open="true"] > .dropmarker-icon {
+  -moz-image-region: rect(16px, 16px, 32px, 0px) !important;
+}
+
+#urlbar > .urlbar-history-dropmarker:hover:active > .dropmarker-icon,
+#urlbar > .autocomplete-history-dropmarker:hover:active > .dropmarker-icon,
+#urlbar > .urlbar-history-dropmarker:active > .dropmarker-icon,
+#urlbar > .autocomplete-history-dropmarker:active > .dropmarker-icon {
+  -moz-image-region: rect(32px, 16px, 48px, 0px) !important;
+}
+
+
+
+/* Pale Moon URL bar feed indicator */
+#ub-feed-button,
+#ub-feed-button > .button-box,
+#ub-feed-button:hover:active > .button-box {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent !important;
+}
+
+#ub-feed-button {
+  -moz-appearance: none;
+  min-width: 0;
+  list-style-image: url("chrome://browser/skin/feeds/feed-icons-16.png");
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+#ub-feed-button:hover {
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+#ub-feed-button[open="true"],
+#ub-feed-button:hover:active {
+  -moz-image-region: rect(0px 48px 16px 32px);
 }
 
 /* ::::: About Popup Blocking dialog ::::: */
@@ -6556,36 +6615,6 @@ toolbar[iconsize="small"] #wrapper-history-menu-button:hover:active {
   -moz-image-region: rect(66px 24px 88px 0) !important;
 }
 
-/* Downloads button: small-icons mapping and wrapper support */
-#wrapper-downloads-button {
-  list-style-image: url("chrome://browser/skin/downloads-32.png") !important;
-  -moz-image-region: rect(0 32px 32px 0) !important;
-}
-#wrapper-downloads-button:hover {
-  -moz-image-region: rect(32px 32px 64px 0) !important;
-}
-#wrapper-downloads-button:hover:active {
-  -moz-image-region: rect(64px 32px 96px 0) !important;
-}
-
-toolbar[iconsize="small"] #downloads-button,
-toolbar[iconsize="small"] #downloads-button > .toolbarbutton-icon,
-toolbar[iconsize="small"] #wrapper-downloads-button {
-  list-style-image: url("chrome://browser/skin/downloads-24x66.png") !important;
-  -moz-image-region: rect(0 24px 22px 0) !important;
-}
-toolbar[iconsize="small"] #downloads-button:hover,
-toolbar[iconsize="small"] #downloads-button:hover > .toolbarbutton-icon,
-toolbar[iconsize="small"] #wrapper-downloads-button:hover {
-  -moz-image-region: rect(22px 24px 44px 0) !important;
-}
-toolbar[iconsize="small"] #downloads-button:hover:active,
-toolbar[iconsize="small"] #downloads-button:hover:active > .toolbarbutton-icon,
-toolbar[iconsize="small"] #wrapper-downloads-button:hover:active {
-  -moz-image-region: rect(44px 24px 66px 0) !important;
-}
-
-
 /* === Aeon Moon 1.1.4b4: system dark theme text safety ================
  * Pale Moon's default theme relies on system text colors for chrome controls.
  * Aeon historically hard-coded some labels to black.  Keep selected/hovered
@@ -6748,129 +6777,18 @@ toolbar[iconsize="small"] #bookmarks-menu-button:not(.bookmark-item):not([disabl
 }
 
 
-/* Downloads button state logic
- * Pale Moon's modern downloads button can initially paint the legacy
- * .toolbarbutton-icon and only later repaint #downloads-indicator-icon.
- * Map both layers to the same original Aeon floppy-disk sprites so the icon
- * is correct before and after opening the downloads panel.
+/* Downloads button follows Pale Moon default indicator logic.
+ * Do not override #downloads-indicator-anchor / #downloads-indicator-icon here;
+ * the button must keep the default progress, counter and notification behavior.
+ * Aeon only supplies the base toolbarbutton sprite mapping earlier in this file. */
+
+
+/* Aeon Moon b41: give ordinary main toolbar buttons a little breathing room.
+ * Do not touch menu/dropmarker buttons or the downloads button.
  */
-#downloads-button,
-#downloads-button > .toolbarbutton-icon,
-#downloads-button[cui-areatype="toolbar"],
-#wrapper-downloads-button {
-  list-style-image: url("chrome://browser/skin/downloads-large.png") !important;
-  -moz-image-region: rect(0 32px 32px 0) !important;
+#nav-bar > toolbarbutton.toolbarbutton-1:not([type="menu"]):not([type="menu-button"]):not(#downloads-button),
+#nav-bar > toolbarpaletteitem > toolbarbutton.toolbarbutton-1:not([type="menu"]):not([type="menu-button"]):not(#downloads-button) {
+  margin-left: 2px !important;
+  margin-right: 2px !important;
 }
 
-#downloads-button:hover,
-#downloads-button:hover > .toolbarbutton-icon,
-#downloads-button[cui-areatype="toolbar"]:hover,
-#wrapper-downloads-button:hover {
-  -moz-image-region: rect(32px 32px 64px 0) !important;
-}
-
-#downloads-button:hover:active,
-#downloads-button:hover:active > .toolbarbutton-icon,
-#downloads-button[open="true"],
-#downloads-button[open="true"] > .toolbarbutton-icon,
-#downloads-button[checked="true"],
-#downloads-button[checked="true"] > .toolbarbutton-icon,
-#downloads-button[cui-areatype="toolbar"]:hover:active,
-#wrapper-downloads-button:hover:active {
-  -moz-image-region: rect(96px 32px 128px 0) !important;
-}
-
-#downloads-button[disabled="true"],
-#downloads-button[disabled="true"] > .toolbarbutton-icon {
-  -moz-image-region: rect(64px 32px 96px 0) !important;
-}
-
-#downloads-button > #downloads-indicator-anchor {
-  min-width: 32px !important;
-  min-height: 32px !important;
-  -moz-box-align: center !important;
-  -moz-box-pack: center !important;
-}
-
-#downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/downloads-large.png"),
-                              0, 32, 32, 0) center no-repeat !important;
-  min-width: 32px !important;
-  min-height: 32px !important;
-}
-
-#downloads-button:hover > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/downloads-large.png"),
-                              32, 32, 64, 0) center no-repeat !important;
-}
-
-#downloads-button:hover:active > #downloads-indicator-anchor > #downloads-indicator-icon,
-#downloads-button[open="true"] > #downloads-indicator-anchor > #downloads-indicator-icon,
-#downloads-button[checked="true"] > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/downloads-large.png"),
-                              96, 32, 128, 0) center no-repeat !important;
-}
-
-#downloads-button[disabled="true"] > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/downloads-large.png"),
-                              64, 32, 96, 0) center no-repeat !important;
-}
-
-/* Small toolbar mode. */
-toolbar[iconsize="small"] #downloads-button,
-toolbar[iconsize="small"] #downloads-button > .toolbarbutton-icon,
-toolbar[iconsize="small"] #downloads-button[cui-areatype="toolbar"],
-toolbar[iconsize="small"] #wrapper-downloads-button {
-  list-style-image: url("chrome://browser/skin/downloads-small.png") !important;
-  -moz-image-region: rect(0 24px 22px 0) !important;
-}
-
-toolbar[iconsize="small"] #downloads-button:hover,
-toolbar[iconsize="small"] #downloads-button:hover > .toolbarbutton-icon,
-toolbar[iconsize="small"] #wrapper-downloads-button:hover {
-  -moz-image-region: rect(22px 24px 44px 0) !important;
-}
-
-toolbar[iconsize="small"] #downloads-button:hover:active,
-toolbar[iconsize="small"] #downloads-button:hover:active > .toolbarbutton-icon,
-toolbar[iconsize="small"] #downloads-button[open="true"],
-toolbar[iconsize="small"] #downloads-button[open="true"] > .toolbarbutton-icon,
-toolbar[iconsize="small"] #downloads-button[checked="true"],
-toolbar[iconsize="small"] #downloads-button[checked="true"] > .toolbarbutton-icon,
-toolbar[iconsize="small"] #wrapper-downloads-button:hover:active {
-  -moz-image-region: rect(66px 24px 88px 0) !important;
-}
-
-toolbar[iconsize="small"] #downloads-button[disabled="true"],
-toolbar[iconsize="small"] #downloads-button[disabled="true"] > .toolbarbutton-icon {
-  -moz-image-region: rect(44px 24px 66px 0) !important;
-}
-
-toolbar[iconsize="small"] #downloads-button > #downloads-indicator-anchor {
-  min-width: 24px !important;
-  min-height: 22px !important;
-}
-
-toolbar[iconsize="small"] #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/downloads-small.png"),
-                              0, 24, 22, 0) center no-repeat !important;
-  min-width: 24px !important;
-  min-height: 22px !important;
-}
-
-toolbar[iconsize="small"] #downloads-button:hover > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/downloads-small.png"),
-                              22, 24, 44, 0) center no-repeat !important;
-}
-
-toolbar[iconsize="small"] #downloads-button:hover:active > #downloads-indicator-anchor > #downloads-indicator-icon,
-toolbar[iconsize="small"] #downloads-button[open="true"] > #downloads-indicator-anchor > #downloads-indicator-icon,
-toolbar[iconsize="small"] #downloads-button[checked="true"] > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/downloads-small.png"),
-                              66, 24, 88, 0) center no-repeat !important;
-}
-
-toolbar[iconsize="small"] #downloads-button[disabled="true"] > #downloads-indicator-anchor > #downloads-indicator-icon {
-  background: -moz-image-rect(url("chrome://browser/skin/downloads-small.png"),
-                              44, 24, 66, 0) center no-repeat !important;
-}

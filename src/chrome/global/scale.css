@@ -27,10 +27,10 @@
 .scale-thumb {
   -moz-appearance: scalethumb-horizontal;
   border: 2px solid;
-  -moz-border-top-colors: #EAEAEA white; /*ThreeDLightShadow ThreeDHighlight;*/
-  -moz-border-right-colors: #6B6B6B #9F9F9F; /*ThreeDDarkShadow ThreeDShadow;*/
-  -moz-border-bottom-colors: #6B6B6B #9F9F9F; /*ThreeDDarkShadow ThreeDShadow;*/
-  -moz-border-left-colors: #EAEAEA white; /*ThreeDLightShadow ThreeDHighlight;*/
+  -moz-border-top-colors: ThreeDLightShadow ThreeDHighlight;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-left-colors: ThreeDLightShadow ThreeDHighlight;
   background-color: -moz-Dialog;
   min-width: 30px;
   min-height: 15px;
@@ -43,8 +43,8 @@
 }
 
 .scale-thumb[disabled="true"] {
-  -moz-border-top-colors: white #EAEAEA !important; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-right-colors: #6B6B6B #9F9F9F !important; /*ThreeDDarkShadow ThreeDShadow;*/
-  -moz-border-bottom-colors: #6B6B6B #9F9F9F !important; /*ThreeDDarkShadow ThreeDShadow;*/
-  -moz-border-left-colors: white #EAEAEA !important; /*ThreeDHighlight ThreeDLightShadow;*/
+  -moz-border-top-colors: ThreeDHighlight ThreeDLightShadow !important;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow !important;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow !important;
+  -moz-border-left-colors: ThreeDHighlight ThreeDLightShadow !important;
 }

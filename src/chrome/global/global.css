@@ -8,76 +8,35 @@
 
 /* all localizable skin settings shall live here */
 @import url("chrome://global/locale/intl.css");
-
+@import url("chrome://os/skin/global/global.css");
 @import url("chrome://global/skin/formatting.css");
-
 @import url("chrome://browser/skin/menuIcons.css");
-@import url("chrome://os/skin/global/menuBindings.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-/* test - these set the DOMI and trees to the other font for testing purposes */
-
-/*#winBoxModel > groupbox,
-#bxElement,
-#winInspectorMain,
-tree {
-  font: menu;
-}*/
-
 /* ::::: XBL bindings ::::: */
 
-radio {
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#radio");
-}
-
-menulist > menupopup,
-.menulist-menupopup {
+menulist > menupopup {
   -moz-binding: url("chrome://global/content/bindings/popup.xml#popup-scrollbars");
-}
-
-.menulist-compact {
-  -moz-binding: url("chrome://global/skin/globalBindings.xml#menulist-compact");
-}
-
-progressmeter[mode="undetermined"] {
-  -moz-binding: url("chrome://global/content/bindings/progressmeter.xml#progressmeter-undetermined");
 }
 
 /* ::::: root elements ::::: */
 
-/*popup,
-menupopup,*/
 window,
 page,
 dialog,
 wizard,
 prefwindow {
-  -moz-appearance: window;
-  background-color: -moz-Dialog;
   color: -moz-DialogText;
   font: message-box;
-}
-
-/*#winInspectorMain,*/
-sidebarheader,
-popup,
-menupopup,
-window,
-page,
-dialog,
-wizard,
-prefwindow,
-toolbar {
-  background-image: url(chrome://global/skin/background.gif);
 }
 
 /* deprecated */
 window.dialog {
   padding-top: 8px;
   padding-bottom: 10px;
-  -moz-padding-start: 8px;
-  -moz-padding-end: 10px;
+  padding-inline-start: 8px;
+  padding-inline-end: 10px;
 }
 
 /* ::::: alert icons :::::*/
@@ -86,15 +45,25 @@ window.dialog {
 .alert-icon,
 .error-icon,
 .question-icon {
-  width: 64px;
-  height: 64px;
-  list-style-image: url("chrome://branding/content/icon64.png");
-  margin: 6px 20px 6px 6px !important;
+  width: 32px;
+  height: 32px;
 }
 
+.message-icon {
+  list-style-image: url("chrome://global/skin/icons/information-32.png");
+}
 
+.alert-icon {
+  list-style-image: url("chrome://global/skin/icons/Warning.png");
+}
 
+.error-icon {
+  list-style-image: url("chrome://global/skin/icons/Error.png");
+}
 
+.question-icon {
+  list-style-image: url("chrome://global/skin/icons/Question.png");
+}
 
 /* ::::: iframe ::::: */
 
@@ -104,106 +73,6 @@ iframe {
   height: 100px;
   min-width: 10px;
   min-height: 10px;
-}
-
-/* skin the toolbars and menus */
-
-
-menubarmenu, toolbar, toolbox {
-  -moz-appearance: none !important;
-  background-color: transparent;
-}
-
-/* align pixels on the sides of the window */
-
-toolbox, #content {
-  border: none !important;
-}
-
-#urlbar {
-  border-width: 1px !important;
-}
-
-#urlbar-wrapper {
-  -moz-box-align: center
-}
-/* from bug 997131; placed 2014-06-14 */
-
-/* ::::: skin Forecastfox ::::: */
-
-#ff-box {
-  -moz-appearance: none !important;
-  background-color: transparent;
-  border-top: 1px solid #9D9DA1; /* ThreeDShadow; */
-  border-right: 1px solid #9D9DA1; /* ThreeDShadow; */
-  border-bottom: 1px solid #9D9DA1; /* ThreeDShadow; */
-  border-left: 1px solid white; /*ThreeDHighlight;*/
-}
-
-/* ::::: statusbar ::::: */
-
-statusbar {
-  -moz-appearance: none /*statusbar*/ !important;
-  background-image: url('chrome://global/skin/background.gif') !important;
-  min-height: 22px;
-  background-color: white;
-  color: black; /* MenuText; */
-}
-
-statusbarpanel {
-  -moz-appearance: none /*statusbarpanel*/ !important;
-  -moz-box-align: center;
-  -moz-box-pack: center;
-  border-left: 1px solid white; /*ThreeDHighlight;*/
-  border-top: 1px solid #9D9DA1; /* ThreeDShadow; */
-  border-right: 1px solid #9D9DA1; /* ThreeDShadow; */
-  border-bottom: 1px solid #9D9DA1; /* ThreeDShadow; */
-  padding: 0 4px;
-}
-
-statusbarpanel:not(.statusbar-resizerpanel):-moz-lwtheme {
-  -moz-appearance: none;
-  border-top-style: none;
-  border-bottom-style: none;
-  -moz-border-start-style: none;
-}
-
-.statusbar-resizerpanel {
-  -moz-box-align: end;
-  -moz-box-pack: end;
-  -moz-appearance: resizerpanel;
-  padding: 0;
-  border: 1px solid silver;
-  border-top: 1px solid #9D9DA1; /* ThreeDShadow; */
-}
-
-.statusbarpanel-iconic,
-.statusbarpanel-iconic-text,
-.statusbarpanel-menu-iconic {
-  padding: 0 1px;
-}
-
-/* XXXBlake yeah, shoot me -- these don't belong here.  I'll move them later. */
-
-sidebarheader {
-  min-height: 23px;
-  background-color: transparent !important;
-  -moz-appearance: none !important; /*toolbox;*/
-  border-bottom: 1px solid silver;
-}
-
-sidebarheader > label {
-  -moz-padding-start: 4px;
-  color: black;
-}
-
-.toolbar-focustarget {
-  -moz-user-focus: ignore !important;
-}
-
-toolbar[mode="text"] .toolbarbutton-text {
-  padding: 0 !important;
-  margin: 3px 5px !important;
 }
 
 /* ::::: miscellaneous formatting ::::: */
@@ -221,27 +90,21 @@ toolbar[mode="text"] .toolbarbutton-text {
   text-shadow: 1px 1px 1.5px black;
 }
 
-statusbar:-moz-lwtheme,
-sidebarheader:-moz-lwtheme {
-  -moz-appearance: none;
-  background: none;
-  border-style: none;
-}
-
 .inset {
-  border: 1px solid #9F9F9F; /*ThreeDShadow;*/
-  border-right-color: white; /*ThreeDHighlight;*/
-  border-bottom-color: white; /*ThreeDHighlight;*/
+  border: 1px solid ThreeDShadow;
+  border-right-color: ThreeDHighlight;
+  border-bottom-color: ThreeDHighlight;
   margin: 0 5px 5px;
 }
   
+
 .outset {
-  border: 1px solid #9F9F9F; /*ThreeDShadow;*/
-  border-left-color: white; /*ThreeDHighlight;*/
-  border-top-color: white; /*ThreeDHighlight;*/
+  border: 1px solid ThreeDShadow;
+  border-left-color: ThreeDHighlight;
+  border-top-color: ThreeDHighlight;
 }
 
-/* separators */
+
 separator:not([orient="vertical"]) {
   height: 1.5em;
 }
@@ -251,30 +114,12 @@ separator[orient="vertical"] {
 
 separator.thin:not([orient="vertical"]) {
   height: 0.5em;
-}
+}  
+
 separator.thin[orient="vertical"] {
   width: 0.5em;
 }
-
-separator.groove:not([orient="vertical"]) {
-  border-top: 1px solid  #9F9F9F; /*ThreeDShadow;*/
-  border-bottom: 1px solid white; /*ThreeDHighlight;*/
-  height: 0;
-  margin-top: 0.4em;
-  margin-bottom: 0.4em;
-}
-separator.groove[orient="vertical"] {
-  border-left: 1px solid  #9F9F9F; /*ThreeDShadow;*/
-  border-right: 1px solid white; /*ThreeDHighlight;*/
-  width: 0;
-  margin-left: 0.4em;
-  margin-right: 0.4em;
-}
-
-.small-margin {
-  margin: 1px 2px;
-}
-
+    
 .plain {
   -moz-appearance: none;
   margin: 0 !important;
@@ -285,10 +130,6 @@ separator.groove[orient="vertical"] {
 description,
 label {
   cursor: default;
-  margin-top: 1px;
-  margin-bottom: 2px;
-  -moz-margin-start: 6px;
-  -moz-margin-end: 5px;
 }
 
 description {
@@ -296,12 +137,7 @@ description {
 }
 
 label[disabled="true"] {
-  color: #ACA899; /*GrayText;*/
-}
-
-label[disabled="true"]:-moz-system-metric(windows-classic) {
-  color:  #9F9F9F; /*ThreeDShadow;*/
-  text-shadow: 1px 1px white; /*ThreeDHighlight;*/
+  color: GrayText;
 }
 
 .tooltip-label {
@@ -317,7 +153,7 @@ label[disabled="true"]:-moz-system-metric(windows-classic) {
 }
 
 .indent {
-  -moz-margin-start: 23px;
+  margin-inline-start: 23px;
 }
 
 .box-padded {
@@ -334,41 +170,52 @@ label[disabled="true"]:-moz-system-metric(windows-classic) {
 
 .text-link {
   color: -moz-nativehyperlinktext;
-  text-decoration: underline;
-  border: 1px solid transparent;
   cursor: pointer;
 }
 
 .text-link:hover {
   text-decoration: underline;
 }
-  
-.text-link:-moz-focusring {
-  border: 1px dotted black; /*-moz-DialogText;*/
-  color: red;
-}
 
 /* :::::: autoscroll popup ::::: */
 
 .autoscroller {
-  height: 28px;
   width: 28px;
-  border: none;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  max-width: 28px;
+  max-height: 28px;
+  border: none !important;
   margin: -14px;
   padding: 0;
-  background-image: url("chrome://global/skin/icons/autoscroll.png");
-  background-color: transparent;
-  background-position: right top;
-  -moz-appearance: none;
+  background: transparent url("chrome://global/skin/icons/autoscroll.png") no-repeat center top !important;
+  -moz-appearance: none !important;
 }
 
 .autoscroller[scrolldir="NS"] {
-  background-position: right center;
+  background-position: center center !important;
 }
 
 .autoscroller[scrolldir="EW"] {
-  background-position: right bottom;
+  background-position: center bottom !important;
 }
+
+/* :::::: Close button icons ::::: */
+
+.close-icon {
+  list-style-image: url("chrome://global/skin/icons/close.png");
+  -moz-image-region: rect(0, 16px, 16px, 0);
+}
+
+.close-icon:hover {
+  -moz-image-region: rect(0, 32px, 16px, 16px);
+}
+
+.close-icon:hover:active {
+  -moz-image-region: rect(0, 48px, 16px, 32px);
+}
+
 
 /* ::::: Broken Page Reporter ::::: */
 

@@ -8,11 +8,11 @@
 /* File Field Widget */
 filefield {
   margin: 2px 4px;
-  -moz-appearance: none !important; /*textfield;*/
-  border: 1px solid #A9A9A9; /*ThreeDShadow;*/}
+  -moz-appearance: textfield;
+}
 
 .fileFieldContentBox {
-  background-color: #E0DFE3; /*-moz-Dialog;*/
+  background-color: -moz-Dialog;
 }
 
 .fileFieldIcon[disabled="true"] {
@@ -24,8 +24,8 @@ filefield {
   height: 16px;
   margin-top: 1px;
   margin-bottom: 1px;
-  -moz-margin-start: 1px;
-  -moz-margin-end: 4px;
+  margin-inline-start: 1px;
+  margin-inline-end: 4px;
 }
 
 .fileFieldLabel {

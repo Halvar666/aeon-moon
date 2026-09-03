@@ -6,32 +6,31 @@
   == Styles used by XUL listbox-related elements.
   ======================================================================= */
 
+@import url("chrome://os/skin/global/aeon-selection.css");
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 /* ::::: listbox ::::: */
 
 listbox {
-  -moz-appearance: none !important; /*listbox;*/
+  -moz-appearance: listbox;
   margin: 2px 4px;
   border: 2px solid;
-  -moz-border-top-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
-  -moz-border-right-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-bottom-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-left-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
-  background-color: white; /* -moz-Field; */
-  color: black; /* -moz-FieldText; */ 
-  min-height: 1.3em;
+  -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
 }
 
 listbox[disabled="true"] {
-  color: #ACA899; /*GrayText;*/
+  color: GrayText;
 }
 
 /* ::::: listitem ::::: */
 
 listitem {
   border: 1px solid transparent;
-  min-height: 1.3em;
 }
 
 listbox:focus > listitem[selected="true"][current="true"] {
@@ -39,32 +38,32 @@ listbox:focus > listitem[selected="true"][current="true"] {
 }
 
 listbox:focus > listitem[current="true"] {
-  outline: 1px dotted #82E6F9; /*Aeon - Highlight;*/
+  outline: 1px dotted Highlight;
   outline-offset: -1px;
 }
 
 listitem[selected="true"] {
-  background-color: #C3F4FD; /* -moz-cellhighlight; */
-  color: black; /* -moz-cellhighlighttext; */
+  background-color: -moz-cellhighlight;
+  color: -moz-cellhighlighttext;
 }
 
 listbox:focus > listitem[selected="true"] {
-  background-color: #82E6F9; /*Aeon - Highlight;*/
-  color: black !important; /* HighlightText; */
+  background-color: Highlight;
+  color: HighlightText;
 }
 
 /* ::::: listheader ::::: */
 
 listheader { 
-  -moz-appearance: none !important; /*treeheadercell;*/
+  -moz-appearance: treeheadercell;
   -moz-box-align: center;
   border: 2px solid;
-  -moz-border-top-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-right-colors: #6B6B6B #9F9F9F; /*ThreeDDarkShadow ThreeDShadow;*/
-  -moz-border-bottom-colors: #6B6B6B #9F9F9F; /*ThreeDDarkShadow ThreeDShadow;*/
-  -moz-border-left-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  background-color: #E0DFE3; /*-moz-Dialog;*/
-  color: black; /*-moz-DialogText*/
+  -moz-border-top-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-left-colors: ThreeDHighlight ThreeDLightShadow;
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
   padding: 0 4px;
 }
 
@@ -73,18 +72,18 @@ listheader[sortable="true"]:hover:active {
   border-right: 1px solid;
   border-bottom: 1px solid;
   border-left: 2px solid;
-  -moz-border-top-colors: #9F9F9F #E0DFE3; /*ThreeDShadow -moz-Dialog;*/
-  -moz-border-right-colors: #9F9F9F; /*ThreeDShadow;*/
-  -moz-border-bottom-colors: #9F9F9F; /*ThreeDShadow;*/
-  -moz-border-left-colors: #9F9F9F #E0DFE3; /*ThreeDShadow -moz-Dialog;*/
+  -moz-border-top-colors: ThreeDShadow -moz-Dialog;
+  -moz-border-right-colors: ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDShadow;
+  -moz-border-left-colors: ThreeDShadow -moz-Dialog;
   padding-top: 1px;
   padding-bottom: 0px;
-  -moz-padding-start: 5px;
-  -moz-padding-end: 4px;
+  padding-inline-start: 5px;
+  padding-inline-end: 4px;
 }
 
 .listheader-icon {
-  -moz-margin-end: 2px;
+  margin-inline-end: 2px;
 }
 
 .listheader-label {
@@ -98,7 +97,7 @@ listheader[sortable="true"]:hover:active {
 }
 
 .listheader-sortdirection[sortDirection="ascending"] {
-  list-style-image: url("chrome://global/skin/tree/sort-asc.gif");
+  list-style-image: url("chrome://global/skin/tree/sort-asc.png");
 }
 
 .listheader-sortdirection[sortDirection="ascending"]:-moz-system-metric(windows-classic) {
@@ -106,7 +105,7 @@ listheader[sortable="true"]:hover:active {
 }
 
 .listheader-sortdirection[sortDirection="descending"] {
-  list-style-image: url("chrome://global/skin/tree/sort-dsc.gif");
+  list-style-image: url("chrome://global/skin/tree/sort-dsc.png");
 }
 
 .listheader-sortdirection[sortDirection="descending"]:-moz-system-metric(windows-classic) {
@@ -119,18 +118,17 @@ listheader[sortable="true"]:hover:active {
   margin: 0px !important;
   padding-top: 0px;
   padding-bottom: 1px;
-  -moz-padding-start: 4px;
-  -moz-padding-end: 0px;
+  padding-inline-start: 4px;
+  padding-inline-end: 0px;
   white-space: nowrap;
 }
 
 .listcell-icon {
-  -moz-margin-end: 2px;
-  -moz-margin-start: 2px;
+  margin-inline-end: 2px;
 }
 
 .listcell-label[disabled="true"] {
-  color: #ACA899; /*GrayText;*/
+  color: GrayText;
 }
 
 /* ::::: listcell checkbox ::::: */
@@ -139,21 +137,17 @@ listheader[sortable="true"]:hover:active {
   -moz-appearance: checkbox;
   -moz-box-align: center;
   margin: 0px 2px;
-  border: 1px solid black; /*-moz-DialogText;*/
+  border: 1px solid -moz-DialogText;
   min-width: 13px;
   min-height: 13px;
-  background: white /*-moz-Field*/ no-repeat 50% 50%;
+  background: -moz-Field no-repeat 50% 50%;
 }
 
-.listcell-check[checked="true"] {
-  background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+
+/* Aeon Moon b31 default light selection color; Linux adaptive override lives in os/linux. */
+listitem[selected="true"],
+listbox:focus > listitem[selected="true"] {
+  background-color: #FFD5EA;
+  color: #000000;
 }
 
-.listcell-check[disabled="true"] {
-  border-color: #ACA899; /*GrayText;*/
-  background-image: url("chrome://global/skin/checkbox/cbox-dis.gif");
-}
-
-.listcell-check[disabled="true"][checked="true"] {
-  background-image: url("chrome://global/skin/checkbox/cbox-check-dis.gif");
-}

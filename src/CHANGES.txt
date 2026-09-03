@@ -1,3 +1,66 @@
+Aeon Moon 1.1.4rc1
+===================
+
+Release candidate 1
+-------------------
+- First release candidate for Aeon Moon 1.1.4, based on the verified 1.1.4b42 clean build.
+- Improved compatibility with Linux dark system themes while preserving the classic Aeon appearance.
+- Restored the Aeon-style CSS toolbar, tab bar, Add-ons Manager and bottom-area texture without fixed light backgrounds.
+- Fixed Permissions Manager geometry, icon sizing and row spacing.
+- Fixed middle-click autoscroll indicator rendering.
+- Fixed URL bar padlock, feed indicator and history dropmarker styling.
+- Fixed Bookmarks and History menu-button geometry, icon sizing and Bookmarks open-folder state.
+- Restored Pale Moon/default Downloads indicator behavior while keeping Aeon artwork.
+- Added scoped Aeon-colored icons for Status Bar Preferences.
+- Improved toolbar button spacing and cleaned obsolete experimental CSS.
+
+
+Aeon Moon 1.1.4b42
+===================
+
+Clean build
+-----------
+- Clean rebuild from the verified 1.1.4b41 working build.
+- No intended functional or visual changes compared with 1.1.4b41.
+- Repacked from a clean source tree with build metadata updated to 1.1.4b42.
+
+
+Aeon Moon 1.1.4b41
+- Added subtle spacing for ordinary main toolbar buttons.
+- Menu/dropmarker buttons and the downloads button are excluded to preserve their special layout and default downloads indicator logic.
+
+
+1.1.4b40
+- Downloads toolbar button: removed custom Aeon override blocks that forced legacy icon layers.
+- The button now follows Pale Moon/default downloads indicator logic for progress, counter, attention and notifications.
+- Kept Aeon base sprite mapping only; no custom override of #downloads-indicator-anchor or #downloads-indicator-icon.
+
+Aeon Moon 1.1.4b39
+- Scoped the new Status Bar Preferences tab icons strictly to #status4evar-prefs radiogroup.paneSelector.
+- Prevented the Status/Progress/Download/Status Bar/Advanced icons from leaking into any other windows or generic labeled controls.
+
+
+1.1.4b38
+- Added new Aeon-colored tab icons for Status Bar Preferences (Status, Progress, Download, Status Bar, Advanced).
+Aeon Moon 1.1.4b34
+===================
+
+URL bar history dropmarker follow-up
+------------------------------------
+- Reworked the URL bar history dropmarker using the Fox 2 The Moon/template split between button background and arrow sprite.
+- Kept the rule scoped to the URL bar so it does not affect URL bar icons, bookmarks/star buttons, searchbar geometry, or tab bar layout.
+
+
+Aeon Moon 1.1.4b32
+===================
+
+URL bar feed button and searchbar dropmarker follow-up
+------------------------------------------------------
+- Added Pale Moon URL bar feed indicator styling based on the theme-template / Fox 2 The Moon logic.
+- Added the 16px feed indicator sprite used by #ub-feed-button.
+- Restricted URL bar history dropmarker rules so they no longer override the Search bar history dropmarker cleanup.
+
+
 Aeon Moon 1.1.4b31
 ===================
 

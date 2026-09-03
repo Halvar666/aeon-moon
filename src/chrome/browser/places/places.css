@@ -8,6 +8,7 @@
   border: 0;
   margin: 0;
   border-top: 1px solid #9F9F9F; /*ThreeDShadow;*/
+@import url("chrome://os/skin/browser/aeon-selection.css");
 }
 
 .sidebar-placesTreechildren::-moz-tree-cell(leaf) ,
@@ -273,4 +274,23 @@ treechildren::-moz-tree-row(selected, focus) {
 
 #placeContent treechildren::-moz-tree-twisty {
   width: 0;
+}
+
+
+/* Aeon Moon b29 adaptive pink selection for Places/sidebar trees */
+treechildren::-moz-tree-row(selected),
+treechildren::-moz-tree-row(selected, focus) {
+  background-color: #FFD5EA !important;
+}
+
+treechildren::-moz-tree-cell-text(selected),
+treechildren::-moz-tree-cell-text(selected, focus) {
+  color: #000000 !important;
+}
+
+@media (-moz-system-dark-theme) {
+  treechildren::-moz-tree-row(selected),
+  treechildren::-moz-tree-row(selected, focus) {
+    background-color: #AD5C83 !important;
+  }
 }

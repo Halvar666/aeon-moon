@@ -6,7 +6,7 @@
 
 /* View buttons */
 #viewGroup {
-  -moz-padding-start: 10px;
+  padding-inline-start: 10px;
 }
 
 #viewGroup > radio {
@@ -17,11 +17,6 @@
   padding: 5px 3px 1px 3px;
   margin: 0 1px;
   min-width: 4.5em;
-}
-
-.viewButtonIcon {
-  width: 32px;
-  height: 32px;
 }
 
 #viewGroup > radio:hover {
@@ -35,11 +30,10 @@
 }
 
 #topBar {
-  border-bottom: 2px groove #E1E1E1; /*ThreeDFace;*/
-  margin: 0;
-  -moz-padding-start: 10px;
-  background-color: white; /*-moz-Field;*/
-  color: black; /*-moz-FieldText;*/
+  border-bottom: 2px groove ThreeDFace;
+  padding-inline-start: 10px;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
 }
 
 #generalTab {
@@ -104,7 +98,7 @@ textbox {
 }
 
 textbox.header {
-  -moz-margin-start: 0;
+  margin-inline-start: 0;
 }
 
 .iframe {
@@ -127,8 +121,8 @@ groupbox.collapsable caption .caption-icon {
   height: 9px;
   background-repeat: no-repeat;
   background-position: center;
-  -moz-margin-start: 2px;
-  -moz-margin-end: 2px;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
   background-image: url("chrome://global/skin/tree/twisty-open.png");
 }
 
@@ -148,7 +142,7 @@ groupbox tree {
 }
 
 #securityBox description { 
-  -moz-margin-start: 10px;
+  margin-inline-start: 10px;
 }
 
 #general-security-identity {
@@ -159,13 +153,6 @@ groupbox tree {
 /* Media Tab */
 #imagetree {
   min-height: 10em;
-  margin-bottom: 0;
-}
-
-#mediaSplitter {
-  border-style: none;
-  background: none;
-  height: .8em;
 }
 
 #mediaGrid {
@@ -182,7 +169,7 @@ groupbox tree {
 
 treechildren::-moz-tree-cell-text(broken) {
   font-style: italic;
-  color: #ACA899; /*graytext;*/
+  color: graytext;
 }
 
 /* Feeds Tab */
@@ -193,29 +180,23 @@ treechildren::-moz-tree-cell-text(broken) {
 #feedListbox richlistitem {
   padding-top: 6px;
   padding-bottom: 6px;
-  -moz-padding-start: 7px;
-  -moz-padding-end: 7px;
+  padding-inline-start: 7px;
+  padding-inline-end: 7px;
   min-height: 25px;
   border-bottom: 1px dotted #C0C0C0;
-  background-color: #F1FDFF;
-}
-
-#feedListbox richlistitem:hover {
-  background-color: #FFD5EA;
-  color: black;
 }
 
 #feedListbox richlistitem[selected="true"] {
-  background-color: #C3F4FD; /* -moz-Dialog; */
-  color: black; /* -moz-DialogText; */
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
 }
 
 #feedListbox {
   border: 2px solid;
-  -moz-border-top-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
-  -moz-border-right-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-bottom-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-left-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
+  -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
 }
 
 .feedTitle { 
@@ -227,18 +208,18 @@ treechildren::-moz-tree-cell-text(broken) {
   margin-top: .5em;
   overflow: auto;
   border: 2px solid;
-  -moz-border-top-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
-  -moz-border-right-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-bottom-colors: white #EAEAEA; /*ThreeDHighlight ThreeDLightShadow;*/
-  -moz-border-left-colors: #9F9F9F #6B6B6B; /*ThreeDShadow ThreeDDarkShadow;*/
-  background-color: #F1FDFF; /* -moz-Field; */
+  -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
+  background-color: -moz-field;
 }
 
 .permission {
   padding-top: 6px;
   padding-bottom: 6px;
-  -moz-padding-start: 7px;
-  -moz-padding-end: 7px;
+  padding-inline-start: 7px;
+  padding-inline-end: 7px;
   min-height: 25px;
   border-bottom: 1px dotted #C0C0C0;
 }
@@ -248,7 +229,7 @@ treechildren::-moz-tree-cell-text(broken) {
 }
 
 .permission:hover {
-  background-color: #C3F4FD; /* -moz-dialog; */
+  background-color: -moz-dialog;
 }
 
 /* Security Tab */
